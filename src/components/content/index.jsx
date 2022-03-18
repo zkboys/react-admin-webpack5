@@ -14,7 +14,7 @@ const Content = forwardRef((props, ref) => {
     isRoot = false,
     offsetHeight = 0,
     children,
-    otherHeight = 8,
+    otherHeight = 0,
     loadingTip,
     ...others
   } = props;
@@ -24,7 +24,6 @@ const Content = forwardRef((props, ref) => {
   const [loadingStyle, setLoadingStyle] = useState({});
   const [loading, setLoading] = useState(propsLoading);
   height -= offsetHeight;
-
 
   // 计算loading的样式，无论是否出现滚动，loading始终覆盖PageContent可视区域
   const handleSetLoadingStyle = useCallback(() => {

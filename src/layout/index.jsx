@@ -2,7 +2,6 @@ import {Outlet} from 'react-router';
 import s from './style.module.less';
 
 export default function Layout(props) {
-    console.log(props);
 
     return (
         <div className={s.root}>
@@ -11,7 +10,6 @@ export default function Layout(props) {
             <main>
                 <Outlet/>
             </main>
-            <footer>底部</footer>
         </div>
     );
 }
