@@ -1,8 +1,9 @@
 import pageConfig, { conventionalRoutes } from 'src/pages/page-configs';
 
 const TITLE_MAP = {
-    _system: '系统管理',
-    _users: '用户管理2',
+    system: '系统管理',
+    users: '用户管理2',
+    'users/good-users': '优质用户管理',
 };
 
 export const menus = getConventionalMenus(pageConfig, conventionalRoutes, TITLE_MAP);
@@ -27,10 +28,10 @@ function getConventionalMenus(pageConfig, conventionalRoutes, TITLE_MAP) {
         const loop = nodes => nodes.forEach(node => {
             const menu = hasTitle.find(item => item.filePath === node.absComponent);
             if (menu) {
-                const id = node.path.replace(/\W/g, '_');
-                const paths = node.path.split('/');
+                const paths = node.path.split('/').filter(Boolean);
+                const id = paths.join('/');
                 paths.pop();
-                const parentId = paths.join('/').replace(/\W/g, '_');
+                const parentId = paths.join('/');
 
                 _menus.push({
                     id,
@@ -87,7 +88,6 @@ function getConventionalMenus(pageConfig, conventionalRoutes, TITLE_MAP) {
             });
         });
     }
-
     return convertToTree(__menus);
 }
 
