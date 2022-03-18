@@ -348,6 +348,17 @@ module.exports = function(webpackEnv) {
                     loader: require.resolve('source-map-loader'),
                 },
                 {
+                    test: path.join(paths.appSrc, 'pages', 'page-configs.js'),
+                    enforce: 'pre',
+                    use: {
+                        loader: require.resolve('@ra-lib/config-loader'),
+                        options: {
+                            pagesPath: path.join(paths.appSrc, 'pages'),
+                        },
+                    },
+                    include: paths.appSrc,
+                },
+                {
                     // "oneOf" will traverse all following loaders until one will
                     // match the requirements. When no loader matches it will fall
                     // back to the "file" loader at the end of the loader list.

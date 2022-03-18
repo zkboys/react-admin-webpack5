@@ -31,7 +31,7 @@ export default WrappedComponent => {
                 };
 
                 ReactDOM.render(
-                    <WrappedComponent {...props} commonProps={commonProps}/>,
+                    <WrappedComponent {...props} commonProps={commonProps} />,
                     container,
                 );
             });
