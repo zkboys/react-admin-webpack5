@@ -14,7 +14,7 @@ const options = {
 
 const routes = getRoutes(options);
 let routesStr = JSON.stringify(routes, null, 4);
-const routesPath = path.join(__dirname, '..', 'src', 'pages', 'routes.js');
+const routesPath = path.join(__dirname, '..', 'src', 'pages', 'test-routes.js');
 const comList = [];
 let index = 0;
 routesStr = routesStr.replace(/"component": "(.*)"/g, (str, $1) => {

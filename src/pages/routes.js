@@ -1,8 +1,8 @@
 import pageConfig, { conventionalRoutes } from 'src/pages/page-configs';
 
 const TITLE_MAP = {
-    system: '系统管理',
-    users: '用户管理2',
+    'system': '系统管理',
+    'users': '用户管理2',
     'users/good-users': '优质用户管理',
 };
 

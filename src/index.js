@@ -1,6 +1,7 @@
-import React, {Suspense} from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
+import { Spin } from 'antd';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -8,12 +9,12 @@ import reportWebVitals from './reportWebVitals';
 class ErrorBoundary extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { hasError: false };
+        this.state = { hasError: false, error: null };
     }
 
     static getDerivedStateFromError(error) {
         // Update state so the next render will show the fallback UI.
-        return { hasError: true };
+        return { hasError: true, error };
     }
 
     componentDidCatch(error, errorInfo) {
@@ -25,7 +26,12 @@ class ErrorBoundary extends React.Component {
     render() {
         if (this.state.hasError) {
             // You can render any custom fallback UI
-            return <h1>Something went wrong.</h1>;
+            return (
+                <div>
+                    <h1>Something went wrong.</h1>
+                    <div>{JSON.stringify(this.state.error)}</div>
+                </div>
+            );
         }
 
         return this.props.children;
@@ -33,15 +39,27 @@ class ErrorBoundary extends React.Component {
 }
 
 ReactDOM.render(
-    <Suspense fallback={<div>Loading... </div>}>
+    <Suspense
+        fallback={(
+            <div style={{
+                position: 'fixed',
+                zIndex: 9999,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '100vw',
+                height: '100vh',
+            }}>
+                <Spin spinning />
+            </div>
+        )}
+    >
         <ErrorBoundary>
             <BrowserRouter>
-                <App/>
+                <App />
             </BrowserRouter>
         </ErrorBoundary>
     </Suspense>
-
-
     ,
     document.getElementById('root'),
 );
