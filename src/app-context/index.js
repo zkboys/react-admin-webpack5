@@ -2,7 +2,10 @@ import { createContext, useCallback, useReducer } from 'react';
 import { IS_SUB } from 'src/config';
 import { isLogin } from 'src/commons';
 
-const initialState = { frame: isLogin() ? false : !IS_SUB };
+const initialState = {
+    // 是否显示头部，左侧等框架内容
+    frame: isLogin() ? false : !IS_SUB,
+};
 
 function reducer(state, action) {
     const { type, payload } = action;
@@ -22,9 +25,7 @@ export const AppProvider = (props) => {
         if (state.frame === frame) return;
         dispatch({ type: 'frame', payload: frame });
     }, [state.frame]);
-    return (
-        <AppContext.Provider value={{ state, dispatch, setFrame }}>
-            {props.children}
-        </AppContext.Provider>
-    );
+    return (<AppContext.Provider value={{ state, dispatch, setFrame }}>
+        {props.children}
+    </AppContext.Provider>);
 };
