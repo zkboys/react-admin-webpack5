@@ -9,17 +9,24 @@ export default config({
 })(function Index(props) {
     return (
         <PageContent className={s.root}>
-            <h1>我是首页</h1>
-            <Button
-                type="primary"
-                onClick={() => myModal({
-                    onOk: async () => {
-                        // 这两种方式都可以阻止关闭弹框
-                        // throw Error('');
-                        // return false;
-                    },
-                })}
-            >好的</Button>
+            <div
+                style={{
+                    height: 2000,
+                    // background: 'yellowgreen',
+                }}
+            >
+                <h1>我是首页</h1>
+                <Button
+                    type="primary"
+                    onClick={() => myModal({
+                        onOk: async () => {
+                            // 这两种方式都可以阻止关闭弹框
+                            // throw Error('');
+                            // return false;
+                        },
+                    })}
+                >好的</Button>
+            </div>
         </PageContent>
     );
 });
