@@ -1,16 +1,14 @@
 import { Button } from 'antd';
 import { PageContent } from 'src/components';
-import myModal from './myModal';
 import config from 'src/commons/config-hoc';
-import s from './style.module.less';
-import { useContext } from 'react';
 import { toLogin } from 'src/commons';
-import { AppContext } from '../../app-context';
+import myModal from './myModal';
+import s from './style.module.less';
 
 export default config({
     title: '首页',
 })(function Index(props) {
-    const { state, setFrame } = useContext(AppContext);
+    console.log('首页 render');
     return (
         <PageContent className={s.root}>
             <div
@@ -21,7 +19,6 @@ export default config({
             >
                 <h1>我是首页</h1>
                 <Button onClick={() => toLogin()}>登录</Button>
-                <Button onClick={() => setFrame(!state.frame)}>切换frame</Button>
                 <Button
                     type="primary"
                     onClick={() => myModal({

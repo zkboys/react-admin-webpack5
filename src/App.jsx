@@ -7,7 +7,6 @@ import routes, { menus } from 'src/pages/routes';
 import s from './App.module.less';
 import { AppContext } from './app-context';
 
-
 function App() {
     const element = useRoutes([
         ...routes,

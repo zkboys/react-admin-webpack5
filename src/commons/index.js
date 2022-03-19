@@ -14,6 +14,10 @@ export function toLogin() {
     window.location.href = `${BASE_NAME}/login`;
 }
 
+export function isLogin() {
+    return window.location.pathname.endsWith('/login');
+}
+
 export function toHome() {
     window.location.href = `${BASE_NAME}/`;
 }

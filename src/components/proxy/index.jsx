@@ -6,7 +6,6 @@ import { SHOW_PROXY } from 'src/config';
 import storage from 'src/commons/storage';
 import s from './style.module.less';
 
-
 export default function Proxy(props) {
     const [selectedKeys, setSelectedKeys] = useState([storage.local.getItem('AJAX_PREFIX') || '/api']);
 
