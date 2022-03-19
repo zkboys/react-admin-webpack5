@@ -25,6 +25,7 @@ const ForkTsCheckerWebpackPlugin =
         ? require('react-dev-utils/ForkTsCheckerWarningWebpackPlugin')
         : require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const { getThemeVariables } = require('antd/dist/theme');
 
 const createEnvironmentHash = require('./webpack/persistentCache/createEnvironmentHash');
 
@@ -319,7 +320,6 @@ module.exports = function(webpackEnv) {
                 }),
                 ...(modules.webpackAliases || {}),
                 src: paths.appSrc,
-                '@': paths.appSrc,
             },
             plugins: [
                 // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -532,6 +532,10 @@ module.exports = function(webpackEnv) {
                                 'less-loader',
                                 {
                                     lessOptions: {
+                                        modifyVars: getThemeVariables({
+                                            // dark: true, // 开启暗黑模式
+                                            // compact: true, // 开启紧凑模式
+                                        }),
                                         javascriptEnabled: true,
                                     },
                                 },
@@ -560,6 +564,10 @@ module.exports = function(webpackEnv) {
                                 'less-loader',
                                 {
                                     lessOptions: {
+                                        modifyVars: getThemeVariables({
+                                            // dark: true, // 开启暗黑模式
+                                            // compact: true, // 开启紧凑模式
+                                        }),
                                         javascriptEnabled: true,
                                     },
                                 },
