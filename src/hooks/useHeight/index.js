@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { getElementTop } from 'src/commons';
+import { getElementTop } from '@ra-lib/util';
 
 export default function useHeight(domRef, otherHeight = 0, deps = []) {
   const [height, setHeight] = useState(document.documentElement.clientHeight - otherHeight);

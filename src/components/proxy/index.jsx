@@ -2,18 +2,17 @@ import { useCallback, useState } from 'react';
 import { Dropdown, Menu } from 'antd';
 import { ApiOutlined, DownOutlined } from '@ant-design/icons';
 import proxyConfig from 'src/setupProxyConfig';
-// import { SHOW_PROXY } from 'src/config';
+import { SHOW_PROXY } from 'src/config';
+import storage from 'src/commons/storage';
 import s from './style.module.less';
 
 
-const SHOW_PROXY = true;
-
 export default function Proxy(props) {
-    const [selectedKeys, setSelectedKeys] = useState([window.localStorage.getItem('AJAX_PREFIX') || '/api']);
+    const [selectedKeys, setSelectedKeys] = useState([storage.local.getItem('AJAX_PREFIX') || '/api']);
 
     const handleSelect = useCallback((baseUrl) => {
         setSelectedKeys([baseUrl]);
-        window.localStorage.setItem('AJAX_PREFIX', baseUrl);
+        storage.local.setItem('AJAX_PREFIX', baseUrl);
         window.location.reload();
     }, []);
 

@@ -1,20 +1,38 @@
-import { ajaxHoc } from 'src/commons/ajax';
-import { modal as modalHoc, modalFunction as modalFunctionHoc } from 'src/hocs';
-import { compose } from 'src/commons';
+import React, { useContext } from 'react';
+import { compose, queryParse } from '@ra-lib/util';
+import { getLoginUser, toLogin } from 'src/commons';
+import { AppContext } from 'src/app-context';
+import { IS_SUB } from 'src/config';
+import {
+    ajax as ajaxHoc,
+    modal as modalHoc,
+    modalFunction as modalFunctionHoc,
+} from 'src/hocs';
 
-import React from 'react';
 
 // 公共高阶组件，注入一些常用数据，比如 query loginUser等
 function commonHoc(options) {
-    const { query, loginUser } = options;
+    const {
+        query = true,
+        loginUser = true,
+        frame = !IS_SUB,
+        auth = true,
+    } = options;
     return (WrappedComponent) => {
         const componentName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
         const WithLayout = (props) => {
+            const { setFrame } = useContext(AppContext);
+
+            setTimeout(() => {
+                setFrame(frame);
+                if (auth && !getLoginUser()) return toLogin();
+            });
+
             // 默认添加属性到props中的属性
             const extendProps = {};
-            if (query !== false) extendProps.query = {}; // getQuery();
-            if (loginUser !== false) extendProps.loginUser = {}; // getLoginUser();
+            if (query) extendProps.query = queryParse();
+            if (loginUser) extendProps.loginUser = getLoginUser();
 
             return <WrappedComponent {...extendProps} {...props} />;
         };
@@ -66,7 +84,7 @@ export default function configHoc(options = {}) {
     // 公共高阶组件
     hoc.push(commonHoc(options));
     // ajax高阶组件
-    if (ajax) hoc.push(ajaxHoc());
+    if (ajax) hoc.push(ajaxHoc);
 
     return compose(hoc);
 }

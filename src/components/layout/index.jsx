@@ -1,8 +1,9 @@
+import { useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, Dropdown, Avatar } from 'antd';
 import { LogoutOutlined, DownOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { toLogin } from 'src/commons';
 import s from './style.module.less';
-import { useCallback } from 'react';
 import { Proxy } from '../index';
 
 export default function Layout(props) {
@@ -36,7 +37,8 @@ export default function Layout(props) {
     }, [menus]);
 
     const handleLogout = useCallback(() => {
-        // TODO
+        // TODO ajax
+        toLogin();
     }, []);
 
     if (!frame) return props.children;

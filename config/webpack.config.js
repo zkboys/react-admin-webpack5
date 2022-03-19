@@ -354,6 +354,7 @@ module.exports = function(webpackEnv) {
                         loader: require.resolve('@ra-lib/config-loader'),
                         options: {
                             pagesPath: path.join(paths.appSrc, 'pages'),
+                            conventionalRoutes: true,
                         },
                     },
                     include: paths.appSrc,
