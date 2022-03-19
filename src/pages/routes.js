@@ -7,7 +7,7 @@ const TITLE_MAP = {
 };
 
 export const menus = getConventionalMenus(pageConfig, conventionalRoutes, TITLE_MAP);
-
+console.log(conventionalRoutes);
 export default [
     ...conventionalRoutes,
 ];

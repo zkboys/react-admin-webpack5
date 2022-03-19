@@ -1,0 +1,58 @@
+@import '../../theme';
+
+@header-height: 50px;
+@aside-width: 256px;
+
+.root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex: 0 0 @header-height;
+  height: @header-height;
+  background-color: #fff;
+  border-bottom: @border-color-base;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  flex: 0 0 @aside-width;
+  width: @aside-width;
+  background: #001529;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000c17;
+}
+
+.headerMain {
+}
+
+.main {
+  flex: 1;
+  display: flex;
+}
+
+.aside {
+  flex: 0 0 @aside-width;
+  height: calc(100vh - @header-height);
+  background: #000c17;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
+}
+
+.page {
+  flex: 1;
+  height: 100%;
+}
+

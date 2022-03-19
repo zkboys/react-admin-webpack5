@@ -1,4 +1,3 @@
-import { Outlet } from 'react-router';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import { menus } from 'src/pages/routes';
@@ -35,18 +34,25 @@ export default function Layout(props) {
     }, []);
     return (
         <div className={s.root}>
-            <header>头部</header>
-            <aside>
-                <Menu
-                    theme={'dark'}
-                    style={{ width: 256 }}
-                    mode="inline"
-                >
-                    {renderMenu()}
-                </Menu>
-            </aside>
-            <main>
-                <Outlet />
+            <header className={s.header}>
+                <div className={s.logo}>React Admin</div>
+                <div className={s.headerMain}>
+                    退出登录
+                </div>
+            </header>
+
+            <main className={s.main}>
+                <aside className={s.aside}>
+                    <Menu
+                        theme={'dark'}
+                        mode="inline"
+                    >
+                        {renderMenu()}
+                    </Menu>
+                </aside>
+                <div className={s.page}>
+                    {props.children}
+                </div>
             </main>
         </div>
     );
