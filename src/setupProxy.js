@@ -1,12 +1,5 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
-
-const proxies = [
-    {
-        name: '测试环境',
-        baseUrl: '/api',
-        target: 'http://172.16.170.17:8080',
-    },
-];
+const proxies = require('./setupProxyConfig.json');
 
 module.exports = function(app) {
     proxies.forEach(item => {

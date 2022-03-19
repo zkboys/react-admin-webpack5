@@ -1,7 +1,9 @@
-import { Menu } from 'antd';
+import { Menu, Dropdown, Avatar } from 'antd';
+import { LogoutOutlined, DownOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import s from './style.module.less';
 import { useCallback } from 'react';
+import { Proxy } from '../index';
 
 export default function Layout(props) {
     const { frame, menus } = props;
@@ -33,7 +35,14 @@ export default function Layout(props) {
         return loop(menus);
     }, [menus]);
 
+    const handleLogout = useCallback(() => {
+        // TODO
+    }, []);
+
     if (!frame) return props.children;
+
+    // TODO
+    const name = '测试';
 
     return (
         <div className={s.root}>
@@ -46,7 +55,25 @@ export default function Layout(props) {
                     <span>React Admin</span>
                 </div>
                 <div className={s.headerMain}>
-                    退出登录
+                    <Proxy />
+                    <Dropdown
+                        overlay={(
+                            <Menu>
+                                <Menu.Divider />
+                                <Menu.Item key="logout" danger icon={<LogoutOutlined />} onClick={handleLogout}>
+                                    退出登录
+                                </Menu.Item>
+                            </Menu>
+                        )}
+                    >
+                        <div className={s.action}>
+                            <Avatar size="small" className={s.avatar}>
+                                {(name[0] || '').toUpperCase()}
+                            </Avatar>
+                            <span className={s.userName}>{name}</span>
+                            <DownOutlined />
+                        </div>
+                    </Dropdown>
                 </div>
             </header>
             <aside className={s.aside}>

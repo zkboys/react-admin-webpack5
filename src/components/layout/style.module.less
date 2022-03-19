@@ -40,8 +40,27 @@
     flex: 1;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    padding: 0 16px;
     height: 100%;
     border-bottom: 1px solid @border-color-base;
+  }
+
+  .action {
+    cursor: pointer;
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .avatar {
+    background: yellowgreen;
+  }
+
+  .userName {
+    margin: 0 8px;
   }
 }
 
@@ -66,4 +85,5 @@
   padding-top: @header-height;
   padding-left: @aside-width;
 }
+
 

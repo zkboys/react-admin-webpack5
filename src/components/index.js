@@ -6,3 +6,4 @@ export { default as confirm } from './confirm';
 export { default as Operator } from './operator';
 export { default as Layout } from './layout';
 export { default as PageLoading } from './page-loading';
+export { default as Proxy } from './proxy';
