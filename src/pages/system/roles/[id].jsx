@@ -1,5 +1,5 @@
 import config from 'src/commons/config-hoc';
-import { PageContent } from 'src/components';
+import { PageContent } from '@ra-lib/component';
 
 export default config({
     title: '角色详情',

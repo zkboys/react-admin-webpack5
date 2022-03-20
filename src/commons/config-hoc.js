@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from 'react';
-import { compose, queryParse } from '@ra-lib/util';
-import { getLoginUser, toLogin } from 'src/commons';
-import { AppContext } from 'src/app-context';
-import { IS_SUB } from 'src/config';
-import { ajaxHoc } from 'src/commons/ajax';
+import React, {useContext, useEffect} from 'react';
+import {compose, queryParse} from '@ra-lib/util';
+import {getLoginUser, toLogin} from 'src/commons';
+import {AppContext} from 'src/app-context';
+import {IS_SUB} from 'src/config';
+import {ajaxHoc} from 'src/commons/ajax';
 import {
     modal2 as modalHoc, modalFunction as modalFunctionHoc,
 } from '@ra-lib/hoc';
@@ -11,16 +11,20 @@ import {
 // 公共高阶组件，注入一些常用数据，比如 query loginUser等
 function commonHoc(options) {
     const {
-        query = true, loginUser = true, frame = !IS_SUB, auth = true,
+        query = true,
+        loginUser = true,
+        frame = !IS_SUB,
+        auth = true,
     } = options;
     return (WrappedComponent) => {
         const componentName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
         const WithLayout = (props) => {
-            const { setFrame } = useContext(AppContext);
+            // modalFunction 组件，AppContext是无法获取到的。
+            const { setFrame } = useContext(AppContext) || {};
 
             useEffect(() => {
-                setFrame(frame);
+                setFrame && setFrame(frame);
             }, [setFrame]);
 
             if (auth && !getLoginUser()) return toLogin();
@@ -50,6 +54,7 @@ export default function configHoc(options = {}) {
         modal, // 是否是弹框函数
         modalFunction, // 是否是抽屉
         drawer, // 是否添加query参数
+        drawerFunction,
         // eslint-disable-next-line
         query = true, // 是否添加loginUser
         // eslint-disable-next-line

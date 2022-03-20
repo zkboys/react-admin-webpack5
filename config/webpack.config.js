@@ -27,6 +27,19 @@ const ForkTsCheckerWebpackPlugin =
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const { getThemeVariables } = require('antd/dist/theme');
 
+const { lessVarsToJs } = require('./util');
+const pkg = require(paths.appPackageJson);
+const themeVars = lessVarsToJs(path.join(paths.appSrc, 'theme.less'));
+const modifyVars = {
+    ...getThemeVariables({
+        // dark: true, // 开启暗黑模式
+        // compact: true, // 开启紧凑模式
+    }),
+    ...themeVars,
+    packageName: pkg.name,
+};
+
+
 const createEnvironmentHash = require('./webpack/persistentCache/createEnvironmentHash');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
@@ -533,10 +546,7 @@ module.exports = function(webpackEnv) {
                                 'less-loader',
                                 {
                                     lessOptions: {
-                                        modifyVars: getThemeVariables({
-                                            // dark: true, // 开启暗黑模式
-                                            // compact: true, // 开启紧凑模式
-                                        }),
+                                        modifyVars,
                                         javascriptEnabled: true,
                                     },
                                 },
@@ -565,10 +575,7 @@ module.exports = function(webpackEnv) {
                                 'less-loader',
                                 {
                                     lessOptions: {
-                                        modifyVars: getThemeVariables({
-                                            // dark: true, // 开启暗黑模式
-                                            // compact: true, // 开启紧凑模式
-                                        }),
+                                        modifyVars,
                                         javascriptEnabled: true,
                                     },
                                 },

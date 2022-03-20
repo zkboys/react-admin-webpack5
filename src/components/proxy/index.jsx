@@ -1,8 +1,8 @@
-import { useCallback, useState } from 'react';
-import { Dropdown, Menu } from 'antd';
-import { ApiOutlined, DownOutlined } from '@ant-design/icons';
+import {useCallback, useState} from 'react';
+import {Dropdown, Menu} from 'antd';
+import {ApiOutlined, DownOutlined} from '@ant-design/icons';
 import proxyConfig from 'src/setupProxyConfig';
-import { SHOW_PROXY } from 'src/config';
+import {SHOW_PROXY} from 'src/config';
 import storage from 'src/commons/storage';
 import s from './style.module.less';
 
@@ -27,7 +27,7 @@ export default function Proxy(props) {
                     return (
                         <Menu.Item
                             key={baseUrl}
-                            icon={<ApiOutlined />}
+                            icon={<ApiOutlined/>}
                             onClick={() => handleSelect(baseUrl)}
                         >
                             {name}
@@ -40,11 +40,13 @@ export default function Proxy(props) {
     return (
         <Dropdown overlay={serverMenu}>
             <div className={s.root}>
-                <ApiOutlined className={s.icon} />
+                <div className={s.icon}>
+                    <ApiOutlined/>
+                </div>
                 <div className={s.name}>
                     {proxyConfig.find((item) => selectedKeys?.includes(item.baseUrl))?.name}
                 </div>
-                <DownOutlined />
+                <DownOutlined/>
             </div>
         </Dropdown>
     );
