@@ -81,6 +81,7 @@ export default function configHoc(options = {}) {
         width: 800,
         footer: false,
         bodyStyle: { padding: 0 },
+        // style: { top: 50 },
     };
     // 函数弹框组件
     if (modalFunction) hoc.push(modalFunctionHoc({ commonProps, antPrefix: theme.antPrefix, raLibPrefix: theme.raLibPrefix }));
