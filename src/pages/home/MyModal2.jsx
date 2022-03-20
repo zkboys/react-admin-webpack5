@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
-import { Form, Modal } from 'antd';
-import { Content, FormItem } from '@ra-lib/component';
+import { Modal } from 'antd';
+import { Content } from '@ra-lib/component';
 import config from 'src/commons/config-hoc';
 
 export default config({
-    modalFunction: true,
-})(function MyModal(props) {
+    modal: true,
+})(function MyModal2(props) {
     const { commonProps, onOk, close } = props;
     console.log(props);
     const handleOk = useCallback(async () => {
@@ -20,13 +20,7 @@ export default config({
             onOk={handleOk}
         >
             <Content>
-                <Form>
-                    <FormItem
-                        type="input"
-                        label="用户名"
-                        name="name"
-                    />
-                </Form>
+                弹框
             </Content>
         </Modal>
     );

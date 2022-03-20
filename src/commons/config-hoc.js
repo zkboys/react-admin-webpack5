@@ -1,12 +1,14 @@
-import React, {useContext, useEffect} from 'react';
-import {compose, queryParse} from '@ra-lib/util';
-import {getLoginUser, toLogin} from 'src/commons';
-import {AppContext} from 'src/app-context';
-import {IS_SUB} from 'src/config';
-import {ajaxHoc} from 'src/commons/ajax';
+import React, { useContext, useEffect } from 'react';
+import { compose, queryParse } from '@ra-lib/util';
+import { getLoginUser, toLogin } from 'src/commons';
+import { AppContext } from 'src/app-context';
+import { IS_SUB } from 'src/config';
+import { ajaxHoc } from 'src/commons/ajax';
 import {
-    modal2 as modalHoc, modalFunction as modalFunctionHoc,
+    modal2 as modalHoc,
+    modalFunction as modalFunctionHoc,
 } from '@ra-lib/hoc';
+import theme from 'src/theme.less';
 
 // 公共高阶组件，注入一些常用数据，比如 query loginUser等
 function commonHoc(options) {
@@ -68,9 +70,8 @@ export default function configHoc(options = {}) {
     if (modal && modalFunction) throw Error('[config hoc] modal and modalFunction config can not be used together!');
 
     const hoc = [];
-
     // 函数弹框组件
-    if (modalFunction) hoc.push(modalFunctionHoc);
+    if (modalFunction) hoc.push(modalFunctionHoc({ antPrefix: theme.antPrefix, raLibPrefix: theme.raLibPrefix }));
     // 弹框高阶组件
     if (modal) hoc.push(modalHoc);
     // 公共高阶组件

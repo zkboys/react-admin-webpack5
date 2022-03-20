@@ -1,14 +1,19 @@
-import {Button, Space} from 'antd';
-import {PageContent} from '@ra-lib/component';
+import { useState } from 'react';
+import { Button, Space } from 'antd';
+import { PageContent } from '@ra-lib/component';
 import config from 'src/commons/config-hoc';
-import {toLogin} from 'src/commons';
+import { toLogin } from 'src/commons';
 import myModal from './myModal';
+import MyModal2 from './MyModal2';
 import s from './style.module.less';
 
 export default config({
     title: '首页',
 })(function Index(props) {
     console.log('首页 render');
+
+    const [visible, setVisible] = useState(false);
+
     return (
         <PageContent className={s.root}>
             <div
@@ -30,8 +35,13 @@ export default config({
                             },
                         })}
                     >我的弹框</Button>
+                    <Button
+                        type="primary"
+                        onClick={() => setVisible(true)}
+                    >我的弹框2</Button>
                 </Space>
             </div>
+            <MyModal2 visible={visible} onCancel={() => setVisible(false)} />
         </PageContent>
     );
 });
