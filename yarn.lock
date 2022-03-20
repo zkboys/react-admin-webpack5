@@ -1455,10 +1455,10 @@
   resolved "https://registry.npmmirror.com/@ra-lib/config-loader/-/config-loader-0.1.9.tgz#8da89878a2d7829fb97a78c1ba78a73e8606b1f3"
   integrity sha512-a+Ms8fLQSRr9nskbRt7bQHmwCoupKGEAg95gukymSyEqiQg0pvY6Tc2qkCayIaFBzZTGmrz33QePUGM5VZNW1g==
 
-"@ra-lib/hoc@^0.1.12":
-  version "0.1.12"
-  resolved "https://registry.npmjs.org/@ra-lib/hoc/-/hoc-0.1.12.tgz#9a9701aff20dba37566bbb8911859546ceed39a7"
-  integrity sha512-nUxl5kATF9pxbCiDZHTleDoUO8ISgsvtLvauZ42kJ+A8QyM5+MHh86ZDjEZ1cWqP3b3OS6I4NK+lMFmrTrZYTw==
+"@ra-lib/hoc@^0.1.14":
+  version "0.1.14"
+  resolved "https://registry.npmjs.org/@ra-lib/hoc/-/hoc-0.1.14.tgz#749af45af71eee6d9dccbd31d88226c3ccdf19e2"
+  integrity sha512-naw8RohWZf32SDKG4ahk3msxIU3OzYGj5VnEvJmRnFUYiSfI5DjdCsYLrZu+ca5nQGdtvRLTusV7+3JulXLglg==
 
 "@ra-lib/hooks@^0.1.11":
   version "0.1.11"

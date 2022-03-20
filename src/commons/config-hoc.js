@@ -73,11 +73,11 @@ export default function configHoc(options = {}) {
     // 函数弹框组件
     if (modalFunction) hoc.push(modalFunctionHoc({ antPrefix: theme.antPrefix, raLibPrefix: theme.raLibPrefix }));
     // 弹框高阶组件
-    if (modal) hoc.push(modalHoc);
+    if (modal) hoc.push(modalHoc());
     // 公共高阶组件
     hoc.push(commonHoc(options));
     // ajax高阶组件
-    if (ajax) hoc.push(ajaxHoc);
+    if (ajax) hoc.push(ajaxHoc());
 
     return compose(hoc);
 }

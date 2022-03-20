@@ -52,7 +52,7 @@ const hoc = createHoc(ajax);
 
 export default ajax;
 
-export const ajaxHoc = hoc();
+export const ajaxHoc = hoc;
 
 export const get = ajax.get;
 export const post = ajax.post;

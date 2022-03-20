@@ -10,7 +10,7 @@
     "@ra-lib/ajax": "^0.1.43",
     "@ra-lib/component": "^0.0.3",
     "@ra-lib/config-loader": "^0.1.9",
-    "@ra-lib/hoc": "^0.1.12",
+    "@ra-lib/hoc": "^0.1.14",
     "@ra-lib/hooks": "^0.1.11",
     "@ra-lib/util": "^0.1.27",
     "@svgr/webpack": "^6.2.1",
