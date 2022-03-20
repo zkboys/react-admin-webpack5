@@ -4,14 +4,14 @@ import { isLogin } from 'src/commons';
 
 const initialState = {
     // 是否显示头部，左侧等框架内容
-    frame: isLogin() ? false : !IS_SUB,
+    layout: isLogin() ? false : !IS_SUB,
 };
 
 function reducer(state, action) {
     const { type, payload } = action;
     switch (type) {
-        case 'frame':
-            return { frame: payload };
+        case 'layout':
+            return { layout: payload };
         default:
             throw new Error(`no such reducer type : ${type}`);
     }
@@ -21,11 +21,11 @@ export const AppContext = createContext(null);
 
 export const AppProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const setFrame = useCallback((frame) => {
-        if (state.frame === frame) return;
-        dispatch({ type: 'frame', payload: frame });
-    }, [state.frame]);
-    return (<AppContext.Provider value={{ state, dispatch, setFrame }}>
+    const setLayout = useCallback((layout) => {
+        if (state.layout === layout) return;
+        dispatch({ type: 'layout', payload: layout });
+    }, [state.layout]);
+    return (<AppContext.Provider value={{ state, dispatch, setLayout }}>
         {props.children}
     </AppContext.Provider>);
 };

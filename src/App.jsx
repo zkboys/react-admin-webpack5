@@ -29,7 +29,7 @@ function App() {
             <ComponentProvider
                 prefixCls={theme.raLibPrefix}
             >
-                <Layout frame={state.frame} menus={menus}>
+                <Layout layout={state.layout} menus={menus}>
                     <Suspense fallback={<Loading spin/>}>
                         <div className={s.root}>
                             {element}

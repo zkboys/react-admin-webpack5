@@ -1,13 +1,31 @@
-import { useCallback } from 'react';
+import { useCallback, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Dropdown, Avatar } from 'antd';
 import { LogoutOutlined, DownOutlined } from '@ant-design/icons';
-import { toLogin } from 'src/commons';
+import { findParentNodes } from '@ra-lib/util';
+import { toLogin, getLoginUser } from 'src/commons';
+import { Proxy, Logo } from '../index';
 import s from './style.module.less';
-import { Proxy } from '../index';
 
 export default function Layout(props) {
-    const { frame, menus } = props;
+    const { layout, menus, keepMenuOpen = true } = props;
+    const [selectedKeys, setSelectedKeys] = useState([window.location.pathname]);
+    const [openKeys, setOpenKeys] = useState([]);
+    const openKeysRef = useRef([]);
+
+    // 计算openKeys
+    useEffect(() => {
+        const key = selectedKeys?.[0];
+        if (!key) return;
+        const nodes = findParentNodes(menus, key, 'path');
+        const keys = nodes.map(item => item.id);
+        const openKeys = keepMenuOpen ? Array.from(new Set([...keys, ...openKeysRef.current])) : keys;
+        setOpenKeys(openKeys);
+    }, [menus, selectedKeys, keepMenuOpen]);
+
+    useEffect(() => {
+        openKeysRef.current = openKeys;
+    }, [openKeys]);
 
     const renderMenu = useCallback(() => {
         const loop = nodes => nodes.map(item => {
@@ -26,7 +44,7 @@ export default function Layout(props) {
                 );
             }
             return (
-                <Menu.Item key={id}>
+                <Menu.Item key={path}>
                     <Link key={id} to={path}>
                         {title}
                     </Link>
@@ -37,24 +55,19 @@ export default function Layout(props) {
     }, [menus]);
 
     const handleLogout = useCallback(() => {
-        // TODO ajax
+        alert('// TODO 退出登录');
         toLogin();
     }, []);
 
-    if (!frame) return props.children;
+    if (!layout) return props.children;
 
-    // TODO
-    const name = '测试';
+    const userName = getLoginUser()?.name;
 
     return (
         <div className={s.root}>
             <header className={s.header}>
                 <div className={s.logo}>
-                    <img
-                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
-                        alt="logo"
-                    />
-                    <span>React Admin</span>
+                    <Logo />
                 </div>
                 <div className={s.headerMain}>
                     <Proxy />
@@ -70,9 +83,9 @@ export default function Layout(props) {
                     >
                         <div className={s.action}>
                             <Avatar size="small" className={s.avatar}>
-                                {(name[0] || '').toUpperCase()}
+                                {(userName[0] || '').toUpperCase()}
                             </Avatar>
-                            <span className={s.userName}>{name}</span>
+                            <span className={s.userName}>{userName}</span>
                             <DownOutlined />
                         </div>
                     </Dropdown>
@@ -82,6 +95,10 @@ export default function Layout(props) {
                 <Menu
                     theme={'dark'}
                     mode="inline"
+                    selectedKeys={selectedKeys}
+                    onSelect={({ selectedKeys }) => setSelectedKeys(selectedKeys)}
+                    openKeys={openKeys}
+                    onOpenChange={openKeys => setOpenKeys(openKeys)}
                 >
                     {renderMenu()}
                 </Menu>

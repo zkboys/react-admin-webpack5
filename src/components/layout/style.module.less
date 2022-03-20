@@ -1,7 +1,7 @@
 @import '../../theme';
 
 @header-height: 50px;
-@aside-width: 256px;
+@aside-width: 222px;
 @z-index: 999;
 
 .root {
@@ -21,7 +21,7 @@
   .logo {
     flex: 0 0 @aside-width;
     width: @aside-width;
-    background: #001529;
+    background: @layout-header-background;
     height: 100%;
     color: #fff;
     font-size: 18px;
@@ -30,9 +30,13 @@
     border-bottom: 1px solid #000c17;
 
     img {
-      width: 24px;
+      width: 30px;
       margin-left: 24px;
       margin-right: 8px;
+    }
+
+    h1 {
+      font-size: 20px;
     }
   }
 
@@ -71,7 +75,7 @@
   z-index: @z-index;
   width: @aside-width;
   height: calc(100vh - @header-height);
-  background: #000c17;
+  background: @menu-dark-inline-submenu-bg;
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */

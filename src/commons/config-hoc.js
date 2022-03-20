@@ -15,7 +15,7 @@ function commonHoc(options) {
     const {
         query = true,
         loginUser = true,
-        frame = !IS_SUB,
+        layout = !IS_SUB,
         auth = true,
     } = options;
     return (WrappedComponent) => {
@@ -23,11 +23,11 @@ function commonHoc(options) {
 
         const WithLayout = (props) => {
             // modalFunction 组件，AppContext是无法获取到的。
-            const { setFrame } = useContext(AppContext) || {};
+            const { setLayout } = useContext(AppContext) || {};
 
             useEffect(() => {
-                setFrame && setFrame(frame);
-            }, [setFrame]);
+                setLayout && setLayout(layout);
+            }, [setLayout]);
 
             if (auth && !getLoginUser()) return toLogin();
 
@@ -48,19 +48,26 @@ function commonHoc(options) {
 export default function configHoc(options = {}) {
     // config 所有可用参数，以及默认值
     const {
-        // 路由地址
-        path, // 是否需要登录
-        auth, // 是否显示框架
-        frame, // 是否注入ajax
-        ajax = true, // 是否是弹框
-        modal, // 是否是弹框函数
-        modalFunction, // 是否是抽屉
-        drawer, // 是否添加query参数
+        // 是否需要登录
+        auth,
+        // 是否显示框架
+        layout,
+        // 是否注入ajax
+        ajax = true,
+        // 是否是弹框
+        modal,
+        // 是否是弹框函数
+        modalFunction,
+        // 是否是抽屉
+        drawer,
         drawerFunction,
+        // 是否添加query参数
         // eslint-disable-next-line
-        query = true, // 是否添加loginUser
+        query = true,
+        // 是否添加loginUser
         // eslint-disable-next-line
-        loginUser = true, // eslint-disable-next-line
+        loginUser = true,
+        // eslint-disable-next-line
         ...others
     } = options;
 
