@@ -1,6 +1,6 @@
-import { Suspense, useContext } from 'react';
-import { useNavigate, useRoutes } from 'react-router';
-import { ConfigProvider } from 'antd';
+import { Suspense, useContext, useEffect } from 'react';
+import { useNavigate, useRoutes, useLocation } from 'react-router';
+import { ConfigProvider, Modal } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import { Layout } from 'src/components';
 import { Loading, Error404, ComponentProvider } from '@ra-lib/component';
@@ -17,19 +17,21 @@ ConfigProvider.config({
     prefixCls: theme.antPrefix,
 });
 
-function App() {
+export default function App() {
     const navigate = useNavigate();
+    const location = useLocation();
     const element = useRoutes([
         ...routes,
         { path: '*', element: <Error404 onToHome={toHome} onGoBack={() => navigate('../')} /> },
     ]);
     const { state } = useContext(AppContext);
 
+    // 页面切换，关闭所有弹框
+    useEffect(() => Modal.destroyAll(), [location]);
+
     return (
         <ConfigProvider locale={zhCN} prefixCls={theme.antPrefix}>
-            <ComponentProvider
-                prefixCls={theme.raLibPrefix}
-            >
+            <ComponentProvider prefixCls={theme.raLibPrefix}>
                 <Layout layout={state.layout} menus={menus}>
                     <Suspense fallback={<Loading spin />}>
                         <div className={s.root}>
@@ -41,5 +43,3 @@ function App() {
         </ConfigProvider>
     );
 }
-
-export default App;

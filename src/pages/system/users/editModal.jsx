@@ -11,7 +11,6 @@ export default config({
     const [form] = Form.useForm();
 
     const handleSubmit = useCallback(async (values) => {
-        console.log(values);
         const params = {
             ...values,
         };

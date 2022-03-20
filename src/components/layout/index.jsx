@@ -6,12 +6,17 @@ import { findParentNodes } from '@ra-lib/util';
 import { toLogin, getLoginUser } from 'src/commons';
 import { Proxy, Logo } from '../index';
 import s from './style.module.less';
+import { useLocation } from 'react-router';
 
 export default function Layout(props) {
     const { layout, menus, keepMenuOpen = true } = props;
-    const [selectedKeys, setSelectedKeys] = useState([window.location.pathname]);
+    const [selectedKeys, setSelectedKeys] = useState([]);
     const [openKeys, setOpenKeys] = useState([]);
     const openKeysRef = useRef([]);
+    const location = useLocation();
+
+    // 页面切换，选中菜单
+    useEffect(() => setSelectedKeys([location.pathname]), [location]);
 
     // 计算openKeys
     useEffect(() => {
