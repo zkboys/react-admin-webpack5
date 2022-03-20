@@ -14,7 +14,7 @@
     "@babel/plugin-proposal-decorators": "^7.17.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@ra-lib/ajax": "^0.1.43",
-    "@ra-lib/component": "^0.0.3",
+    "@ra-lib/component": "^0.0.4",
     "@ra-lib/config-loader": "^0.1.9",
     "@ra-lib/hoc": "^0.1.14",
     "@ra-lib/hooks": "^0.1.11",

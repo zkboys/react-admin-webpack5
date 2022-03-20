@@ -1445,10 +1445,10 @@
   resolved "https://registry.npmmirror.com/@ra-lib/ajax/-/ajax-0.1.43.tgz#f41601c72166128c15a9c16c0e14ea084b6bb374"
   integrity sha512-rbp0/FnF9vTRdqbuAp0DSaLw4ZuFJdPCXa30tLN5rvTTEO3qOOHuChS496ogBEmFzUFr5N+F96DYC7j7s6ac4A==
 
-"@ra-lib/component@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.npmmirror.com/@ra-lib/component/-/component-0.0.3.tgz#73d49a7c474401bd3cb606be0c721b5ab4f06f72"
-  integrity sha512-pHtxUEoiGPYal62KfMuaPLxu7H+5Jfqd/OZHZtyYes9VcjhjpKMB/xfM71jK8hQ6Cf3I4CuUVhKrCE5BK9MVOg==
+"@ra-lib/component@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.npmjs.org/@ra-lib/component/-/component-0.0.4.tgz#9f09a98a66c9ee1e6a364fa206cf307ed60eb103"
+  integrity sha512-/aADF4hDonHUJtO2XI8JPJ+ufNL9nQfZWacEscOA6LLbMBP2dQejBSgzE4Gj28DRoYUiJX/1GkGEb13G5wXQKw==
 
 "@ra-lib/config-loader@^0.1.9":
   version "0.1.9"
