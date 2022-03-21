@@ -1,6 +1,6 @@
 import { useCallback, useState, useEffect } from 'react';
 import { Form, Row, Col, Modal } from 'antd';
-import { FormItem, ModalContent } from '@ra-lib/component';
+import { FormItem, ModalContent } from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 
 export default config({

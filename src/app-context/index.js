@@ -1,10 +1,10 @@
 import { createContext, useCallback, useReducer } from 'react';
 import { IS_SUB } from 'src/config';
-import { isLogin } from 'src/commons';
+import { isLoginPage } from '@ra-lib/adm';
 
 const initialState = {
     // 是否显示头部，左侧等框架内容
-    layout: isLogin() ? false : !IS_SUB,
+    layout: isLoginPage() ? false : !IS_SUB,
 };
 
 function reducer(state, action) {

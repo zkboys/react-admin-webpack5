@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button, Descriptions, Modal } from 'antd';
-import { ModalContent } from '@ra-lib/component';
+import { ModalContent } from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 
 export default config({

@@ -1,12 +1,12 @@
-import { useCallback, useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, Dropdown, Avatar } from 'antd';
-import { LogoutOutlined, DownOutlined } from '@ant-design/icons';
-import { findParentNodes } from '@ra-lib/util';
-import { toLogin, getLoginUser } from 'src/commons';
-import { Proxy, Logo } from '../index';
+import {useCallback, useState, useEffect, useRef} from 'react';
+import {Link} from 'react-router-dom';
+import {Menu, Dropdown, Avatar} from 'antd';
+import {LogoutOutlined, DownOutlined} from '@ant-design/icons';
+import {findParentNodes, getLoginUser} from '@ra-lib/adm';
+import {toLogin} from 'src/commons';
+import {Proxy, Logo} from '../index';
 import s from './style.module.less';
-import { useLocation } from 'react-router';
+import {useLocation} from 'react-router';
 
 export default function Layout(props) {
     const { layout, menus, keepMenuOpen = true } = props;
@@ -66,21 +66,21 @@ export default function Layout(props) {
 
     if (!layout) return props.children;
 
-    const userName = getLoginUser()?.name;
+    const userName = getLoginUser()?.name || '';
 
     return (
         <div className={s.root}>
             <header className={s.header}>
                 <div className={s.logo}>
-                    <Logo />
+                    <Logo/>
                 </div>
                 <div className={s.headerMain}>
-                    <Proxy />
+                    <Proxy/>
                     <Dropdown
                         overlay={(
                             <Menu>
-                                <Menu.Divider />
-                                <Menu.Item key="logout" danger icon={<LogoutOutlined />} onClick={handleLogout}>
+                                <Menu.Divider/>
+                                <Menu.Item key="logout" danger icon={<LogoutOutlined/>} onClick={handleLogout}>
                                     退出登录
                                 </Menu.Item>
                             </Menu>
@@ -91,7 +91,7 @@ export default function Layout(props) {
                                 {(userName[0] || '').toUpperCase()}
                             </Avatar>
                             <span className={s.userName}>{userName}</span>
-                            <DownOutlined />
+                            <DownOutlined/>
                         </div>
                     </Dropdown>
                 </div>

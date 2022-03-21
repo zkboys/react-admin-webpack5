@@ -1,5 +1,5 @@
-import Ajax, { createHooks, createHoc } from '@ra-lib/ajax';
-import { AJAX_PREFIX, AJAX_TIMEOUT } from 'src/config';
+import {Ajax, createAjaxHooks as createHooks, createAjaxHoc as createHoc} from '@ra-lib/adm';
+import {AJAX_PREFIX, AJAX_TIMEOUT} from 'src/config';
 import handleError from './handle-error';
 import handleSuccess from './handle-success';
 

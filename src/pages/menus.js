@@ -1,4 +1,4 @@
-import { getConventionalMenus } from '@ra-lib/util';
+import { getConventionalMenus } from '@ra-lib/adm';
 import pageConfig, { conventionalRoutes } from 'src/pages/page-configs';
 
 // 无法获取title的菜单配置

@@ -1,4 +1,4 @@
-import storage from 'src/commons/storage';
+import {storage} from '@ra-lib/adm';
 
 const isIframe = window.self !== window.top;
 

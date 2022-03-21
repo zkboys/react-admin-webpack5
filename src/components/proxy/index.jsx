@@ -3,7 +3,7 @@ import { Dropdown, Menu } from 'antd';
 import { ApiOutlined, DownOutlined } from '@ant-design/icons';
 import proxyConfig from 'src/setupProxyConfig';
 import { SHOW_PROXY } from 'src/config';
-import storage from 'src/commons/storage';
+import {storage} from '@ra-lib/adm';
 import c from 'classnames';
 import s from './style.module.less';
 

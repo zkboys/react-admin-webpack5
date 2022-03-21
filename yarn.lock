@@ -1440,12 +1440,32 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/ajax@^0.1.43":
-  version "0.1.43"
-  resolved "https://registry.npmmirror.com/@ra-lib/ajax/-/ajax-0.1.43.tgz#f41601c72166128c15a9c16c0e14ea084b6bb374"
-  integrity sha512-rbp0/FnF9vTRdqbuAp0DSaLw4ZuFJdPCXa30tLN5rvTTEO3qOOHuChS496ogBEmFzUFr5N+F96DYC7j7s6ac4A==
+"@ra-lib/adm@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.2.tgz#c88ecae08f690f956cb769c7755efe7ae425bca2"
+  integrity sha512-Es9XqZj2K4DaD0Yhw8LU+ukTQ3FFV9b+JxUi5x472b+WOEXtagF8IcIMi7uc/w9c+4ntkTZi5h6E8umaPfWDoQ==
+  dependencies:
+    "@ra-lib/admin-util" "0.0.2"
+    "@ra-lib/ajax" "0.1.44"
+    "@ra-lib/component" "0.0.4"
+    "@ra-lib/hoc" "0.1.16"
+    "@ra-lib/hooks" "0.1.11"
+    "@ra-lib/options" "0.0.2"
+    "@ra-lib/util" "0.1.28"
 
-"@ra-lib/component@^0.0.4":
+"@ra-lib/admin-util@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@ra-lib/admin-util/-/admin-util-0.0.2.tgz#b0a9c114713a0149448de94f76b4c45715ab437c"
+  integrity sha512-8aIc812MRuPMXSYNDlJ3WvLFIA3QytoEakFHcyqF1OsoRBkTdwjRfPjTQ3KD2jDJ0LParWP8DJf0nm2HAZSpxg==
+  dependencies:
+    "@ra-lib/util" "0.1.28"
+
+"@ra-lib/ajax@0.1.44":
+  version "0.1.44"
+  resolved "https://registry.npmjs.org/@ra-lib/ajax/-/ajax-0.1.44.tgz#19cfccdf3605b9655b5f21b3f8888915e824b3db"
+  integrity sha512-1so9Z4ypp6eh8qhBpwdPY5qNlKBaer97lzb3f+frBpQ7U1aP3//oMJHH7u8CeT+92qjeKkh4CHrRWy7z7gAbPQ==
+
+"@ra-lib/component@0.0.4":
   version "0.0.4"
   resolved "https://registry.npmjs.org/@ra-lib/component/-/component-0.0.4.tgz#9f09a98a66c9ee1e6a364fa206cf307ed60eb103"
   integrity sha512-/aADF4hDonHUJtO2XI8JPJ+ufNL9nQfZWacEscOA6LLbMBP2dQejBSgzE4Gj28DRoYUiJX/1GkGEb13G5wXQKw==
@@ -1455,17 +1475,22 @@
   resolved "https://registry.npmmirror.com/@ra-lib/config-loader/-/config-loader-0.1.9.tgz#8da89878a2d7829fb97a78c1ba78a73e8606b1f3"
   integrity sha512-a+Ms8fLQSRr9nskbRt7bQHmwCoupKGEAg95gukymSyEqiQg0pvY6Tc2qkCayIaFBzZTGmrz33QePUGM5VZNW1g==
 
-"@ra-lib/hoc@^0.1.15":
-  version "0.1.15"
-  resolved "https://registry.npmjs.org/@ra-lib/hoc/-/hoc-0.1.15.tgz#75a2fe2d5c39f812e97f33a2a452f4e28bdfac62"
-  integrity sha512-xi5l+bdAc8RreHQVRcLj4+GuMz2BUJtGo9NQGw6qlgdzvnBeBUNXiRugZJmCGuaUD8uSkQvShC82/3EMpLNUJQ==
+"@ra-lib/hoc@0.1.16":
+  version "0.1.16"
+  resolved "https://registry.npmjs.org/@ra-lib/hoc/-/hoc-0.1.16.tgz#3c62509ca54733a357f3202ab3cab912d9fa550e"
+  integrity sha512-qKeaig7a+2yhMCn2Q9yJzD9dxqUyNimsWXswfseAy1IH7O7b75VRxGB0tLxGLI6igDnEriqhiVCG3JemL6QZEA==
 
-"@ra-lib/hooks@^0.1.11":
+"@ra-lib/hooks@0.1.11":
   version "0.1.11"
   resolved "https://registry.npmmirror.com/@ra-lib/hooks/-/hooks-0.1.11.tgz#6a2406cadf0ce328f832742f7966e9a634366517"
   integrity sha512-7W7Sm8MUTK28FtSwKnkzM5D2WR9MVjWZ/GYZe0H/RVECjjU2TRaZMM2X+gfsfbeOf+R0f8N+4zy9zOhhmughLQ==
 
-"@ra-lib/util@^0.1.28":
+"@ra-lib/options@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@ra-lib/options/-/options-0.0.2.tgz#b91c1f7331fc9aba4f0b0a2d5f6f0fda8a3a7fb8"
+  integrity sha512-xshPD+UrG4ZaHpG80G8HZCgFrgbIKq6aB5ofwZv1ysvHJ38rfUfPeFEMWPeyILFDDbhYzJzrYc8n9wg4+uS5Pw==
+
+"@ra-lib/util@0.1.28":
   version "0.1.28"
   resolved "https://registry.npmjs.org/@ra-lib/util/-/util-0.1.28.tgz#ae07920e5a019a3c446d59daa4d0c83e803208cb"
   integrity sha512-UQImOHffzxgWjaDqLwuCUqQupTRrRa41LZ7i+cmx+Y2wmUOzfvwi0AUqFVx4CUWDXaghxmF+o4Q6WIVhVwR9zw==

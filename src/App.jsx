@@ -3,7 +3,7 @@ import { useNavigate, useRoutes, useLocation } from 'react-router';
 import { ConfigProvider, Modal } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import { Layout } from 'src/components';
-import { Loading, Error404, ComponentProvider } from '@ra-lib/component';
+import { Loading, Error404, ComponentProvider } from '@ra-lib/adm';
 import routes from 'src/pages/routes';
 import menus from 'src/pages/menus';
 import { toHome } from 'src/commons';

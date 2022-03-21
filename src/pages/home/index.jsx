@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, Space } from 'antd';
-import { PageContent } from '@ra-lib/component';
+import { PageContent } from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 import { toLogin } from 'src/commons';
 import myModal from './myModal';
