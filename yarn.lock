@@ -1465,6 +1465,11 @@
   resolved "https://registry.npmjs.org/@ra-lib/ajax/-/ajax-0.1.44.tgz#19cfccdf3605b9655b5f21b3f8888915e824b3db"
   integrity sha512-1so9Z4ypp6eh8qhBpwdPY5qNlKBaer97lzb3f+frBpQ7U1aP3//oMJHH7u8CeT+92qjeKkh4CHrRWy7z7gAbPQ==
 
+"@ra-lib/babel-plugin-attribute-wrapper@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.npmjs.org/@ra-lib/babel-plugin-attribute-wrapper/-/babel-plugin-attribute-wrapper-0.0.20.tgz#15929da0f1d2643f22323f8c2c5be6197b981bc0"
+  integrity sha512-6cB21bF906ZPKhnEOG1caT8n76gn8VzULQG5yAXUvkB01RyDkXpLxh1ubKW7fMsiQJw9SbDgftZbHZqDQVyq/w==
+
 "@ra-lib/component@0.0.4":
   version "0.0.4"
   resolved "https://registry.npmjs.org/@ra-lib/component/-/component-0.0.4.tgz#9f09a98a66c9ee1e6a364fa206cf307ed60eb103"
