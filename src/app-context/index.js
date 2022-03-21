@@ -1,6 +1,6 @@
-import { createContext, useCallback, useReducer } from 'react';
-import { IS_SUB } from 'src/config';
-import { isLoginPage } from '@ra-lib/adm';
+import {createContext, useCallback, useReducer} from 'react';
+import {IS_SUB} from 'src/config';
+import {isLoginPage} from '@ra-lib/adm';
 
 const initialState = {
     // 是否显示头部，左侧等框架内容

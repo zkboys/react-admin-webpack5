@@ -1,6 +1,6 @@
-import { useCallback, useState, useEffect } from 'react';
-import { Form, Row, Col, Modal } from 'antd';
-import { FormItem, ModalContent } from '@ra-lib/adm';
+import {useCallback, useState, useEffect} from 'react';
+import {Form, Row, Col, Modal} from 'antd';
+import {FormItem, ModalContent} from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 
 export default config({
@@ -46,7 +46,7 @@ export default config({
                     cancelText="重置"
                     onCancel={() => form.resetFields()}
                 >
-                    {isEdit ? <FormItem hidden name="id" /> : null}
+                    {isEdit ? <FormItem hidden name="id"/> : null}
                     <Row>
                         <Col span={12}>
                             <FormItem

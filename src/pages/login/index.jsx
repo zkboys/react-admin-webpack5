@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Helmet } from 'react-helmet';
-import { Button, Form } from 'antd';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { FormItem, setLoginUser } from '@ra-lib/adm';
+import React, {useState, useEffect, useCallback} from 'react';
+import {Helmet} from 'react-helmet';
+import {Button, Form} from 'antd';
+import {LockOutlined, UserOutlined} from '@ant-design/icons';
+import {FormItem, setLoginUser} from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
-import { toHome } from 'src/commons';
-import { Logo, Proxy } from 'src/components';
-import { IS_DEV, IS_TEST, IS_PREVIEW } from 'src/config';
+import {toHome} from 'src/commons';
+import {Logo, Proxy} from 'src/components';
+import {IS_DEV, IS_TEST, IS_PREVIEW} from 'src/config';
 import c from 'classnames';
 import s from './style.module.less';
 
@@ -67,11 +67,11 @@ export default config({
     const formItemClass = c(s.formItem, { [s.active]: isMount });
 
     return (<div className={s.root}>
-        <Helmet title="欢迎登录" />
+        <Helmet title="欢迎登录"/>
         <div className={s.logo}>
-            <Logo />
+            <Logo/>
         </div>
-        <Proxy className={s.proxy} />
+        <Proxy className={s.proxy}/>
         <div className={s.box}>
             <Form form={form} name="login" onFinish={handleSubmit}>
                 <div className={formItemClass}>
@@ -82,7 +82,7 @@ export default config({
                         name="account"
                         allowClear
                         autoFocus
-                        prefix={<UserOutlined />}
+                        prefix={<UserOutlined/>}
                         placeholder="请输入用户名"
                         rules={[{ required: true, message: '请输入用户名！' }]}
                     />
@@ -91,7 +91,7 @@ export default config({
                     <FormItem
                         type="password"
                         name="password"
-                        prefix={<LockOutlined />}
+                        prefix={<LockOutlined/>}
                         placeholder="请输入密码"
                         rules={[{ required: true, message: '请输入密码！' }]}
                     />

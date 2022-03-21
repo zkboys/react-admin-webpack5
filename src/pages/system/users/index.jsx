@@ -1,13 +1,12 @@
-import { useCallback, useState, useEffect } from 'react';
-import { Button, Form, Space } from 'antd';
-import { PageContent, QueryBar, FormItem, Table, Pagination, Operator } from '@ra-lib/adm';
+import {useCallback, useState, useEffect} from 'react';
+import {Button, Form, Space} from 'antd';
+import {PageContent, QueryBar, FormItem, Table, Pagination, Operator} from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 import editModal from './editModal';
 import detailModal from './detailModal';
 
 export default config({
     title: '用户查询',
-    parentTitle: '用户管理',
 })(function UserList(props) {
     const [loading, setLoading] = useState(false);
     const [pageNum, setPageNum] = useState(1);
@@ -42,7 +41,7 @@ export default config({
                         },
                     },
                 ];
-                return <Operator items={items} />;
+                return <Operator items={items}/>;
             },
         },
     ];

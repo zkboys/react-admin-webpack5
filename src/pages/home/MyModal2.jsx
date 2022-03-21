@@ -1,6 +1,6 @@
-import { useCallback } from 'react';
-import { Modal } from 'antd';
-import { Content } from '@ra-lib/adm';
+import {useCallback} from 'react';
+import {Modal} from 'antd';
+import {Content} from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 
 export default config({

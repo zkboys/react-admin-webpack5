@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { BASE_NAME } from 'src/config';
+import {BrowserRouter} from 'react-router-dom';
+import {BASE_NAME} from 'src/config';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { AppProvider } from 'src/app-context';
+import {AppProvider} from 'src/app-context';
 import './index.css';
 
 
 ReactDOM.render(
     <AppProvider>
         <BrowserRouter basename={BASE_NAME}>
-            <App />
+            <App/>
         </BrowserRouter>
     </AppProvider>
     ,

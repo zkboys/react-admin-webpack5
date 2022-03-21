@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { Button, Space } from 'antd';
-import { PageContent } from '@ra-lib/adm';
+import {useState} from 'react';
+import {Button, Space} from 'antd';
+import {PageContent} from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
-import { toLogin } from 'src/commons';
+import {toLogin} from 'src/commons';
 import myModal from './myModal';
 import MyModal2 from './MyModal2';
 import s from './style.module.less';
 
 export default config({
-    title: '首页',
+    // title: '首页', // 注释掉，不生成菜单
 })(function Index(props) {
     console.log('首页 render');
 
@@ -41,7 +41,7 @@ export default config({
                     >我的弹框2</Button>
                 </Space>
             </div>
-            <MyModal2 visible={visible} onCancel={() => setVisible(false)} />
+            <MyModal2 visible={visible} onCancel={() => setVisible(false)}/>
         </PageContent>
     );
 });

@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Button, Descriptions, Drawer } from 'antd';
-import { DrawerContent } from '@ra-lib/adm';
+import {useState, useEffect} from 'react';
+import {Button, Descriptions, Drawer} from 'antd';
+import {DrawerContent} from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 
 export default config({

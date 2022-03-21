@@ -1,6 +1,7 @@
 import {useCallback} from 'react';
 import {Menu, Dropdown, Avatar} from 'antd';
 import {LogoutOutlined, DownOutlined, MenuFoldOutlined, MenuUnfoldOutlined} from '@ant-design/icons';
+import {useNavigate} from 'react-router';
 import {getLoginUser} from '@ra-lib/adm';
 import {toLogin} from 'src/commons';
 import {Proxy, Logo} from '../index';
@@ -9,6 +10,7 @@ import s from './style.module.less';
 
 export default function Header(props) {
     const { collapsed, onCollapsedChange } = props;
+    const navigate = useNavigate();
 
     const handleLogout = useCallback(() => {
         alert('// TODO 退出登录');
@@ -19,7 +21,7 @@ export default function Header(props) {
 
     return (
         <header className={s.header}>
-            <div className={c(s.logo, collapsed && s.collapsed)}>
+            <div className={c(s.logo, collapsed && s.collapsed)} onClick={() => navigate('/')}>
                 <Logo simple={collapsed}/>
             </div>
             <div className={s.headerMain}>

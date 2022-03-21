@@ -7,7 +7,6 @@ import detailDrawer from './detailDrawer';
 
 export default config({
     title: '用户查询2',
-    parentTitle: '用户管理',
 })(function UserList(props) {
     const [loading, setLoading] = useState(false);
     const [pageNum, setPageNum] = useState(1);
