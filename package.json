@@ -8,7 +8,8 @@
     "build": "cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
     "test": "node scripts/test.js",
     "build:test": "cross-env REACT_APP_RUN_ENV=test node scripts/build.js",
-    "rancher": "cross-env BUILD_COMMAND=build:test GIT_URL=https://github.com/zkboys/react-admin-webpack5.git rancher-deploy"
+    "rancher": "cross-env BUILD_COMMAND=build:test rancher-deploy",
+    "rancher2": "cross-env BUILD_COMMAND=build:test GIT_URL=https://github.com/zkboys/react-admin-webpack5.git rancher-deploy"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
