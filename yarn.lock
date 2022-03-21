@@ -1490,6 +1490,13 @@
   resolved "https://registry.npmjs.org/@ra-lib/options/-/options-0.0.2.tgz#b91c1f7331fc9aba4f0b0a2d5f6f0fda8a3a7fb8"
   integrity sha512-xshPD+UrG4ZaHpG80G8HZCgFrgbIKq6aB5ofwZv1ysvHJ38rfUfPeFEMWPeyILFDDbhYzJzrYc8n9wg4+uS5Pw==
 
+"@ra-lib/rancher-deploy@^1.0.21":
+  version "1.0.21"
+  resolved "https://registry.npmmirror.com/@ra-lib/rancher-deploy/-/rancher-deploy-1.0.21.tgz#152b176dfa38d11380287e3b32433144cbc98ca2"
+  integrity sha512-T+ZJY+qRWcRry1TMysJXV1qZwBnYDT++MWSffD+ZJ4z1rT49DzVpKji+wIKbzuJSD60L4IEbI7pi9gN+PlCn0g==
+  dependencies:
+    jenkins "^0.28.1"
+
 "@ra-lib/util@0.1.28":
   version "0.1.28"
   resolved "https://registry.npmjs.org/@ra-lib/util/-/util-0.1.28.tgz#ae07920e5a019a3c446d59daa4d0c83e803208cb"
@@ -5399,6 +5406,13 @@ jake@^10.6.1:
     filelist "^1.0.1"
     minimatch "^3.0.4"
 
+jenkins@^0.28.1:
+  version "0.28.1"
+  resolved "https://registry.npmmirror.com/jenkins/-/jenkins-0.28.1.tgz#f7951798ee5d2bb501a831979b6b5ecc1a922a64"
+  integrity sha512-gcC4QUrP4VzdqOMHoVzh36XlJprxJkI2HGLQSY7w84KoCTVNDcR/8O00tYyXp9vrZOx4wl5zCXLVKMgH2IoyJQ==
+  dependencies:
+    papi "^0.29.0"
+
 jest-changed-files@^27.5.1:
   version "27.5.1"
   resolved "https://registry.npmmirror.com/jest-changed-files/-/jest-changed-files-27.5.1.tgz#a348aed00ec9bf671cc58a66fcbe7c3dfd6a68f5"
@@ -6720,6 +6734,11 @@ package-json@^6.3.0:
     registry-auth-token "^4.0.0"
     registry-url "^5.0.0"
     semver "^6.2.0"
+
+papi@^0.29.0:
+  version "0.29.1"
+  resolved "https://registry.npmmirror.com/papi/-/papi-0.29.1.tgz#7373e2c527f5117d61fd2a0e6c6b1dd72bf7f180"
+  integrity sha512-Y9ipSMfWuuVFO3zY9PlxOmEg+bQ7CeJ28sa9/a0veYNynLf9fwjR3+3fld5otEy7okUaEOUuCHVH62MyTmACXQ==
 
 param-case@^3.0.4:
   version "3.0.4"
