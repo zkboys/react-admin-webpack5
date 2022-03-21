@@ -79,6 +79,7 @@ export default function configHoc(options = {}) {
 
     const hoc = [];
     const commonProps = {
+        maskClosable: true,
         width: 800,
         footer: false,
         bodyStyle: { padding: 0 },
@@ -88,6 +89,10 @@ export default function configHoc(options = {}) {
     if (modalFunction) hoc.push(modalFunctionHoc({ commonProps, destroyFns, antPrefix: theme.antPrefix, raLibPrefix: theme.raLibPrefix }));
     // 弹框高阶组件
     if (modal) hoc.push(modalHoc({ commonProps }));
+    // 函数抽屉组件
+    if (drawerFunction) hoc.push(modalFunctionHoc({ commonProps, destroyFns, antPrefix: theme.antPrefix, raLibPrefix: theme.raLibPrefix }));
+    // 抽屉高阶组件
+    if (drawer) hoc.push(modalHoc({ commonProps }));
     // 公共高阶组件
     hoc.push(commonHoc(options));
     // ajax高阶组件

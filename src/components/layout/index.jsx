@@ -1,12 +1,12 @@
 import {useCallback, useState, useEffect, useRef} from 'react';
 import {Link} from 'react-router-dom';
+import {useLocation} from 'react-router';
 import {Menu, Dropdown, Avatar} from 'antd';
 import {LogoutOutlined, DownOutlined} from '@ant-design/icons';
 import {findParentNodes, getLoginUser} from '@ra-lib/adm';
 import {toLogin} from 'src/commons';
 import {Proxy, Logo} from '../index';
 import s from './style.module.less';
-import {useLocation} from 'react-router';
 
 export default function Layout(props) {
     const { layout, menus, keepMenuOpen = true } = props;

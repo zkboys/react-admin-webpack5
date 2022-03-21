@@ -1440,15 +1440,15 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/adm@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.2.tgz#c88ecae08f690f956cb769c7755efe7ae425bca2"
-  integrity sha512-Es9XqZj2K4DaD0Yhw8LU+ukTQ3FFV9b+JxUi5x472b+WOEXtagF8IcIMi7uc/w9c+4ntkTZi5h6E8umaPfWDoQ==
+"@ra-lib/adm@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.3.tgz#716b1773c1691433983da4cb6f3830efe4d80933"
+  integrity sha512-lNIHDXoR01CalJvBIHOBwZdqB7nI8JyC6XXu+F3xr9iTW1BsO5ZhMLI4cV2v3hcPPWbpWZcaOC2aVq1C2bNcKw==
   dependencies:
     "@ra-lib/admin-util" "0.0.2"
     "@ra-lib/ajax" "0.1.44"
     "@ra-lib/component" "0.0.4"
-    "@ra-lib/hoc" "0.1.16"
+    "@ra-lib/hoc" "0.1.17"
     "@ra-lib/hooks" "0.1.11"
     "@ra-lib/options" "0.0.2"
     "@ra-lib/util" "0.1.28"
@@ -1475,10 +1475,10 @@
   resolved "https://registry.npmmirror.com/@ra-lib/config-loader/-/config-loader-0.1.9.tgz#8da89878a2d7829fb97a78c1ba78a73e8606b1f3"
   integrity sha512-a+Ms8fLQSRr9nskbRt7bQHmwCoupKGEAg95gukymSyEqiQg0pvY6Tc2qkCayIaFBzZTGmrz33QePUGM5VZNW1g==
 
-"@ra-lib/hoc@0.1.16":
-  version "0.1.16"
-  resolved "https://registry.npmjs.org/@ra-lib/hoc/-/hoc-0.1.16.tgz#3c62509ca54733a357f3202ab3cab912d9fa550e"
-  integrity sha512-qKeaig7a+2yhMCn2Q9yJzD9dxqUyNimsWXswfseAy1IH7O7b75VRxGB0tLxGLI6igDnEriqhiVCG3JemL6QZEA==
+"@ra-lib/hoc@0.1.17":
+  version "0.1.17"
+  resolved "https://registry.npmjs.org/@ra-lib/hoc/-/hoc-0.1.17.tgz#05fa2da8700e3e3c67f2c3ca2ecc0e1ae8ab722a"
+  integrity sha512-v/arB7icXGMnRaHgGmls7EmqmfXoeqK3PLg0jGGwpFrl2DJI7loyHFm5FvAx//sVPovoedLDmFYJnMr1Agl9lA==
 
 "@ra-lib/hooks@0.1.11":
   version "0.1.11"
