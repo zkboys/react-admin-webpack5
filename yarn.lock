@@ -1490,11 +1490,12 @@
   resolved "https://registry.npmjs.org/@ra-lib/options/-/options-0.0.2.tgz#b91c1f7331fc9aba4f0b0a2d5f6f0fda8a3a7fb8"
   integrity sha512-xshPD+UrG4ZaHpG80G8HZCgFrgbIKq6aB5ofwZv1ysvHJ38rfUfPeFEMWPeyILFDDbhYzJzrYc8n9wg4+uS5Pw==
 
-"@ra-lib/rancher-deploy@^1.0.21":
-  version "1.0.21"
-  resolved "https://registry.npmmirror.com/@ra-lib/rancher-deploy/-/rancher-deploy-1.0.21.tgz#152b176dfa38d11380287e3b32433144cbc98ca2"
-  integrity sha512-T+ZJY+qRWcRry1TMysJXV1qZwBnYDT++MWSffD+ZJ4z1rT49DzVpKji+wIKbzuJSD60L4IEbI7pi9gN+PlCn0g==
+"@ra-lib/rancher-deploy@^1.0.23":
+  version "1.0.23"
+  resolved "https://registry.npmjs.org/@ra-lib/rancher-deploy/-/rancher-deploy-1.0.23.tgz#6d8b65c6ccbe0ab2630fdf5348951c714c2a15dc"
+  integrity sha512-HJTSgajWt+lilXCCmqFcMp8d9hLtdgVwx0glB42H79coMgXrewC51Ywp1a7Ne3GnVD9Xi/G+obNlBm/46g8gKw==
   dependencies:
+    axios "^0.26.1"
     jenkins "^0.28.1"
 
 "@ra-lib/util@0.1.28":
