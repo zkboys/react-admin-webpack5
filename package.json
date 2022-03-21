@@ -1,5 +1,5 @@
 {
-  "name": "react-admin-webpack55",
+  "name": "react-admin-webpack5",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "test": "node scripts/test.js",
     "build:test": "cross-env REACT_APP_RUN_ENV=test node scripts/build.js",
     "rancher": "cross-env BUILD_COMMAND=build:test rancher-deploy",
-    "rancher2": "cross-env BUILD_COMMAND=build:test GIT_URL=https://gitee.com/sxfad/react-admin.git rancher-deploy"
+    "rancher2": "cross-env BUILD_COMMAND=build:test GIT_URL=https://github.com/zkboys/react-admin-webpack5.git rancher-deploy"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
@@ -18,7 +18,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@ra-lib/adm": "^0.0.3",
     "@ra-lib/config-loader": "^0.1.9",
-    "@ra-lib/rancher-deploy": "^1.0.23",
+    "@ra-lib/rancher-deploy": "^1.0.24",
     "@svgr/webpack": "^6.2.1",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
