@@ -1,4 +1,4 @@
-import {Ajax, createAjaxHooks as createHooks, createAjaxHoc as createHoc} from '@ra-lib/adm';
+import {Ajax, createAjaxHooks as createHooks, createAjaxHoc as createHoc, getToken} from '@ra-lib/adm';
 import {AJAX_PREFIX, AJAX_TIMEOUT} from 'src/config';
 import handleError from './handle-error';
 import handleSuccess from './handle-success';
@@ -17,7 +17,7 @@ ajax.instance.interceptors.request.use(
     (cfg) => {
         if (!cfg.headers) cfg.headers = {};
         // 这里每次请求都会动态获取，放到创建实例中，只加载一次，有时候会出问题。
-        // cfg.headers['auth-token'] = getToken();
+        cfg.headers['auth-token'] = getToken();
         return cfg;
     },
     (error) => {

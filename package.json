@@ -6,7 +6,9 @@
     "dev": "node scripts/start.js",
     "start": "nodemon -w ./config/webpack.config.js -w ./src/theme.less -w ./src/setupProxy.js -w ./src/setupProxyConfig.json --exec \"npm run dev\"",
     "build": "cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "build:test": "cross-env REACT_APP_RUN_ENV=test craco build",
+    "rancher": "cross-env BUILD_COMMAND=build:test rancher-deploy"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
