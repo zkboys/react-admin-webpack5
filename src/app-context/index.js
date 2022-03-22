@@ -25,7 +25,7 @@ export const AppProvider = (props) => {
         if (state.layout === layout) return;
         dispatch({ type: 'layout', payload: layout });
     }, [state.layout]);
-    return (<AppContext.Provider value={{ state, dispatch, setLayout }}>
+    return (<AppContext.Provider value={{ state, setLayout }}>
         {props.children}
     </AppContext.Provider>);
 };

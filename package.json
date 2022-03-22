@@ -1,5 +1,5 @@
 {
-  "name": "react-admin-webpack5",
+  "name": "raw5",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,7 +16,7 @@
     "@babel/core": "^7.16.0",
     "@babel/plugin-proposal-decorators": "^7.17.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
-    "@ra-lib/adm": "^0.0.3",
+    "@ra-lib/adm": "^0.0.5",
     "@ra-lib/babel-plugin-attribute-wrapper": "^0.0.20",
     "@ra-lib/config-loader": "^0.1.9",
     "@ra-lib/rancher-deploy": "^1.0.24",
@@ -164,27 +164,30 @@
       "react-app"
     ],
     "plugins": [
-      [ "@ra-lib/babel-plugin-attribute-wrapper",
+      [
+        "@ra-lib/babel-plugin-attribute-wrapper",
         {
-           "packageName": "classnames",
-           "attributeName": "className"
+          "packageName": "classnames",
+          "attributeName": "className"
         },
         "className"
       ],
-      [ "@ra-lib/babel-plugin-attribute-wrapper",
+      [
+        "@ra-lib/babel-plugin-attribute-wrapper",
         {
           "importName": "hasPermission",
-           "packageName": "@ra-lib/adm",
-           "attributeName": "r-code",
+          "packageName": "@ra-lib/adm",
+          "attributeName": "r-code",
           "conditional": true
         },
         "permission-remove"
       ],
-      [ "@ra-lib/babel-plugin-attribute-wrapper",
+      [
+        "@ra-lib/babel-plugin-attribute-wrapper",
         {
           "importName": "hasPermission",
-           "packageName": "@ra-lib/adm",
-           "attributeName": "d-code",
+          "packageName": "@ra-lib/adm",
+          "attributeName": "d-code",
           "replaceAttributeName": "disabled",
           "negation": true
         },
