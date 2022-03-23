@@ -16,6 +16,8 @@ export const AJAX_PREFIX = process.env.REACT_APP_AJAX_PREFIX || (SHOW_PROXY && s
 export const AJAX_TIMEOUT = process.env.REACT_APP_AJAX_TIMEOUT || 1000 * 60 * 60;
 // 页面路由前缀
 export const BASE_NAME = process.env.REACT_APP_BASE_NAME || '';
+// 页面保持
+export const KEEP_PAGE_ALIVE = process.env.REACT_APP_KEEP_PAGE_ALIVE || false;
 // 静态文件前缀
 export const PUBLIC_URL = process.env.PUBLIC_URL || '';
 // 是否作为微前端子项目，或者嵌入在iframe中
@@ -28,3 +30,4 @@ export const IS_PROD = RUN_ENV === 'production';
 export const IS_TEST = RUN_ENV === 'test';
 // 是否是预览
 export const IS_PREVIEW = RUN_ENV === 'preview';
+

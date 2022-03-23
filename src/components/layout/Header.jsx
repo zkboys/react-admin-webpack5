@@ -35,7 +35,7 @@ export default function Header(props) {
                     <Dropdown
                         overlay={(
                             <Menu>
-                                <Menu.Divider/>
+                                {/*<Menu.Divider/>*/}
                                 <Menu.Item key="logout" danger icon={<LogoutOutlined/>} onClick={handleLogout}>
                                     退出登录
                                 </Menu.Item>

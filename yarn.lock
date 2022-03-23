@@ -1440,10 +1440,10 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/adm@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.5.tgz#1896397b1413e600d1ed82d73cdf3c8f2518d248"
-  integrity sha512-ROWE3T3cqIQUr4j0NqC7E/GWVcS7YxrFSPG41y9j57Jg3E0I5puXc03Wh4395gh3lLem+I9lQiyerfTshEeKVQ==
+"@ra-lib/adm@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.7.tgz#bce77620108db789ba23265e4cdd7bdf905a4766"
+  integrity sha512-CrRQrvtP6lK0mF7MO21YDSdjIziDSIHid6aWBqtBvjCXqeG9qpepHmW5ULh3fHWHjiYypeLMz/2mKZfqpOvX6A==
   dependencies:
     "@ra-lib/admin-util" "0.0.4"
     "@ra-lib/ajax" "0.1.44"
@@ -1475,10 +1475,10 @@
   resolved "https://registry.npmjs.org/@ra-lib/component/-/component-0.0.4.tgz#9f09a98a66c9ee1e6a364fa206cf307ed60eb103"
   integrity sha512-/aADF4hDonHUJtO2XI8JPJ+ufNL9nQfZWacEscOA6LLbMBP2dQejBSgzE4Gj28DRoYUiJX/1GkGEb13G5wXQKw==
 
-"@ra-lib/config-loader@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.npmmirror.com/@ra-lib/config-loader/-/config-loader-0.1.9.tgz#8da89878a2d7829fb97a78c1ba78a73e8606b1f3"
-  integrity sha512-a+Ms8fLQSRr9nskbRt7bQHmwCoupKGEAg95gukymSyEqiQg0pvY6Tc2qkCayIaFBzZTGmrz33QePUGM5VZNW1g==
+"@ra-lib/config-loader@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.npmjs.org/@ra-lib/config-loader/-/config-loader-0.1.10.tgz#32b6c101c21e0dc5f43b7348a6f326002c641baa"
+  integrity sha512-qgYexkllJcfDhY2B8Tu9YBx5Lw8B5oiXg2F8+TNRWvfcF1wUo5HJGYrZ37GQkPYd89vPeW1s3rtLn4oJPaA8KA==
 
 "@ra-lib/hoc@0.1.17":
   version "0.1.17"
@@ -6823,6 +6823,11 @@ path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "https://registry.npmmirror.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==
+
+path-to-regexp@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-6.2.0.tgz#f7b3803336104c346889adece614669230645f38"
+  integrity sha512-f66KywYG6+43afgE/8j/GoiNyygk/bnoCbps++3ErRKsIYkGGupyv07R2Ok5m9i67Iqc+T2g1eAUGUPzWhYTyg==
 
 path-type@^4.0.0:
   version "4.0.0"

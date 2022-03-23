@@ -53,6 +53,7 @@ export default function configHoc(options = {}) {
         // layout, // 是否显示框架
         // query = true, // 是否添加query参数
         // loginUser = true, // 是否添加loginUser
+        // keepAlive, // 页面是否保持
         ajax = true, // 是否注入ajax
         modal, // 是否是弹框
         modalFunction, // 是否是弹框函数
