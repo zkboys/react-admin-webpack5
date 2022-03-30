@@ -2,7 +2,7 @@ import React, {useState, useEffect, useCallback} from 'react';
 import {Helmet} from 'react-helmet';
 import {Button, Form} from 'antd';
 import {LockOutlined, UserOutlined} from '@ant-design/icons';
-import {FormItem, setLoginUser} from '@ra-lib/adm';
+import {FormItem, queryStringify, setLoginUser} from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 import {toHome} from 'src/commons';
 import {Logo, Proxy} from 'src/components';
@@ -10,13 +10,26 @@ import {IS_DEV, IS_TEST, IS_PREVIEW} from 'src/config';
 import c from 'classnames';
 import s from './style.module.less';
 
-// 开发模式 默认填充的用户名密码
-const formValues = {
-    account: 'admin', password: '123456',
+// 开发模式下，默认填充的账号密码
+const FORM_VALUES = {
+    account: 'P101282',
+    password: '0000',
 };
 
+
+// 登录接口所需的其他参数
+const QUERY_STRING = queryStringify({
+    phoneCode: '0000',
+    captchaCode: '0000',
+    captchaId: '578721818865569792',
+    srandNumFlagId: 1,
+    isPhone: false,
+    isCheck: true,
+});
+
 export default config({
-    auth: false, layout: false,
+    auth: false,
+    layout: false,
 })(function Login(props) {
     const [message, setMessage] = useState();
     const [isMount, setIsMount] = useState(false);
@@ -26,22 +39,15 @@ export default config({
     const handleSubmit = useCallback(async (values) => {
         if (loading) return;
 
-        if (!loading) {
-            alert('// TODO 登录');
-            setLoginUser({
-                id: 23, // 必须字段
-                name: '用户名', // 必须字段
-                token: '11233',
-            });
-            return toHome();
-        }
-
+        const { account, password } = values;
         const params = {
-            ...values,
+            loginName: account,
+            password,
         };
+
         try {
-            const res = await props.ajax.post('/login', params, { setLoading, errorTip: false });
-            const { id, name, token, ...others } = res;
+            const res = await props.ajax.post(`/login/login?${QUERY_STRING}`, params, { baseURL: '/portal', setLoading, errorTip: false });
+            const { id, loginName: name, token, ...others } = res;
             setLoginUser({
                 id, // 必须字段
                 name, // 必须字段
@@ -58,7 +64,7 @@ export default config({
     useEffect(() => {
         // 开发时默认填入数据
         if (IS_DEV || IS_TEST || IS_PREVIEW) {
-            form.setFieldsValue(formValues);
+            form.setFieldsValue(FORM_VALUES);
         }
 
         setTimeout(() => setIsMount(true), 300);
