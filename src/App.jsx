@@ -3,7 +3,7 @@ import {useNavigate, useRoutes, useLocation} from 'react-router';
 import {ConfigProvider, Modal} from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import {Layout} from 'src/components';
-import {Loading, Error404, ComponentProvider, KeepPageAlive} from '@ra-lib/adm';
+import {Loading, Error404, ComponentProvider, KeepPageAlive, setLoginUser} from '@ra-lib/adm';
 import routes from 'src/pages/routes';
 import menus from 'src/pages/menus';
 import {toHome} from 'src/commons';
@@ -18,6 +18,13 @@ import s from './App.module.less';
 ConfigProvider.config({
     prefixCls: theme.antPrefix,
 });
+
+
+if (window.microApp) {
+    const { loginUser } = window.microApp.getData() || {};
+
+    setLoginUser(loginUser);
+}
 
 export default function App() {
     // 路由页面注入的数据
@@ -42,6 +49,17 @@ export default function App() {
         Modal.destroyAll();
         modalDestroyAll();
     }, [location]);
+
+    useEffect(() => {
+        if (!window.microApp) return;
+        // 监听基座下发的数据变化
+        window.microApp.addDataListener((data) => {
+            // 当基座下发跳转指令时进行跳转
+            if (data.path) {
+                navigate(data.path.replace(BASE_NAME, '/'));
+            }
+        });
+    }, [navigate]);
 
     return (
         <ConfigProvider locale={zhCN} prefixCls={theme.antPrefix}>

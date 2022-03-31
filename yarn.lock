@@ -1440,10 +1440,10 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/adm@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.10.tgz#e3279f9751174fbfdd6eb576f2ccdf4ddaa8310b"
-  integrity sha512-w5eWuU+aG9O4pQKcxO4DfDCoG0XCFbPEUKDa71TSxogxOa3ZoLnBrEq3s4qK+BDk5yV0gawrMy60q4qiFH28wA==
+"@ra-lib/adm@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.11.tgz#bbe6e1e42f22589afcb7035e0720323fc2e15aed"
+  integrity sha512-1O2e9VleVaKax1VZ5Z77FL3gKgQHynCteXc5gFlojLrKOW4tdEVionTykgYihI8TqUzne8UbUDKz3Ccqov+WPw==
   dependencies:
     "@ra-lib/admin-util" "0.0.6"
     "@ra-lib/ajax" "0.1.44"

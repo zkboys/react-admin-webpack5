@@ -15,13 +15,13 @@ export const AJAX_PREFIX = process.env.REACT_APP_AJAX_PREFIX || (SHOW_PROXY && s
 // ajax 超时时间
 export const AJAX_TIMEOUT = process.env.REACT_APP_AJAX_TIMEOUT || 1000 * 60 * 60;
 // 页面路由前缀
-export const BASE_NAME = process.env.REACT_APP_BASE_NAME || '';
+export const BASE_NAME = process.env.REACT_APP_BASE_NAME || window.__MICRO_APP_BASE_ROUTE__ || '';
 // 页面保持
-export const KEEP_PAGE_ALIVE = process.env.REACT_APP_KEEP_PAGE_ALIVE || false;
+export const KEEP_PAGE_ALIVE = process.env.REACT_APP_KEEP_PAGE_ALIVE || true;
 // 静态文件前缀
 export const PUBLIC_URL = process.env.PUBLIC_URL || '';
 // 是否作为微前端子项目，或者嵌入在iframe中
-export const IS_SUB = process.env.REACT_APP_IS_SUB || isIframe;
+export const IS_SUB = process.env.REACT_APP_IS_SUB || isIframe || window.microApp;
 // 是否是开发环境
 export const IS_DEV = RUN_ENV === 'development';
 // 是否是生产环境
