@@ -1,4 +1,4 @@
-import {Suspense, useContext, useEffect} from 'react';
+import {Suspense, useContext, useEffect, useState} from 'react';
 import {useNavigate, useRoutes, useLocation} from 'react-router';
 import {ConfigProvider, Modal} from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
@@ -29,6 +29,7 @@ export default function App() {
     const ejectProps = {};
     const navigate = useNavigate();
     const location = useLocation();
+    const [keepAlive, setKeepAlive] = useState(KEEP_PAGE_ALIVE);
     const error404 = <Error404 {...ejectProps} onToHome={toHome} onGoBack={() => navigate('../')}/>;
     const element = useRoutes([
         ...routes.map(item => {
@@ -59,6 +60,9 @@ export default function App() {
 
             // 更新主应用
             const mainApp = getMainApp();
+            const { keepAlive } = mainApp;
+
+            setKeepAlive(keepAlive);
 
             setMainApp({
                 ...mainApp,
@@ -72,7 +76,7 @@ export default function App() {
             <ComponentProvider prefixCls={theme.raLibPrefix}>
                 <Layout layout={state.layout} menus={menus}>
                     <Suspense fallback={<Loading spin/>}>
-                        {KEEP_PAGE_ALIVE ? (
+                        {keepAlive ? (
                             <KeepPageAlive
                                 routes={routes}
                                 ejectProps={ejectProps}
