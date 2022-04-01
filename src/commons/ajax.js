@@ -1,5 +1,5 @@
-import {Ajax, createAjaxHooks as createHooks, createAjaxHoc as createHoc, getToken} from '@ra-lib/adm';
-import {AJAX_PREFIX, AJAX_TIMEOUT} from 'src/config';
+import { Ajax, createAjaxHooks as createHooks, createAjaxHoc as createHoc, getToken } from '@ra-lib/adm';
+import { AJAX_PREFIX, AJAX_FULL_PREFIX, AJAX_TIMEOUT } from 'src/config';
 import handleError from './handle-error';
 import handleSuccess from './handle-success';
 
@@ -15,6 +15,12 @@ const ajax = new Ajax({
 // 请求拦截
 ajax.instance.interceptors.request.use(
     (cfg) => {
+        // 判断是否与主应用同源，如果同源，要通过app-name区分ajax请求，Nginx代理区分
+        const _AJAX_FULL_PREFIX = AJAX_FULL_PREFIX.endsWith('/') ? AJAX_FULL_PREFIX.substring(0, AJAX_FULL_PREFIX.length - 1) : AJAX_FULL_PREFIX;
+        if (!cfg.url.startsWith('http')) {
+            cfg.baseURL = `${_AJAX_FULL_PREFIX}${cfg.baseURL}`;
+        }
+
         if (!cfg.headers) cfg.headers = {};
         // 这里每次请求都会动态获取，放到创建实例中，只加载一次，有时候会出问题。
         cfg.headers['auth-token'] = getToken();

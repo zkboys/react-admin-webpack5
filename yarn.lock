@@ -1440,25 +1440,25 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/adm@^0.0.18":
-  version "0.0.18"
-  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.18.tgz#3d25dd54da4fc8a0536144fddf55073728838fe8"
-  integrity sha512-iYjcUiQ6FI7A9vNzo1g2cvWRHbwutT0bOHvMPjMz3m4vU/zRoA5PwaRxhKjaX300/q03X7ZQKM79c4MSQd6Q0w==
+"@ra-lib/adm@^0.0.24":
+  version "0.0.24"
+  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.24.tgz#d4af0def5a0c74c43b3034c8d8f83dae23c91382"
+  integrity sha512-8f1vXw6VsszCddilk1SoVzS3Navg/HIr5EkD2wLRREUve+Bjkcs+jt6IN9fXB+box/3brqi7v5vr6oCd5C+SZg==
   dependencies:
-    "@ra-lib/admin-util" "0.0.8"
+    "@ra-lib/admin-util" "0.0.14"
     "@ra-lib/ajax" "0.1.44"
     "@ra-lib/component" "0.0.4"
     "@ra-lib/hoc" "0.1.18"
     "@ra-lib/hooks" "0.1.11"
     "@ra-lib/options" "0.0.2"
-    "@ra-lib/util" "0.1.32"
+    "@ra-lib/util" "0.1.34"
 
-"@ra-lib/admin-util@0.0.8":
-  version "0.0.8"
-  resolved "https://registry.npmjs.org/@ra-lib/admin-util/-/admin-util-0.0.8.tgz#527efee2a9c78165b8b6108914b31a2dfaf4acae"
-  integrity sha512-UPw5xMwWjCs1PK1C2tE3zh/hyaZuFSzIUrZKZ+tSVBvylu4Dg8YkoTuyfQCasG52lKYUc/k/l/pwOmV3iPDLTw==
+"@ra-lib/admin-util@0.0.14":
+  version "0.0.14"
+  resolved "https://registry.npmjs.org/@ra-lib/admin-util/-/admin-util-0.0.14.tgz#92c208014aede72c7ddbc9a029420e4fb23dbe12"
+  integrity sha512-rlsKYCWHseNu9ZRIzyWy8bU2LjLytuxvSHks2L9muppi1hUt1/gHOF0TkdxEUi/4K+s9AikzWHAbZylhXWaudA==
   dependencies:
-    "@ra-lib/util" "0.1.32"
+    "@ra-lib/util" "0.1.34"
 
 "@ra-lib/ajax@0.1.44":
   version "0.1.44"
@@ -1503,10 +1503,10 @@
     axios "^0.26.1"
     jenkins "^0.28.1"
 
-"@ra-lib/util@0.1.32":
-  version "0.1.32"
-  resolved "https://registry.npmjs.org/@ra-lib/util/-/util-0.1.32.tgz#86bb3b4d50b6cc488c448f2b8ba448a8f615258c"
-  integrity sha512-YEGVyoF8eYySaPqWGQcL9m2U0t5hnZxtPU7xk1wF0o2DxM9UlNgvzHU0cfe+RmMRV2GpMwbBAM4hx6CSQle8fA==
+"@ra-lib/util@0.1.34":
+  version "0.1.34"
+  resolved "https://registry.npmjs.org/@ra-lib/util/-/util-0.1.34.tgz#c39bd255529b48002913b4a81b0197b06960e954"
+  integrity sha512-nKvmnk2FEQjeQRPX7Aaqlvkp1SrgfBJR8jYmnkOSdIjCKnxqG7OlvUrsP5Wa18UFBoiLgewsB14yUIhFwW7R7A==
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"

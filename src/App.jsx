@@ -1,18 +1,17 @@
-import {Suspense, useContext, useEffect} from 'react';
-import {useNavigate, useRoutes, useLocation} from 'react-router';
-import {ConfigProvider, Modal} from 'antd';
+import { Suspense, useContext, useEffect } from 'react';
+import { useNavigate, useRoutes, useLocation } from 'react-router';
+import { ConfigProvider, Modal } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
-import {Layout} from 'src/components';
-import {Loading, Error404, ComponentProvider, KeepPageAlive, useMainAppDataListener} from '@ra-lib/adm';
+import { Layout } from 'src/components';
+import { Loading, Error404, ComponentProvider, KeepPageAlive, useMainAppDataListener } from '@ra-lib/adm';
 import routes from 'src/pages/routes';
 import menus from 'src/pages/menus';
-import {toHome} from 'src/commons';
-import {AppContext} from './app-context';
+import { toHome } from 'src/commons';
+import { AppContext } from './app-context';
 import theme from 'src/theme.less';
-import {modalDestroyAll} from 'src/commons/config-hoc';
+import { modalDestroyAll } from 'src/commons/config-hoc';
 import 'antd/dist/antd.less';
-import {BASE_NAME, KEEP_PAGE_ALIVE} from 'src/config';
-import pak from '../package.json';
+import { BASE_NAME, KEEP_PAGE_ALIVE } from 'src/config';
 import s from './App.module.less';
 
 // 设置 Modal、Message、Notification rootPrefixCls。
@@ -28,19 +27,19 @@ export default function App() {
 
     // 监听主应用数据
     const { keepAlive } = useMainAppDataListener({
-        name: pak.name,
+        name: window.location.pathname.split('/').filter(Boolean).shift(),
         navigate,
         baseName: BASE_NAME,
         keepPageAlive: KEEP_PAGE_ALIVE,
     });
 
-    const error404 = <Error404 {...ejectProps} onToHome={toHome} onGoBack={() => navigate('../')}/>;
+    const error404 = <Error404 {...ejectProps} onToHome={toHome} onGoBack={() => navigate('../')} />;
     const element = useRoutes([
         ...routes.map(item => {
             const { Component } = item;
             return {
                 ...item,
-                element: <Component {...ejectProps}/>,
+                element: <Component {...ejectProps} />,
             };
         }),
         { path: '*', element: error404 },
@@ -57,7 +56,7 @@ export default function App() {
         <ConfigProvider locale={zhCN} prefixCls={theme.antPrefix}>
             <ComponentProvider prefixCls={theme.raLibPrefix}>
                 <Layout layout={state.layout} menus={menus}>
-                    <Suspense fallback={<Loading spin/>}>
+                    <Suspense fallback={<Loading spin />}>
                         {keepAlive ? (
                             <KeepPageAlive
                                 routes={routes}
