@@ -3,7 +3,7 @@ import {useNavigate, useRoutes, useLocation} from 'react-router';
 import {ConfigProvider, Modal} from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import {Layout} from 'src/components';
-import {Loading, Error404, ComponentProvider, KeepPageAlive, setLoginUser} from '@ra-lib/adm';
+import {Loading, Error404, ComponentProvider, KeepPageAlive, getMainApp, setMainApp} from '@ra-lib/adm';
 import routes from 'src/pages/routes';
 import menus from 'src/pages/menus';
 import {toHome} from 'src/commons';
@@ -19,11 +19,9 @@ ConfigProvider.config({
     prefixCls: theme.antPrefix,
 });
 
-
 if (window.microApp) {
-    const { loginUser } = window.microApp.getData() || {};
-
-    setLoginUser(loginUser);
+    const mainApp = window.microApp.getData() || {};
+    setMainApp(mainApp);
 }
 
 export default function App() {
@@ -52,12 +50,20 @@ export default function App() {
 
     useEffect(() => {
         if (!window.microApp) return;
-        // 监听基座下发的数据变化
+        // 监听主应用下发的数据变化
         window.microApp.addDataListener((data) => {
-            // 当基座下发跳转指令时进行跳转
+            // 当主应用下发跳转指令时进行跳转
             if (data.path) {
                 navigate(data.path.replace(BASE_NAME, '/'));
             }
+
+            // 更新主应用
+            const mainApp = getMainApp();
+
+            setMainApp({
+                ...mainApp,
+                ...data,
+            });
         });
     }, [navigate]);
 
