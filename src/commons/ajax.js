@@ -15,7 +15,8 @@ const ajax = new Ajax({
 // 请求拦截
 ajax.instance.interceptors.request.use(
     (cfg) => {
-        // 判断是否与主应用同源，如果同源，要通过app-name区分ajax请求，Nginx代理区分
+
+        // 拼接成完整路由（作为子应用时需要）
         const _AJAX_FULL_PREFIX = AJAX_FULL_PREFIX.endsWith('/') ? AJAX_FULL_PREFIX.substring(0, AJAX_FULL_PREFIX.length - 1) : AJAX_FULL_PREFIX;
         if (!cfg.url.startsWith('http')) {
             cfg.baseURL = `${_AJAX_FULL_PREFIX}${cfg.baseURL}`;
