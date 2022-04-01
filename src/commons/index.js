@@ -28,7 +28,6 @@ export function toHome() {
  * 跳转到登录页面
  */
 export function toLogin() {
-
     const loginPath = '/login';
 
     // 判断当前页面是否已经是login页面，如果是，直接返回，不进行跳转，防止出现跳转死循环
@@ -42,6 +41,7 @@ export function toLogin() {
     if (IS_SUB) {
         // 微前端，跳转主应用登录
         const mainToLogin = getMainApp()?.toLogin;
+        console.log(getMainApp());
         if (mainToLogin) return mainToLogin();
 
         // 嵌入iframe中
