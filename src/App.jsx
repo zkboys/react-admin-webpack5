@@ -12,6 +12,7 @@ import theme from 'src/theme.less';
 import {modalDestroyAll} from 'src/commons/config-hoc';
 import 'antd/dist/antd.less';
 import {BASE_NAME, KEEP_PAGE_ALIVE} from 'src/config';
+import pak from '../package.json';
 import s from './App.module.less';
 
 // 设置 Modal、Message、Notification rootPrefixCls。
@@ -27,6 +28,7 @@ export default function App() {
 
     // 监听主应用数据
     const { keepAlive } = useMainAppDataListener({
+        name: pak.name,
         navigate,
         baseName: BASE_NAME,
         keepPageAlive: KEEP_PAGE_ALIVE,
