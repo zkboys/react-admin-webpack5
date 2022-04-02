@@ -1,4 +1,4 @@
-import {Suspense, useContext, useEffect} from 'react';
+import {Suspense, useContext, useEffect, useState} from 'react';
 import {useNavigate, useRoutes, useLocation} from 'react-router';
 import {ConfigProvider, Modal} from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
@@ -11,7 +11,7 @@ import {AppContext} from './app-context';
 import theme from 'src/theme.less';
 import {modalDestroyAll} from 'src/commons/config-hoc';
 import 'antd/dist/antd.less';
-import {KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY} from 'src/config';
+import {KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY, SUB_APP_NAME, IS_SUB} from 'src/config';
 import proxyConfig from 'src/setupProxyConfig.json';
 
 // 设置 Modal、Message、Notification rootPrefixCls。
@@ -20,13 +20,13 @@ ConfigProvider.config({
 });
 
 export default function App() {
+    const [loading, setLoading] = useState(true);
     // 路由页面注入的数据
     const ejectProps = {};
     const navigate = useNavigate();
     const location = useLocation();
-
     // 监听主应用数据
-    useMainAppDataListener({ navigate });
+    useMainAppDataListener({ navigate, name: SUB_APP_NAME, isSub: IS_SUB, setLoading });
 
     const error404 = <Error404 {...ejectProps} onToHome={toHome} onGoBack={() => navigate('../')}/>;
     const element = useRoutes([
@@ -46,6 +46,8 @@ export default function App() {
         Modal.destroyAll();
         modalDestroyAll();
     }, [location]);
+
+    if (loading) return <Loading spin/>;
 
     return (
         <ConfigProvider locale={zhCN} prefixCls={theme.antPrefix}>
