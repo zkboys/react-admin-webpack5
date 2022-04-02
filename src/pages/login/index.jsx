@@ -17,7 +17,6 @@ const FORM_VALUES = {
     password: '0000',
 };
 
-
 // 登录接口所需的其他参数
 const QUERY_STRING = queryStringify({
     phoneCode: '0000',
