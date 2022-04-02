@@ -1440,12 +1440,12 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/adm@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.24.tgz#d4af0def5a0c74c43b3034c8d8f83dae23c91382"
-  integrity sha512-8f1vXw6VsszCddilk1SoVzS3Navg/HIr5EkD2wLRREUve+Bjkcs+jt6IN9fXB+box/3brqi7v5vr6oCd5C+SZg==
+"@ra-lib/adm@^0.0.26":
+  version "0.0.26"
+  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.26.tgz#2c44223812b0f51bd3a28666284c989cf9aef6f1"
+  integrity sha512-+707zdiIGklhPUaL0CdRvNdXr4/MvIGKh9i4NqsEJJHP21mpOGHKJADCpjlgfKPqbic1hAIYsE8NZQZYYF4O2A==
   dependencies:
-    "@ra-lib/admin-util" "0.0.14"
+    "@ra-lib/admin-util" "0.0.16"
     "@ra-lib/ajax" "0.1.44"
     "@ra-lib/component" "0.0.4"
     "@ra-lib/hoc" "0.1.18"
@@ -1453,10 +1453,10 @@
     "@ra-lib/options" "0.0.2"
     "@ra-lib/util" "0.1.34"
 
-"@ra-lib/admin-util@0.0.14":
-  version "0.0.14"
-  resolved "https://registry.npmjs.org/@ra-lib/admin-util/-/admin-util-0.0.14.tgz#92c208014aede72c7ddbc9a029420e4fb23dbe12"
-  integrity sha512-rlsKYCWHseNu9ZRIzyWy8bU2LjLytuxvSHks2L9muppi1hUt1/gHOF0TkdxEUi/4K+s9AikzWHAbZylhXWaudA==
+"@ra-lib/admin-util@0.0.16":
+  version "0.0.16"
+  resolved "https://registry.npmjs.org/@ra-lib/admin-util/-/admin-util-0.0.16.tgz#2f4c033bf52f97621642854915e6ba31959316c9"
+  integrity sha512-TvQPaVF7fSE7fUgufsWnS/G9EX7XxiZhIJ3BZOQ3FCPdwyhzQF+swyAc328x7JHOSmT3EOAUBfW9RAP/UCQJDA==
   dependencies:
     "@ra-lib/util" "0.1.34"
 

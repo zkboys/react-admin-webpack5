@@ -1,7 +1,12 @@
-import { storage, getConfig } from '@ra-lib/adm';
+import {storage, getConfig} from '@ra-lib/adm';
 
 const {
-    isIframe, isMicro, publicPath, baseName, name, isSameOrigin,
+    isIframe,
+    isMicro,
+    publicPath,
+    baseName,
+    name,
+    isSameOrigin,
 } = getConfig();
 
 // 应用名称
@@ -15,7 +20,7 @@ export const SHOW_PROXY = NODE_ENV === 'development' || window.location.hostname
 // 是否作为微前端子项目，或者嵌入在iframe中
 export const IS_SUB = process.env.REACT_APP_IS_SUB || isIframe || isMicro;
 // 作为子应用时，拼接完整路径，如果同源，基于name做代理区分
-export const AJAX_FULL_PREFIX = IS_SUB ? `${publicPath}${isSameOrigin ? name : ''}` : '';
+export const AJAX_FULL_PREFIX = IS_SUB ? `${publicPath}${isSameOrigin ? `/${name}` : ''}` : '';
 // ajax 请求前缀 开发环境 或者 测试环境使用 localStorage中存储的前缀
 export const AJAX_PREFIX = process.env.REACT_APP_AJAX_PREFIX || (SHOW_PROXY && storage.local.getItem('AJAX_PREFIX')) || '/api';
 // ajax 超时时间

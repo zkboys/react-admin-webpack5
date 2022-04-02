@@ -1,5 +1,5 @@
-import { Ajax, createAjaxHooks as createHooks, createAjaxHoc as createHoc, getToken } from '@ra-lib/adm';
-import { AJAX_PREFIX, AJAX_FULL_PREFIX, AJAX_TIMEOUT } from 'src/config';
+import {Ajax, createAjaxHooks as createHooks, createAjaxHoc as createHoc, getToken} from '@ra-lib/adm';
+import {AJAX_PREFIX, AJAX_FULL_PREFIX, AJAX_TIMEOUT} from 'src/config';
 import handleError from './handle-error';
 import handleSuccess from './handle-success';
 
@@ -17,9 +17,8 @@ ajax.instance.interceptors.request.use(
     (cfg) => {
 
         // 拼接成完整路由（作为子应用时需要）
-        const _AJAX_FULL_PREFIX = AJAX_FULL_PREFIX.endsWith('/') ? AJAX_FULL_PREFIX.substring(0, AJAX_FULL_PREFIX.length - 1) : AJAX_FULL_PREFIX;
         if (!cfg.url.startsWith('http')) {
-            cfg.baseURL = `${_AJAX_FULL_PREFIX}${cfg.baseURL}`;
+            cfg.baseURL = `${AJAX_FULL_PREFIX}${cfg.baseURL}`;
         }
 
         if (!cfg.headers) cfg.headers = {};
