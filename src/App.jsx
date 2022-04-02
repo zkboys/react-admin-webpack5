@@ -26,12 +26,7 @@ export default function App() {
     const location = useLocation();
 
     // 监听主应用数据
-    const { keepAlive } = useMainAppDataListener({
-        name: window.location.pathname.split('/').filter(Boolean).shift(),
-        navigate,
-        baseName: BASE_NAME,
-        keepPageAlive: KEEP_PAGE_ALIVE,
-    });
+    useMainAppDataListener({ navigate });
 
     const error404 = <Error404 {...ejectProps} onToHome={toHome} onGoBack={() => navigate('../')}/>;
     const element = useRoutes([
@@ -57,7 +52,7 @@ export default function App() {
             <ComponentProvider prefixCls={theme.raLibPrefix}>
                 <Layout layout={state.layout} menus={menus}>
                     <Suspense fallback={<Loading spin/>}>
-                        {keepAlive ? (
+                        {KEEP_PAGE_ALIVE ? (
                             <KeepPageAlive
                                 routes={routes}
                                 ejectProps={ejectProps}
