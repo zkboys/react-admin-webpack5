@@ -14,7 +14,7 @@ import 'antd/dist/antd.less';
 import { KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY, SUB_APP_NAME, IS_SUB } from 'src/config';
 import proxyConfig from 'src/setupProxyConfig.json';
 
-// 设置 Modal、Message、Notification rootPrefixCls。
+// 设置 Modal、Message、Notification rootPrefixCls
 ConfigProvider.config({
     prefixCls: theme.antPrefix,
 });
