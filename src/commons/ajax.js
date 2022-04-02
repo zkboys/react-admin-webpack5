@@ -1,20 +1,25 @@
-import {Ajax, createAjaxHooks as createHooks, createAjaxHoc as createHoc, getToken} from '@ra-lib/adm';
-import {AJAX_PREFIX, AJAX_TIMEOUT} from 'src/config';
-import handleError from './handle-error';
-import handleSuccess from './handle-success';
+import {Ajax, createAjaxHooks as createHooks, createAjaxHoc as createHoc, getToken, handleError, handleSuccess} from '@ra-lib/adm';
+import {AJAX_PREFIX, AJAX_FULL_PREFIX, AJAX_TIMEOUT} from 'src/config';
+import {toLogin} from './index';
 
 // 创建Ajax实例，设置默认值
 const ajax = new Ajax({
     baseURL: AJAX_PREFIX,
     timeout: AJAX_TIMEOUT,
-    onError: handleError,
-    onSuccess: handleSuccess,
+    onError: handleError(toLogin),
+    onSuccess: handleSuccess(),
     // withCredentials: true, // 跨域携带cookie，对应后端 Access-Control-Allow-Origin不可以为 '*'，需要指定为具体域名
 });
 
 // 请求拦截
 ajax.instance.interceptors.request.use(
     (cfg) => {
+
+        // 拼接成完整路由（作为子应用时需要）
+        if (!cfg.url.startsWith('http')) {
+            cfg.baseURL = `${AJAX_FULL_PREFIX}${cfg.baseURL}`;
+        }
+
         if (!cfg.headers) cfg.headers = {};
         // 这里每次请求都会动态获取，放到创建实例中，只加载一次，有时候会出问题。
         cfg.headers['auth-token'] = getToken();

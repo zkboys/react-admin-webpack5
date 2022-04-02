@@ -93,7 +93,7 @@ export default config({
                     <FormItem
                         {...layout}
                         type="input"
-                        label="用户名"
+                        label="用户名22"
                         name="userName"
                     />
                     <FormItem>
