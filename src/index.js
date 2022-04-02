@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import {AppProvider} from 'src/app-context';
 import './index.css';
 
+
 ReactDOM.render(
     <AppProvider>
         <BrowserRouter basename={BASE_NAME}>
