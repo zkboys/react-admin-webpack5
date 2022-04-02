@@ -332,6 +332,18 @@ module.exports = function(webpackEnv) {
                     'scheduler/tracing': 'scheduler/tracing-profiling',
                 }),
                 ...(modules.webpackAliases || {}),
+
+                // 使所有的react 都访问主应用安装的包
+                react: path.join(paths.appNodeModules, 'react'),
+                antd: path.join(paths.appNodeModules, 'antd'),
+                moment: path.join(paths.appNodeModules, 'moment'),
+                'react-dom': path.join(paths.appNodeModules, 'react-dom'),
+                'react-redux': path.join(paths.appNodeModules, 'react-redux'),
+                'redux': path.join(paths.appNodeModules, 'redux'),
+                'react-router-dom': path.join(paths.appNodeModules, 'react-router-dom'),
+                'react-router': path.join(paths.appNodeModules, 'react-router'),
+                'axios': path.join(paths.appNodeModules, 'axios'),
+
                 src: paths.appSrc,
                 root: paths.appPath,
             },
@@ -341,14 +353,14 @@ module.exports = function(webpackEnv) {
                 // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
                 // please link the files into your node_modules/ and let module-resolution kick in.
                 // Make sure your source files are compiled, as they will not be processed in any way.
-                new ModuleScopePlugin(paths.appSrc, [
-                    paths.appPackageJson,
-                    reactRefreshRuntimeEntry,
-                    reactRefreshWebpackPluginRuntimeEntry,
-                    babelRuntimeEntry,
-                    babelRuntimeEntryHelpers,
-                    babelRuntimeRegenerator,
-                ]),
+                // new ModuleScopePlugin(paths.appSrc, [
+                //     paths.appPackageJson,
+                //     reactRefreshRuntimeEntry,
+                //     reactRefreshWebpackPluginRuntimeEntry,
+                //     babelRuntimeEntry,
+                //     babelRuntimeEntryHelpers,
+                //     babelRuntimeRegenerator,
+                // ]),
             ],
         },
         module: {

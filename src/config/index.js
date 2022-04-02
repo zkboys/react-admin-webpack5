@@ -1,13 +1,6 @@
 import {storage, getConfig} from '@ra-lib/adm';
 
-const {
-    isIframe,
-    isMicro,
-    publicPath,
-    baseName,
-    name,
-    isSameOrigin,
-} = getConfig();
+const { isIframe, isMicro, publicPath, baseName, name, isSameOrigin } = getConfig();
 
 // 应用名称
 export const APP_NAME = '管理系统架构';
@@ -28,7 +21,7 @@ export const AJAX_TIMEOUT = process.env.REACT_APP_AJAX_TIMEOUT || 1000 * 60 * 60
 // 页面路由前缀
 export const BASE_NAME = process.env.REACT_APP_BASE_NAME || baseName || '';
 // 页面保持
-export const KEEP_PAGE_ALIVE = process.env.REACT_APP_KEEP_PAGE_ALIVE || false
+export const KEEP_PAGE_ALIVE = process.env.REACT_APP_KEEP_PAGE_ALIVE || false;
 // 静态文件前缀
 export const PUBLIC_URL = process.env.PUBLIC_URL || '';
 // 是否是开发环境

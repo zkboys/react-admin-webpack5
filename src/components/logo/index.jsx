@@ -1,5 +1,5 @@
-import logo from './logo.png';
 import {APP_NAME} from 'src/config';
+import logo from './logo.png';
 import styles from './style.module.less';
 
 export default function Logo(props) {

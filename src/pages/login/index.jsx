@@ -2,11 +2,12 @@ import React, {useState, useEffect, useCallback} from 'react';
 import {Helmet} from 'react-helmet';
 import {Button, Form} from 'antd';
 import {LockOutlined, UserOutlined} from '@ant-design/icons';
-import {FormItem, queryStringify, setLoginUser} from '@ra-lib/adm';
+import {FormItem, queryStringify, setLoginUser, Proxy} from '@ra-lib/adm';
+import {Logo} from 'src/components';
 import config from 'src/commons/config-hoc';
 import {toHome} from 'src/commons';
-import {Logo, Proxy} from 'src/components';
-import {IS_DEV, IS_TEST, IS_PREVIEW} from 'src/config';
+import {IS_DEV, IS_TEST, IS_PREVIEW, SHOW_PROXY} from 'src/config';
+import proxyConfig from 'src/setupProxyConfig.json';
 import c from 'classnames';
 import s from './style.module.less';
 
@@ -77,7 +78,7 @@ export default config({
         <div className={s.logo}>
             <Logo/>
         </div>
-        <Proxy className={s.proxy}/>
+        <Proxy className={s.proxy} visible={SHOW_PROXY} proxyConfig={proxyConfig}/>
         <div className={s.box}>
             <Form form={form} name="login" onFinish={handleSubmit}>
                 <div className={formItemClass}>
