@@ -1,4 +1,4 @@
-import { Suspense, useContext, useEffect, useState } from 'react';
+import { Suspense, useContext, useEffect } from 'react';
 import { useNavigate, useRoutes, useLocation } from 'react-router';
 import { ConfigProvider, Modal } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
@@ -11,7 +11,7 @@ import { AppContext } from './app-context';
 import theme from 'src/theme.less';
 import { modalDestroyAll } from 'src/commons/config-hoc';
 import 'antd/dist/antd.less';
-import { KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY, SUB_APP_NAME, IS_SUB } from 'src/config';
+import { KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY } from 'src/config';
 import proxyConfig from 'src/setupProxyConfig.json';
 
 // 设置 Modal、Message、Notification rootPrefixCls
@@ -22,7 +22,6 @@ ConfigProvider.config({
 export default function App() {
     // 路由页面注入的数据
     const ejectProps = {};
-    const [loading, setLoading] = useState(true);
     const { state } = useContext(AppContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -38,45 +37,43 @@ export default function App() {
         { path: '*', element: error404 },
     ]);
 
-    // 监听主应用数据
-    useMainAppDataListener({ navigate, name: SUB_APP_NAME, isSub: IS_SUB, setLoading });
-
     // 页面切换，关闭所有弹框
     useEffect(() => {
         Modal.destroyAll();
         modalDestroyAll();
     }, [location]);
 
+    // 监听主应用数据
+    useMainAppDataListener({ navigate });
+
     return (
         <ConfigProvider locale={zhCN} prefixCls={theme.antPrefix}>
             <ComponentProvider prefixCls={theme.raLibPrefix}>
-                {loading ? <Loading spin /> : (
-                    <Layout
-                        layout={state.layout}
-                        menus={menus}
-                        proxyVisible={SHOW_PROXY}
-                        Logo={Logo}
-                        proxyConfig={proxyConfig}
-                        onLogout={() => {
-                            // TODO 退出登录
-                            alert('// TODO 退出登录');
-                            toLogin();
-                        }}
-                    >
-                        <Suspense fallback={<Loading spin />}>
-                            {KEEP_PAGE_ALIVE ? (
-                                <KeepPageAlive
-                                    routes={routes}
-                                    ejectProps={ejectProps}
-                                    baseName={BASE_NAME}
-                                    error404={error404}
-                                />
-                            ) : (
-                                <div style={{ overflow: 'auto' }}>{element}</div>
-                            )}
-                        </Suspense>
-                    </Layout>
-                )}
+                <Layout
+                    layout={state.layout}
+                    menus={menus}
+                    proxyVisible={SHOW_PROXY}
+                    Logo={Logo}
+                    proxyConfig={proxyConfig}
+                    onLogout={() => {
+                        // TODO 退出登录
+                        alert('// TODO 退出登录');
+                        toLogin();
+                    }}
+                >
+                    <Suspense fallback={<Loading spin />}>
+                        {KEEP_PAGE_ALIVE ? (
+                            <KeepPageAlive
+                                routes={routes}
+                                ejectProps={ejectProps}
+                                baseName={BASE_NAME}
+                                error404={error404}
+                            />
+                        ) : (
+                            <div style={{ overflow: 'auto' }}>{element}</div>
+                        )}
+                    </Suspense>
+                </Layout>
             </ComponentProvider>
         </ConfigProvider>
     );
