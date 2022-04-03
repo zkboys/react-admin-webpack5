@@ -8,7 +8,6 @@ import {
     ComponentProvider,
     KeepPageAlive,
     useMainAppDataListener,
-    useMainAppDataListenerForIframe,
     Layout,
 } from '@ra-lib/adm';
 import { Logo } from 'src/components';
@@ -53,9 +52,7 @@ export default function App() {
     }, [location]);
 
     // 监听主应用数据
-    useMainAppDataListener({ navigate });
-    // 当前是iframe嵌入方式是，监听主应用数据
-    useMainAppDataListenerForIframe({ onFinish: () => setLoading(false) });
+    useMainAppDataListener({ navigate, onFinish: () => setLoading(false) });
 
     return (
         <ConfigProvider locale={zhCN} prefixCls={theme.antPrefix}>
