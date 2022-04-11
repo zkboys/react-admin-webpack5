@@ -14,4 +14,6 @@ export default createConfigHoc({
     theme,
     toLogin,
     ejectProps: {},
+    modalCommonProps: {},
+    drawerCommonProps: {},
 });
