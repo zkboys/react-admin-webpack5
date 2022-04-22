@@ -1,4 +1,4 @@
-import {storage, getSubAppConfig} from '@ra-lib/adm';
+import {getSubAppConfig} from '@ra-lib/adm';
 
 const { isIframe, isMicro, baseName, ajaxFullPrefix } = getSubAppConfig();
 
@@ -15,7 +15,7 @@ export const IS_SUB = process.env.REACT_APP_IS_SUB || isIframe || isMicro;
 // 作为子应用时，拼接完整路径，如果同源，基于name做代理区分
 export const AJAX_FULL_PREFIX = IS_SUB ? ajaxFullPrefix : '';
 // ajax 请求前缀 开发环境 或者 测试环境使用 localStorage中存储的前缀
-export const AJAX_PREFIX = process.env.REACT_APP_AJAX_PREFIX || (SHOW_PROXY && storage.local.getItem('AJAX_PREFIX')) || '/api';
+export const AJAX_PREFIX = process.env.REACT_APP_AJAX_PREFIX || (SHOW_PROXY && window.localStorage.getItem('AJAX_PREFIX')) || '/api';
 // ajax 超时时间
 export const AJAX_TIMEOUT = process.env.REACT_APP_AJAX_TIMEOUT || 1000 * 60 * 60;
 // 页面路由前缀

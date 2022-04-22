@@ -6,7 +6,8 @@ import config from 'src/commons/config-hoc';
 export default config({
     modalFunction: true,
 })(function UserEditModal(props) {
-    const { record, isEdit, close, commonProps } = props;
+    const { record, close, commonProps } = props;
+    const isEdit = !!record;
     const [loading, setLoading] = useState(false);
     const [form] = Form.useForm();
 
