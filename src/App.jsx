@@ -1,24 +1,27 @@
-import { Suspense, useContext, useEffect, useState } from 'react';
-import { useNavigate, useRoutes, useLocation } from 'react-router';
-import { ConfigProvider, Modal } from 'antd';
+import {Suspense, useContext, useEffect, useState} from 'react';
+import {useNavigate, useRoutes, useLocation} from 'react-router';
+import {ConfigProvider, Modal} from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import {
     Loading,
     Error404,
     ComponentProvider,
     KeepPageAlive,
-    useMainAppDataListener,
+    // useMainAppDataListener,
     Layout,
+    setLoginUser,
+    getToken,
+    getLoginUser,
 } from '@ra-lib/adm';
-import { Logo } from 'src/components';
+import {Logo} from 'src/components';
 import routes from 'src/routes';
 import menus from 'src/menus';
-import { toHome, toLogin } from 'src/commons';
-import { AppContext } from './app-context';
+import {toHome, toLogin} from 'src/commons';
+import {AppContext} from './app-context';
 import theme from 'src/theme.less';
-import { modalDestroyAll } from 'src/commons/config-hoc';
+import {modalDestroyAll} from 'src/commons/config-hoc';
 import 'antd/dist/antd.less';
-import { KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY } from 'src/config';
+import {KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY} from 'src/config';
 import proxyConfig from 'src/setupProxyConfig.json';
 
 // 设置 Modal、Message、Notification rootPrefixCls
@@ -33,7 +36,7 @@ export default function App() {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const location = useLocation();
-    const error404 = <Error404 {...ejectProps} onToHome={toHome} onGoBack={() => navigate('../')} />;
+    const error404 = <Error404 {...ejectProps} onToHome={toHome} onGoBack={() => navigate('../')}/>;
     const element = useRoutes([
         ...routes.map(item => {
             const { Component } = item;
@@ -51,13 +54,28 @@ export default function App() {
         modalDestroyAll();
     }, [location]);
 
+    useEffect(() => {
+        const loginUser = getLoginUser();
+
+        // 嵌入老门户，没有用户，设置个mock用户
+        if (!loginUser) {
+            const token = getToken();
+            setLoginUser({
+                id: '1',
+                name: 'text',
+                token,
+            });
+        }
+        setLoading(false);
+    }, []);
+
     // 监听主应用数据
-    useMainAppDataListener({ navigate, onFinish: () => setLoading(false) });
+    // useMainAppDataListener({ navigate, onFinish: () => setLoading(false) });
 
     return (
         <ConfigProvider locale={zhCN} prefixCls={theme.antPrefix}>
             <ComponentProvider prefixCls={theme.raLibPrefix}>
-                {loading ? <Loading sping /> : (
+                {loading ? <Loading sping/> : (
                     <Layout
                         layout={state.layout}
                         menus={menus}
@@ -70,7 +88,7 @@ export default function App() {
                             toLogin();
                         }}
                     >
-                        <Suspense fallback={<Loading spin />}>
+                        <Suspense fallback={<Loading spin/>}>
                             {KEEP_PAGE_ALIVE ? (
                                 <KeepPageAlive
                                     routes={routes}

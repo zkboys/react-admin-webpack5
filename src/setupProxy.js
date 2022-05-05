@@ -8,7 +8,7 @@ module.exports = function(app) {
         const { baseUrl, target } = item;
         app.use(createProxyMiddleware(baseUrl, {
             target,
-            // pathRewrite: { [`^${baseUrl}`]': '' },
+            pathRewrite: { [`^${baseUrl}`]: '' },
             changeOrigin: true,
             secure: false, // 是否验证证书
             ws: true, // 启用websocket
