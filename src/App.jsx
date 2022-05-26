@@ -23,6 +23,11 @@ import {modalDestroyAll} from 'src/commons/config-hoc';
 import 'antd/dist/antd.less';
 import {KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY} from 'src/config';
 import proxyConfig from 'src/setupProxyConfig.json';
+import moment from 'moment';
+import 'moment/locale/zh-cn'; // 解决antd日期相关组件国际化问题
+
+// 设置语言
+moment.locale('zh-cn');
 
 // 设置 Modal、Message、Notification rootPrefixCls
 ConfigProvider.config({
