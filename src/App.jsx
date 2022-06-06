@@ -1,4 +1,4 @@
-import {Suspense, useContext, useEffect, useState} from 'react';
+import {Suspense, useEffect, useState} from 'react';
 import {useNavigate, useRoutes, useLocation} from 'react-router';
 import {ConfigProvider, Modal} from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
@@ -17,7 +17,7 @@ import {Logo} from 'src/components';
 import routes from 'src/routes';
 import menus from 'src/menus';
 import {toHome, toLogin} from 'src/commons';
-import {AppContext} from './app-context';
+import useAppContext from './app-context';
 import theme from 'src/theme.less';
 import {modalDestroyAll} from 'src/commons/config-hoc';
 import 'antd/dist/antd.less';
@@ -37,7 +37,7 @@ ConfigProvider.config({
 export default function App() {
     // 路由页面注入的数据
     const ejectProps = {};
-    const { state } = useContext(AppContext);
+    const { state } = useAppContext();
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const location = useLocation();

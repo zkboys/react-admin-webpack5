@@ -16,7 +16,7 @@
     "@babel/core": "^7.16.0",
     "@babel/plugin-proposal-decorators": "^7.17.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
-    "@ra-lib/adm": "^0.0.28",
+    "@ra-lib/adm": "^0.0.38",
     "@ra-lib/babel-plugin-attribute-wrapper": "^0.0.20",
     "@ra-lib/config-loader": "^0.1.10",
     "@ra-lib/rancher-deploy": "^1.0.27",

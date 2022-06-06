@@ -1,4 +1,4 @@
-import {createContext, useCallback, useReducer} from 'react';
+import {createContext, useCallback, useReducer, useContext} from 'react';
 import {IS_SUB} from 'src/config';
 import {isLoginPage} from '@ra-lib/adm';
 
@@ -25,7 +25,13 @@ export const AppProvider = (props) => {
         if (state.layout === layout) return;
         dispatch({ type: 'layout', payload: layout });
     }, [state.layout]);
-    return (<AppContext.Provider value={{ state, setLayout }}>
-        {props.children}
-    </AppContext.Provider>);
+    return (
+        <AppContext.Provider value={{ state, setLayout }}>
+            {props.children}
+        </AppContext.Provider>
+    );
 };
+
+export default function useAppContext() {
+    return useContext(AppContext);
+}
