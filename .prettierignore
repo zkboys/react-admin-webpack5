@@ -3,3 +3,8 @@ build
 coverage
 .gitignore
 .eslintignore
+generator
+config
+deploy
+public
+scripts

@@ -3,16 +3,18 @@ const proxies = require('./setupProxyConfig.json');
 const path = require('path');
 const fs = require('fs');
 
-module.exports = function(app) {
-    proxies.forEach(item => {
+module.exports = function (app) {
+    proxies.forEach((item) => {
         const { baseUrl, target } = item;
-        app.use(createProxyMiddleware(baseUrl, {
-            target,
-            pathRewrite: { [`^${baseUrl}`]: '' },
-            changeOrigin: true,
-            secure: false, // 是否验证证书
-            ws: true, // 启用websocket
-        }));
+        app.use(
+            createProxyMiddleware(baseUrl, {
+                target,
+                pathRewrite: { [`^${baseUrl}`]: '' },
+                changeOrigin: true,
+                secure: false, // 是否验证证书
+                ws: true, // 启用websocket
+            })
+        );
     });
 
     // 门户代理
@@ -25,10 +27,9 @@ module.exports = function(app) {
             changeOrigin: true,
             secure: false, // 是否验证证书
             ws: true, // 启用websocket
-        }),
+        })
     );
 };
-
 
 (function modifyTestNg() {
     const ngConfigPath = path.resolve(__dirname, '..', 'deploy', 'rancher', 'nginx.conf');

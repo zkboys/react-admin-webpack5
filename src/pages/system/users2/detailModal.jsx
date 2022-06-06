@@ -1,6 +1,6 @@
-import {useState, useEffect} from 'react';
-import {Button, Descriptions, Modal} from 'antd';
-import {ModalContent} from '@ra-lib/adm';
+import { useState, useEffect } from 'react';
+import { Button, Descriptions, Modal } from 'antd';
+import { ModalContent } from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 
 export default config({
@@ -27,7 +27,11 @@ export default config({
                 loading={loading}
                 footer={<Button onClick={onCancel}>关闭</Button>}
             >
-                <Descriptions bordered size="small" labelStyle={{ width: 150 }}>
+                <Descriptions
+                    bordered
+                    size="small"
+                    labelStyle={{ width: 150 }}
+                >
                     <Descriptions.Item label="用户名">{data.userName ?? '-'}</Descriptions.Item>
                     <Descriptions.Item label="年龄">{data.age ?? '-'}</Descriptions.Item>
                 </Descriptions>

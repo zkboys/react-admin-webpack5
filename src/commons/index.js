@@ -1,5 +1,5 @@
-import {toHome as _toHome, toLogin as _toLogin} from '@ra-lib/adm';
-import {BASE_NAME, IS_SUB} from '../config';
+import { toHome as _toHome, toLogin as _toLogin } from '@ra-lib/adm';
+import { BASE_NAME, IS_SUB } from '../config';
 
 /**
  * 进入首页

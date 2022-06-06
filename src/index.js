@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
-import {BASE_NAME} from 'src/config';
+import { BrowserRouter } from 'react-router-dom';
+import { BASE_NAME } from 'src/config';
 import App from './App';
-import {AppProvider} from 'src/app-context';
+import { AppProvider } from 'src/app-context';
 
 ReactDOM.render(
     <AppProvider>
         <BrowserRouter basename={BASE_NAME}>
-            <App/>
+            <App />
         </BrowserRouter>
-    </AppProvider>
-    ,
-    document.getElementById('root'),
+    </AppProvider>,
+    document.getElementById('root')
 );

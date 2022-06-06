@@ -1,5 +1,5 @@
-import {wrapperOptions} from '@ra-lib/adm';
-import {Tag} from 'antd';
+import { wrapperOptions } from '@ra-lib/adm';
+import { Tag } from 'antd';
 import ajax from 'src/commons/ajax';
 
 /**

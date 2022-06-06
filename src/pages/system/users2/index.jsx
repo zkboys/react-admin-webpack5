@@ -1,6 +1,6 @@
-import {useCallback, useState, useEffect} from 'react';
-import {Button, Form, Space} from 'antd';
-import {PageContent, QueryBar, FormItem, Table, Pagination, Operator} from '@ra-lib/adm';
+import { useCallback, useState, useEffect } from 'react';
+import { Button, Form, Space } from 'antd';
+import { PageContent, QueryBar, FormItem, Table, Pagination, Operator } from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 import editModal from './editModal';
 import detailModal from './detailModal';
@@ -28,7 +28,8 @@ export default config({
                     {
                         label: '详情',
                         onClick: () => detailModal({ record }),
-                    }, {
+                    },
+                    {
                         label: '修改',
                         onClick: () => editModal({ record }),
                     },
@@ -41,31 +42,37 @@ export default config({
                         },
                     },
                 ];
-                return <Operator items={items}/>;
+                return <Operator items={items} />;
             },
         },
     ];
 
     // 查询
-    const handleSearch = useCallback(async (options = {}) => {
-        const values = await form.validateFields();
-        const params = {
-            ...values,
-            pageNum: options.pageNum || pageNum,
-            pageSize: options.pageSize || pageSize,
-        };
-        const res = await props.ajax.get('/users', params, { setLoading });
-        const dataSource = res?.content || [];
-        const total = res?.totalElements || 0;
-        setDataSource(dataSource);
-        setTotal(total);
-    }, [form, pageNum, pageSize, props.ajax]);
+    const handleSearch = useCallback(
+        async (options = {}) => {
+            const values = await form.validateFields();
+            const params = {
+                ...values,
+                pageNum: options.pageNum || pageNum,
+                pageSize: options.pageSize || pageSize,
+            };
+            const res = await props.ajax.get('/users', params, { setLoading });
+            const dataSource = res?.content || [];
+            const total = res?.totalElements || 0;
+            setDataSource(dataSource);
+            setTotal(total);
+        },
+        [form, pageNum, pageSize, props.ajax]
+    );
 
     // 删除
-    const handleDelete = useCallback(async (id) => {
-        await props.ajax.del(`/users/${id}`, null, { setLoading, successTip: '删除成功！' });
-        await handleSearch();
-    }, [handleSearch, props.ajax]);
+    const handleDelete = useCallback(
+        async (id) => {
+            await props.ajax.del(`/users/${id}`, null, { setLoading, successTip: '删除成功！' });
+            await handleSearch();
+        },
+        [handleSearch, props.ajax]
+    );
 
     // 初始化查询
     useEffect(() => {
@@ -98,13 +105,17 @@ export default config({
                     />
                     <FormItem>
                         <Space>
-                            <Button type="primary" htmlType="submit">
+                            <Button
+                                type="primary"
+                                htmlType="submit"
+                            >
                                 查询
                             </Button>
-                            <Button htmlType="reset">
-                                重置
-                            </Button>
-                            <Button type="primary" onClick={() => editModal()}>
+                            <Button htmlType="reset">重置</Button>
+                            <Button
+                                type="primary"
+                                onClick={() => editModal()}
+                            >
                                 添加
                             </Button>
                         </Space>
@@ -123,7 +134,7 @@ export default config({
                 total={total}
                 pageNum={pageNum}
                 pageSize={pageSize}
-                onPageNumChange={async pageNum => {
+                onPageNumChange={async (pageNum) => {
                     setPageNum(pageNum);
                     await handleSearch({ pageNum });
                 }}

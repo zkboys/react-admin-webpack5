@@ -1,6 +1,6 @@
-import {useCallback, useState, useEffect} from 'react';
-import {Form, Row, Col, Modal} from 'antd';
-import {FormItem, ModalContent} from '@ra-lib/adm';
+import { useCallback, useState, useEffect } from 'react';
+import { Form, Row, Col, Modal } from 'antd';
+import { FormItem, ModalContent } from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 
 export default config({
@@ -10,18 +10,21 @@ export default config({
     const [loading, setLoading] = useState(false);
     const [form] = Form.useForm();
 
-    const handleSubmit = useCallback(async (values) => {
-        const params = {
-            ...values,
-        };
-        if (isEdit) {
-            await props.ajax.put('/users', params, { setLoading, successTip: '修改成功！' });
-        } else {
-            await props.ajax.post('/users', params, { setLoading, successTip: '创建成功！' });
-        }
+    const handleSubmit = useCallback(
+        async (values) => {
+            const params = {
+                ...values,
+            };
+            if (isEdit) {
+                await props.ajax.put('/users', params, { setLoading, successTip: '修改成功！' });
+            } else {
+                await props.ajax.post('/users', params, { setLoading, successTip: '创建成功！' });
+            }
 
-        close();
-    }, [isEdit, close, props.ajax]);
+            close();
+        },
+        [isEdit, close, props.ajax]
+    );
 
     // 初始化，查询详情数据
     useEffect(() => {
@@ -38,7 +41,10 @@ export default config({
             {...commonProps}
             title={record ? '修改用户' : '添加用户'}
         >
-            <Form form={form} onFinish={handleSubmit}>
+            <Form
+                form={form}
+                onFinish={handleSubmit}
+            >
                 <ModalContent
                     loading={loading}
                     okText="保存"
@@ -46,7 +52,12 @@ export default config({
                     cancelText="重置"
                     onCancel={() => form.resetFields()}
                 >
-                    {isEdit ? <FormItem hidden name="id"/> : null}
+                    {isEdit ? (
+                        <FormItem
+                            hidden
+                            name="id"
+                        />
+                    ) : null}
                     <Row>
                         <Col span={12}>
                             <FormItem

@@ -1,6 +1,6 @@
-import {Ajax, createAjaxHooks as createHooks, createAjaxHoc as createHoc, getToken, handleError, handleSuccess} from '@ra-lib/adm';
-import {AJAX_PREFIX, AJAX_FULL_PREFIX, AJAX_TIMEOUT} from 'src/config';
-import {toLogin} from './index';
+import { Ajax, createAjaxHooks as createHooks, createAjaxHoc as createHoc, getToken, handleError, handleSuccess } from '@ra-lib/adm';
+import { AJAX_PREFIX, AJAX_FULL_PREFIX, AJAX_TIMEOUT } from 'src/config';
+import { toLogin } from './index';
 
 // 创建Ajax实例，设置默认值
 const ajax = new Ajax({
@@ -14,7 +14,6 @@ const ajax = new Ajax({
 // 请求拦截
 ajax.instance.interceptors.request.use(
     (cfg) => {
-
         // 拼接成完整路由（作为子应用时需要）
         if (!cfg.url.startsWith('http')) {
             cfg.baseURL = `${AJAX_FULL_PREFIX}${cfg.baseURL}`;
@@ -28,7 +27,7 @@ ajax.instance.interceptors.request.use(
     (error) => {
         // Do something with request error
         return Promise.reject(error);
-    },
+    }
 );
 
 // 响应拦截
@@ -48,9 +47,8 @@ ajax.instance.interceptors.response.use(
     (error) => {
         // Do something with response error
         return Promise.reject(error);
-    },
+    }
 );
-
 
 const hooks = createHooks(ajax);
 const hoc = createHoc(ajax);
