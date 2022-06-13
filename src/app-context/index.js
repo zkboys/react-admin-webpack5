@@ -21,13 +21,9 @@ export const AppContext = createContext(null);
 
 export const AppProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const setLayout = useCallback(
-        (layout) => {
-            if (state.layout === layout) return;
-            dispatch({ type: 'layout', payload: layout });
-        },
-        [state.layout]
-    );
+    const setLayout = useCallback((layout) => {
+        dispatch({ type: 'layout', payload: layout });
+    }, []);
     return <AppContext.Provider value={{ state, setLayout }}>{props.children}</AppContext.Provider>;
 };
 
