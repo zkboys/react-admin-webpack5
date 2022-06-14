@@ -1,6 +1,7 @@
 import { Suspense, useEffect, useState } from 'react';
 import { useNavigate, useRoutes, useLocation } from 'react-router';
 import { ConfigProvider, Modal } from 'antd';
+import { Provider } from 'react-redux';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import {
     Loading,
@@ -17,6 +18,7 @@ import { Logo } from 'src/components';
 import routes from 'src/routes';
 import menus from 'src/menus';
 import { toHome, toLogin } from 'src/commons';
+import { store } from './models';
 import useAppContext from './app-context';
 import theme from 'src/theme.less';
 import { modalDestroyAll } from 'src/commons/config-hoc';
@@ -84,41 +86,43 @@ export default function App() {
     // useMainAppDataListener({ navigate, onFinish: () => setLoading(false) });
 
     return (
-        <ConfigProvider
-            locale={zhCN}
-            prefixCls={theme.antPrefix}
-        >
-            <ComponentProvider prefixCls={theme.raLibPrefix}>
-                {loading ? (
-                    <Loading sping />
-                ) : (
-                    <Layout
-                        layout={state.layout}
-                        menus={menus}
-                        proxyVisible={SHOW_PROXY}
-                        Logo={Logo}
-                        proxyConfig={proxyConfig}
-                        onLogout={() => {
-                            // TODO 退出登录
-                            alert('// TODO 退出登录');
-                            toLogin();
-                        }}
-                    >
-                        <Suspense fallback={<Loading spin />}>
-                            {KEEP_PAGE_ALIVE ? (
-                                <KeepPageAlive
-                                    routes={routes}
-                                    ejectProps={ejectProps}
-                                    baseName={BASE_NAME}
-                                    error404={error404}
-                                />
-                            ) : (
-                                <div style={{ overflow: 'auto' }}>{element}</div>
-                            )}
-                        </Suspense>
-                    </Layout>
-                )}
-            </ComponentProvider>
-        </ConfigProvider>
+        <Provider store={store}>
+            <ConfigProvider
+                locale={zhCN}
+                prefixCls={theme.antPrefix}
+            >
+                <ComponentProvider prefixCls={theme.raLibPrefix}>
+                    {loading ? (
+                        <Loading sping />
+                    ) : (
+                        <Layout
+                            layout={state.layout}
+                            menus={menus}
+                            proxyVisible={SHOW_PROXY}
+                            Logo={Logo}
+                            proxyConfig={proxyConfig}
+                            onLogout={() => {
+                                // TODO 退出登录
+                                alert('// TODO 退出登录');
+                                toLogin();
+                            }}
+                        >
+                            <Suspense fallback={<Loading spin />}>
+                                {KEEP_PAGE_ALIVE ? (
+                                    <KeepPageAlive
+                                        routes={routes}
+                                        ejectProps={ejectProps}
+                                        baseName={BASE_NAME}
+                                        error404={error404}
+                                    />
+                                ) : (
+                                    <div style={{ overflow: 'auto' }}>{element}</div>
+                                )}
+                            </Suspense>
+                        </Layout>
+                    )}
+                </ComponentProvider>
+            </ConfigProvider>
+        </Provider>
     );
 }

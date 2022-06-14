@@ -5,7 +5,6 @@ import s from './style.module.less';
 export default config({
     // title: '首页', // 注释掉，不生成菜单
     auth: false,
-    layout: false,
 })(function Index(props) {
     return (
         <PageContent className={s.root}>
