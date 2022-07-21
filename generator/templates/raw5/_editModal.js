@@ -74,6 +74,7 @@ export default config({
             <Form
                 form={form}
                 onFinish={handleSubmit}
+                {...layout}
             >
                 <ModalContent
                     loading={loading}
@@ -89,7 +90,6 @@ export default config({
                 const uniqueValidation = item.validation.some(it => it === 'unique');
                 return `<Col span={12}>
                             <FormItem
-                                {...layout}
                                 type="${item.formType}"
                                 label="${item.chinese}"
                                 name="${item.__names.moduleName}"
