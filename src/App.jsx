@@ -17,7 +17,7 @@ import {
 import { Logo } from 'src/components';
 import routes from 'src/routes';
 import menus from 'src/menus';
-import { toHome, toLogin } from 'src/commons';
+import { toHome, toLogin, getCurrentPageConfig } from 'src/commons';
 import { store } from './models';
 import useAppContext from './app-context';
 import theme from 'src/theme.less';
@@ -85,6 +85,7 @@ export default function App() {
     // 监听主应用数据
     // useMainAppDataListener({ navigate, onFinish: () => setLoading(false) });
 
+    const pageConfig = getCurrentPageConfig();
     return (
         <Provider store={store}>
             <ConfigProvider
@@ -98,6 +99,7 @@ export default function App() {
                         <Layout
                             layout={state.layout}
                             menus={menus}
+                            selectedMenuPath={pageConfig?.selectedMenuPath}
                             proxyVisible={SHOW_PROXY}
                             Logo={Logo}
                             proxyConfig={proxyConfig}
