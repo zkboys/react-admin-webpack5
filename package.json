@@ -101,6 +101,17 @@
         "rules": {
             "jsx-a11y/anchor-is-valid": 0,
             "import/no-anonymous-default-export": 0
+        },
+        "parserOptions": {
+            "babelOptions": {
+                "presets": [
+                    [
+                        "babel-preset-react-app",
+                        false
+                    ],
+                    "babel-preset-react-app/prod"
+                ]
+            }
         }
     },
     "browserslist": {
