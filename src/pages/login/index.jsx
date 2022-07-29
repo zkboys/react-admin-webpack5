@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Button, Form } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { FormItem, queryStringify, setLoginUser, Proxy } from '@ra-lib/adm';
+import { FormItem, queryStringify, setLoginUser, Proxy, useFunction } from '@ra-lib/adm';
 import { Logo } from 'src/components';
 import config from 'src/commons/config-hoc';
 import { toHome } from 'src/commons';
@@ -36,33 +36,30 @@ export default config({
     const [loading, setLoading] = useState(false);
     const [form] = Form.useForm();
 
-    const handleSubmit = useCallback(
-        async (values) => {
-            if (loading) return;
+    const handleSubmit = useFunction(async (values) => {
+        if (loading) return;
 
-            const { account, password } = values;
-            const params = {
-                loginName: account,
-                password,
-            };
+        const { account, password } = values;
+        const params = {
+            loginName: account,
+            password,
+        };
 
-            try {
-                const res = await props.ajax.post(`/login/login?${QUERY_STRING}`, params, { baseURL: '/portal', setLoading, errorTip: false });
-                const { id, loginName: name, token, ...others } = res;
-                setLoginUser({
-                    id, // 必须字段
-                    name, // 必须字段
-                    token, // 其他字段按需添加
-                    ...others,
-                });
-                toHome();
-            } catch (err) {
-                console.error(err);
-                setMessage(err.response?.data?.message || '用户名或密码错误');
-            }
-        },
-        [loading, props.ajax]
-    );
+        try {
+            const res = await props.ajax.post(`/login/login?${QUERY_STRING}`, params, { baseURL: '/portal', setLoading, errorTip: false });
+            const { id, loginName: name, token, ...others } = res;
+            setLoginUser({
+                id, // 必须字段
+                name, // 必须字段
+                token, // 其他字段按需添加
+                ...others,
+            });
+            toHome();
+        } catch (err) {
+            console.error(err);
+            setMessage(err.response?.data?.message || '用户名或密码错误');
+        }
+    });
 
     useEffect(() => {
         // 开发时默认填入数据

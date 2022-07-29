@@ -1,6 +1,6 @@
-import { createContext, useCallback, useReducer, useContext } from 'react';
+import { createContext, useReducer, useContext } from 'react';
 import { IS_SUB } from 'src/config';
-import { isLoginPage } from '@ra-lib/adm';
+import { isLoginPage, useFunction } from '@ra-lib/adm';
 
 const initialState = {
     // 是否显示头部，左侧等框架内容
@@ -21,9 +21,9 @@ export const AppContext = createContext(null);
 
 export const AppProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const setLayout = useCallback((layout) => {
+    const setLayout = useFunction((layout) => {
         dispatch({ type: 'layout', payload: layout });
-    }, []);
+    });
     return <AppContext.Provider value={{ state, setLayout }}>{props.children}</AppContext.Provider>;
 };
 

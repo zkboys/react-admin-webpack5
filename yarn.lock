@@ -1447,16 +1447,16 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/adm@^0.0.39":
-  version "0.0.39"
-  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.39.tgz#8b0d129271f21a04e3e2b9e4458aac8fa3fed097"
-  integrity sha512-CQaeaWH8fGs0V29la1A5Zu+Kp1sf8NFTo7zKQ9a5tmJhlZ9TWKUf4Ky0UQlCAecpkMiktaBXba7wAp81+FrmUg==
+"@ra-lib/adm@^0.0.49":
+  version "0.0.49"
+  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.49.tgz#4609c34e1937eb74087f8dc2a7320a746b62e2eb"
+  integrity sha512-R6+dNhgWSFYWbO/mCg2y9N2c5TOpTxQJvuo5SP2XIlv2hm5Ej24U/wud7hU37GeWWvg7G2+hTDSNNDd3PWoFjg==
   dependencies:
     "@ra-lib/admin-util" "0.0.22"
     "@ra-lib/ajax" "0.1.46"
-    "@ra-lib/component" "0.0.6"
+    "@ra-lib/component" "0.0.7"
     "@ra-lib/hoc" "0.1.18"
-    "@ra-lib/hooks" "0.1.12"
+    "@ra-lib/hooks" "0.1.16"
     "@ra-lib/model" "^0.1.11"
     "@ra-lib/options" "0.0.2"
     "@ra-lib/util" "0.1.35"
@@ -1479,10 +1479,10 @@
   resolved "https://registry.npmjs.org/@ra-lib/babel-plugin-attribute-wrapper/-/babel-plugin-attribute-wrapper-0.0.20.tgz#15929da0f1d2643f22323f8c2c5be6197b981bc0"
   integrity sha512-6cB21bF906ZPKhnEOG1caT8n76gn8VzULQG5yAXUvkB01RyDkXpLxh1ubKW7fMsiQJw9SbDgftZbHZqDQVyq/w==
 
-"@ra-lib/component@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/@ra-lib/component/-/component-0.0.6.tgz#5292f97cd923a39737f00729d51c3ad551cedaef"
-  integrity sha512-GE3CzZaOYVTmvovwSEsE7Uwsi9X371x/Uyh5J4LIepYdhqWFfZm0LVIbnQDVl65zNF+LN0Jhh89zEH9UiBJhGg==
+"@ra-lib/component@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/@ra-lib/component/-/component-0.0.7.tgz#431a5f2b061443f2ca7f0a2ccc2fb9a9befbba7f"
+  integrity sha512-o6CpIcqukG0pSqqbhqV2mAbEtLJX7l8UHfrnHZC6c10OKUAwX/W/VkXDXT8LMexrf8XbH5Cf/hCb0zWsaX92bw==
 
 "@ra-lib/config-loader@^0.1.10":
   version "0.1.10"
@@ -1494,10 +1494,10 @@
   resolved "https://registry.npmjs.org/@ra-lib/hoc/-/hoc-0.1.18.tgz#68ac60146034bc1c46bfc41f87de24d223be8954"
   integrity sha512-HK+khWfGzWIy4GcKqSYL+H0yVVXcTcdXMWbkya9Gt5LdsR5UuY7iPUTY+f8WILrMe6XbdXX8kqCcjNaD1Hu8+Q==
 
-"@ra-lib/hooks@0.1.12":
-  version "0.1.12"
-  resolved "https://registry.npmjs.org/@ra-lib/hooks/-/hooks-0.1.12.tgz#2a2bf29a70136602f1715c8aa296d0c1c65d9b40"
-  integrity sha512-1dOKhB8qQkayB1ydJVejwW5DUYzC1y+3BoKUULs4LTUWWwUYjK1Jbe2mpujeaJb4aLHR8yr96tnnotTpPCvF3A==
+"@ra-lib/hooks@0.1.16":
+  version "0.1.16"
+  resolved "https://registry.npmjs.org/@ra-lib/hooks/-/hooks-0.1.16.tgz#cf426e262e6b7cf2e7d825bd2de17494531d7e91"
+  integrity sha512-fcAhgn+vGOGwCvMrDf0hgmrWzLeVHmWpZrmJ7K4MZ1VqMUHVkTa3Zgc64pEqphEuAoIfBKq8IZsk4+gBI1CzQw==
 
 "@ra-lib/model@^0.1.11":
   version "0.1.11"
@@ -4077,6 +4077,26 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
+eslint-config-react-app-ra@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.npmjs.org/eslint-config-react-app-ra/-/eslint-config-react-app-ra-7.0.3.tgz#08f2522657f3fbb2ef63a880be35fd81f0d68c90"
+  integrity sha512-Pl5PRypfIoJuw0SkSpxFPz9AfjFzZoqALnyz4FAw5uKpuso3eKAuxqHueeUtQQRCra5LW8ZiW4GVrfOOdVtHsA==
+  dependencies:
+    "@babel/core" "^7.16.0"
+    "@babel/eslint-parser" "^7.16.3"
+    "@rushstack/eslint-patch" "^1.1.0"
+    "@typescript-eslint/eslint-plugin" "^5.5.0"
+    "@typescript-eslint/parser" "^5.5.0"
+    babel-preset-react-app "^10.0.1"
+    confusing-browser-globals "^1.0.11"
+    eslint-plugin-flowtype "^8.0.3"
+    eslint-plugin-import "^2.25.3"
+    eslint-plugin-jest "^25.3.0"
+    eslint-plugin-jsx-a11y "^6.5.1"
+    eslint-plugin-react "^7.27.1"
+    eslint-plugin-react-hooks-ra "4.3.2"
+    eslint-plugin-testing-library "^5.0.1"
+
 eslint-config-react-app@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npmmirror.com/eslint-config-react-app/-/eslint-config-react-app-7.0.0.tgz#0fa96d5ec1dfb99c029b1554362ab3fa1c3757df"
@@ -4164,6 +4184,11 @@ eslint-plugin-jsx-a11y@^6.5.1:
     jsx-ast-utils "^3.2.1"
     language-tags "^1.0.5"
     minimatch "^3.0.4"
+
+eslint-plugin-react-hooks-ra@4.3.2:
+  version "4.3.2"
+  resolved "https://registry.npmjs.org/eslint-plugin-react-hooks-ra/-/eslint-plugin-react-hooks-ra-4.3.2.tgz#ea2cba182048916eab356f9d457bcca2db211950"
+  integrity sha512-g+4fx4DgDMywFEME98tFtjIgBonQAEUh8kaYybhztm+ZmUvM+p6No51u8qGLUq63ZsDKhduuLwnbySdpM/cJ2A==
 
 eslint-plugin-react-hooks@^4.3.0:
   version "4.3.0"

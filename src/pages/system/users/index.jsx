@@ -1,6 +1,6 @@
-import { useCallback, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Form, Space } from 'antd';
-import { PageContent, QueryBar, FormItem, Table, Pagination, Operator } from '@ra-lib/adm';
+import { PageContent, QueryBar, FormItem, Table, Pagination, Operator, useFunction } from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 import editModal from './editModal';
 import detailModal from './detailModal';
@@ -48,38 +48,31 @@ export default config({
     ];
 
     // 查询
-    const handleSearch = useCallback(
-        async (options = {}) => {
-            const values = await form.validateFields();
-            const params = {
-                ...values,
-                pageNum: options.pageNum || pageNum,
-                pageSize: options.pageSize || pageSize,
-            };
-            const res = await props.ajax.get('/users', params, { setLoading });
-            const dataSource = res?.content || [];
-            const total = res?.totalElements || 0;
-            setDataSource(dataSource);
-            setTotal(total);
-        },
-        [form, pageNum, pageSize, props.ajax]
-    );
+    const handleSearch = useFunction(async (options = {}) => {
+        const values = await form.validateFields();
+        const params = {
+            ...values,
+            pageNum: options.pageNum || pageNum,
+            pageSize: options.pageSize || pageSize,
+        };
+        const res = await props.ajax.get('/users', params, { setLoading });
+        const dataSource = res?.content || [];
+        const total = res?.totalElements || 0;
+        setDataSource(dataSource);
+        setTotal(total);
+    });
 
     // 删除
-    const handleDelete = useCallback(
-        async (id) => {
-            await props.ajax.del(`/users/${id}`, null, { setLoading, successTip: '删除成功！' });
-            await handleSearch();
-        },
-        [handleSearch, props.ajax]
-    );
+    const handleDelete = useFunction(async (id) => {
+        await props.ajax.del(`/users/${id}`, null, { setLoading, successTip: '删除成功！' });
+        await handleSearch();
+    });
 
     // 初始化查询
     useEffect(() => {
         (async () => {
             await handleSearch({ pageNum: 1 });
         })();
-        // eslint-disable-next-line
     }, []);
 
     const layout = {

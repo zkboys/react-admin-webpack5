@@ -1,6 +1,6 @@
-import { useCallback, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Form, Row, Col, Modal } from 'antd';
-import { FormItem, ModalContent } from '@ra-lib/adm';
+import { FormItem, ModalContent, useFunction } from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 
 export default config({
@@ -11,21 +11,18 @@ export default config({
     const [loading, setLoading] = useState(false);
     const [form] = Form.useForm();
 
-    const handleSubmit = useCallback(
-        async (values) => {
-            const params = {
-                ...values,
-            };
-            if (isEdit) {
-                await props.ajax.put('/users', params, { setLoading, successTip: '修改成功！' });
-            } else {
-                await props.ajax.post('/users', params, { setLoading, successTip: '创建成功！' });
-            }
+    const handleSubmit = useFunction(async (values) => {
+        const params = {
+            ...values,
+        };
+        if (isEdit) {
+            await props.ajax.put('/users', params, { setLoading, successTip: '修改成功！' });
+        } else {
+            await props.ajax.post('/users', params, { setLoading, successTip: '创建成功！' });
+        }
 
-            close();
-        },
-        [isEdit, close, props.ajax]
-    );
+        close();
+    });
 
     // 初始化，查询详情数据
     useEffect(() => {
