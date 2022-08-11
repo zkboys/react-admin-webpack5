@@ -11,7 +11,7 @@ export default config({
     const [loading, setLoading] = useState(false);
     const [pageNum, setPageNum] = useState(1);
     const [pageSize, setPageSize] = useState(20);
-    const [dataSource, setDataSource] = useState([{ id: 1, userName: '张三', age: 11 }]);
+    const [dataSource, setDataSource] = useState([]);
     const [total, setTotal] = useState(0);
     const [form] = Form.useForm();
 
@@ -49,6 +49,9 @@ export default config({
 
     // 查询
     const handleSearch = useFunction(async (options = {}) => {
+        // TODO 测试数据
+        setDataSource([{ id: 1, userName: '张三', age: 11 }]);
+
         const values = await form.validateFields();
         const params = {
             ...values,

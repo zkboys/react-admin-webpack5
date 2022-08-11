@@ -8,7 +8,7 @@ export const APP_NAME = '管理系统架构';
 export const NODE_ENV = process.env.NODE_ENV;
 // 实际运行环境，测试、预发布等环境时 NODE_ENV 也为 production，无法区分
 export const RUN_ENV = process.env.REACT_APP_RUN_ENV || NODE_ENV;
-// 是否显示却换代理组件
+// 是否显示切换代理组件
 export const SHOW_PROXY = NODE_ENV === 'development' || window.location.hostname === '172.16.143.44';
 // 是否作为微前端子项目，或者嵌入在iframe中
 export const IS_SUB = process.env.REACT_APP_IS_SUB || isIframe || isMicro;
