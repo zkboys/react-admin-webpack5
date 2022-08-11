@@ -1447,17 +1447,17 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/adm@^0.0.52":
-  version "0.0.52"
-  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.52.tgz#bb585cb70d0e6adb56632c33c86e4bbf881ffd19"
-  integrity sha512-Vx12Qx+mfx/ZkW79c7UEIXtMOn5Rym34ggt3EbcHIr2+K1GRuG78RyCv0FntclJYfxWPQPZ67KOyjf6mA7Z/FA==
+"@ra-lib/adm@^0.0.54":
+  version "0.0.54"
+  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.54.tgz#2f2481fb17cec269cf899b45d1e2963eb4ad8fd1"
+  integrity sha512-uKE/1p3arlFT0zXekYU5xwTWkBgCPG0bASG10X87w9I1gzL/hhaaQxdjyqt/0ER116jN9I4fwpVvy7ya4LURTg==
   dependencies:
     "@ra-lib/admin-util" "0.0.22"
     "@ra-lib/ajax" "0.1.46"
     "@ra-lib/component" "0.0.10"
     "@ra-lib/hoc" "0.1.18"
     "@ra-lib/hooks" "0.1.17"
-    "@ra-lib/model" "^0.1.11"
+    "@ra-lib/model" "0.1.13"
     "@ra-lib/options" "0.0.2"
     "@ra-lib/util" "0.1.35"
     react-helmet "^6.1.0"
@@ -1499,15 +1499,15 @@
   resolved "https://registry.npmjs.org/@ra-lib/hooks/-/hooks-0.1.17.tgz#c96762ddfc5b87ffd3aa6c4367313c74ff20b2bc"
   integrity sha512-p4HzHPWOxbwaMzFoU0j/dJhmv6AKoRfqd1qHV8GFN6hinVRVzqLkQjIpgfIZVMb9Q+0DoOAy5zAIGEhH5XSZAg==
 
-"@ra-lib/model-async-function-loader@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/@ra-lib/model-async-function-loader/-/model-async-function-loader-0.0.2.tgz#32d5be69f13906c1d75d727ce4d96c98b12ee490"
-  integrity sha512-o7/ZrZSF15SbANPde/s9Mqfvlxm6GUED9Jy+m2wcszxIcc0XodQL4rj91DER5tJ0wdXFhUuR+dxrboJqWG+TtQ==
+"@ra-lib/model-async-function-loader@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/@ra-lib/model-async-function-loader/-/model-async-function-loader-0.0.3.tgz#e73cfeea2c8f92502dfd8b8b17384ee6aaaef7dc"
+  integrity sha512-r1ZH2ecaikgwI9tPJZlm1nFldvP35Qk+T04IZCk/A0V8IfeJKVfPfvW7fNufdFsqWZWc8VFnn7tAJ5dvJdVp1Q==
 
-"@ra-lib/model@^0.1.11":
-  version "0.1.11"
-  resolved "https://registry.npmjs.org/@ra-lib/model/-/model-0.1.11.tgz#cc68606223a1e53c48b6c31d40067d8deb6f4b27"
-  integrity sha512-wzOhEm77wtyiXdPDSehYcwIY4EDP3jjP2MnueiKZ5F+3Y1ExzVdmdnQ0MzAN6L126NJQ86T+lgE/f8pkUMo4Jg==
+"@ra-lib/model@0.1.13":
+  version "0.1.13"
+  resolved "https://registry.npmjs.org/@ra-lib/model/-/model-0.1.13.tgz#e5e161a212e4aaa21cd9992d7bf671dd4e6d2a97"
+  integrity sha512-4mmFgIaK3uNw4IE0tX0oTi+SoM9GiQCi3jUZKmW7X+V+Boy0oLz/uPCoyqKyxmGajrYUdHjCDw/QshngGYh5Ig==
 
 "@ra-lib/options@0.0.2":
   version "0.0.2"
