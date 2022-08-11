@@ -1,6 +1,7 @@
 import models from './models';
-import {storage, createStoreByModels, handleSuccess, handleError} from '@ra-lib/adm';
+import { storage, createStoreByModels, handleSuccess, handleError } from '@ra-lib/adm';
 
+console.log(models);
 const result = createStoreByModels(models, {
     // middlewares: [
     //     thunk,
@@ -13,8 +14,8 @@ const result = createStoreByModels(models, {
     // deserialize: JSON.parse,
     localStorage: storage.local,
     sessionStorage: storage.session,
-    serialize: data => data,
-    deserialize: data => data,
+    serialize: (data) => data,
+    deserialize: (data) => data,
     onError: handleError,
     onSuccess: handleSuccess,
 });

@@ -1499,6 +1499,11 @@
   resolved "https://registry.npmjs.org/@ra-lib/hooks/-/hooks-0.1.17.tgz#c96762ddfc5b87ffd3aa6c4367313c74ff20b2bc"
   integrity sha512-p4HzHPWOxbwaMzFoU0j/dJhmv6AKoRfqd1qHV8GFN6hinVRVzqLkQjIpgfIZVMb9Q+0DoOAy5zAIGEhH5XSZAg==
 
+"@ra-lib/model-async-function-loader@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@ra-lib/model-async-function-loader/-/model-async-function-loader-0.0.2.tgz#32d5be69f13906c1d75d727ce4d96c98b12ee490"
+  integrity sha512-o7/ZrZSF15SbANPde/s9Mqfvlxm6GUED9Jy+m2wcszxIcc0XodQL4rj91DER5tJ0wdXFhUuR+dxrboJqWG+TtQ==
+
 "@ra-lib/model@^0.1.11":
   version "0.1.11"
   resolved "https://registry.npmjs.org/@ra-lib/model/-/model-0.1.11.tgz#cc68606223a1e53c48b6c31d40067d8deb6f4b27"

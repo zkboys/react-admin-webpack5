@@ -20,6 +20,7 @@
         "@ra-lib/adm": "^0.0.52",
         "@ra-lib/babel-plugin-attribute-wrapper": "^0.0.20",
         "@ra-lib/config-loader": "^0.1.10",
+        "@ra-lib/model-async-function-loader": "^0.0.2",
         "@ra-lib/rancher-deploy": "^1.0.27",
         "@svgr/webpack": "^6.2.1",
         "@testing-library/jest-dom": "^5.16.2",
