@@ -42,6 +42,7 @@ export default config({
             <Form
                 form={form}
                 onFinish={handleSubmit}
+                {...layout}
             >
                 <ModalContent
                     loading={loading}
@@ -59,7 +60,6 @@ export default config({
                     <Row>
                         <Col span={12}>
                             <FormItem
-                                {...layout}
                                 type="input"
                                 label="用户名"
                                 name="userName"
@@ -69,7 +69,6 @@ export default config({
                         </Col>
                         <Col span={12}>
                             <FormItem
-                                {...layout}
                                 type="input"
                                 label="年龄"
                                 name="age"

@@ -87,6 +87,7 @@ export default config({
             <QueryBar>
                 <Form
                     layout="inline"
+                    {...layout}
                     form={form}
                     onFinish={async () => {
                         setPageNum(1);
@@ -94,7 +95,6 @@ export default config({
                     }}
                 >
                     <FormItem
-                        {...layout}
                         type="input"
                         label="用户名"
                         name="userName"

@@ -1067,7 +1067,7 @@
 
 "@babel/runtime@^7.15.4":
   version "7.18.3"
-  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.18.3.tgz#c7b654b57f6f63cf7f8b418ac9ca04408c4579f4"
+  resolved "https://registry.npmmirror.com/@babel/runtime/-/runtime-7.18.3.tgz#c7b654b57f6f63cf7f8b418ac9ca04408c4579f4"
   integrity sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug==
   dependencies:
     regenerator-runtime "^0.13.4"
@@ -1449,7 +1449,7 @@
 
 "@ra-lib/adm@^0.0.54":
   version "0.0.54"
-  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.54.tgz#2f2481fb17cec269cf899b45d1e2963eb4ad8fd1"
+  resolved "https://registry.npmmirror.com/@ra-lib/adm/-/adm-0.0.54.tgz#2f2481fb17cec269cf899b45d1e2963eb4ad8fd1"
   integrity sha512-uKE/1p3arlFT0zXekYU5xwTWkBgCPG0bASG10X87w9I1gzL/hhaaQxdjyqt/0ER116jN9I4fwpVvy7ya4LURTg==
   dependencies:
     "@ra-lib/admin-util" "0.0.22"
@@ -1464,59 +1464,59 @@
 
 "@ra-lib/admin-util@0.0.22":
   version "0.0.22"
-  resolved "https://registry.npmjs.org/@ra-lib/admin-util/-/admin-util-0.0.22.tgz#62613ff53ca48d779699fb46fd82e31f498f7994"
+  resolved "https://registry.npmmirror.com/@ra-lib/admin-util/-/admin-util-0.0.22.tgz#62613ff53ca48d779699fb46fd82e31f498f7994"
   integrity sha512-7BrvU1aZQJlvr6uz3o8EeYMgBvS2npqe5Jfm/H71qed9GOt6EqJOYmhAwacA5Vh8at2GmLNYuxvBMENaZ+tMGw==
   dependencies:
     "@ra-lib/util" "0.1.35"
 
 "@ra-lib/ajax@0.1.46":
   version "0.1.46"
-  resolved "https://registry.npmjs.org/@ra-lib/ajax/-/ajax-0.1.46.tgz#e745e3da585db4249ed7d3c74e9080a2454b08c4"
+  resolved "https://registry.npmmirror.com/@ra-lib/ajax/-/ajax-0.1.46.tgz#e745e3da585db4249ed7d3c74e9080a2454b08c4"
   integrity sha512-od01uKVWwFWJnFA9k7uuAFQG93bq9z8OI76OelLPtl9HojU/94X6MiKEZ22HePfmQL/FyqsJyrl4sVDgc9VgDQ==
 
 "@ra-lib/babel-plugin-attribute-wrapper@^0.0.20":
   version "0.0.20"
-  resolved "https://registry.npmjs.org/@ra-lib/babel-plugin-attribute-wrapper/-/babel-plugin-attribute-wrapper-0.0.20.tgz#15929da0f1d2643f22323f8c2c5be6197b981bc0"
+  resolved "https://registry.npmmirror.com/@ra-lib/babel-plugin-attribute-wrapper/-/babel-plugin-attribute-wrapper-0.0.20.tgz#15929da0f1d2643f22323f8c2c5be6197b981bc0"
   integrity sha512-6cB21bF906ZPKhnEOG1caT8n76gn8VzULQG5yAXUvkB01RyDkXpLxh1ubKW7fMsiQJw9SbDgftZbHZqDQVyq/w==
 
 "@ra-lib/component@0.0.10":
   version "0.0.10"
-  resolved "https://registry.npmjs.org/@ra-lib/component/-/component-0.0.10.tgz#4d34be1006117ca72631fadacbaaa262d7559589"
+  resolved "https://registry.npmmirror.com/@ra-lib/component/-/component-0.0.10.tgz#4d34be1006117ca72631fadacbaaa262d7559589"
   integrity sha512-GKLAVVjq5+cZ7NEF/bItJtGupOAD+FF96nnMa933TIKjoR+BmdyC4ALvpLlJvXjpd2ew19KZHXV/XhR3ynjzzw==
 
 "@ra-lib/config-loader@^0.1.10":
   version "0.1.10"
-  resolved "https://registry.npmjs.org/@ra-lib/config-loader/-/config-loader-0.1.10.tgz#32b6c101c21e0dc5f43b7348a6f326002c641baa"
+  resolved "https://registry.npmmirror.com/@ra-lib/config-loader/-/config-loader-0.1.10.tgz#32b6c101c21e0dc5f43b7348a6f326002c641baa"
   integrity sha512-qgYexkllJcfDhY2B8Tu9YBx5Lw8B5oiXg2F8+TNRWvfcF1wUo5HJGYrZ37GQkPYd89vPeW1s3rtLn4oJPaA8KA==
 
 "@ra-lib/hoc@0.1.18":
   version "0.1.18"
-  resolved "https://registry.npmjs.org/@ra-lib/hoc/-/hoc-0.1.18.tgz#68ac60146034bc1c46bfc41f87de24d223be8954"
+  resolved "https://registry.npmmirror.com/@ra-lib/hoc/-/hoc-0.1.18.tgz#68ac60146034bc1c46bfc41f87de24d223be8954"
   integrity sha512-HK+khWfGzWIy4GcKqSYL+H0yVVXcTcdXMWbkya9Gt5LdsR5UuY7iPUTY+f8WILrMe6XbdXX8kqCcjNaD1Hu8+Q==
 
 "@ra-lib/hooks@0.1.17":
   version "0.1.17"
-  resolved "https://registry.npmjs.org/@ra-lib/hooks/-/hooks-0.1.17.tgz#c96762ddfc5b87ffd3aa6c4367313c74ff20b2bc"
+  resolved "https://registry.npmmirror.com/@ra-lib/hooks/-/hooks-0.1.17.tgz#c96762ddfc5b87ffd3aa6c4367313c74ff20b2bc"
   integrity sha512-p4HzHPWOxbwaMzFoU0j/dJhmv6AKoRfqd1qHV8GFN6hinVRVzqLkQjIpgfIZVMb9Q+0DoOAy5zAIGEhH5XSZAg==
 
 "@ra-lib/model-async-function-loader@^0.0.3":
   version "0.0.3"
-  resolved "https://registry.npmjs.org/@ra-lib/model-async-function-loader/-/model-async-function-loader-0.0.3.tgz#e73cfeea2c8f92502dfd8b8b17384ee6aaaef7dc"
+  resolved "https://registry.npmmirror.com/@ra-lib/model-async-function-loader/-/model-async-function-loader-0.0.3.tgz#e73cfeea2c8f92502dfd8b8b17384ee6aaaef7dc"
   integrity sha512-r1ZH2ecaikgwI9tPJZlm1nFldvP35Qk+T04IZCk/A0V8IfeJKVfPfvW7fNufdFsqWZWc8VFnn7tAJ5dvJdVp1Q==
 
 "@ra-lib/model@0.1.13":
   version "0.1.13"
-  resolved "https://registry.npmjs.org/@ra-lib/model/-/model-0.1.13.tgz#e5e161a212e4aaa21cd9992d7bf671dd4e6d2a97"
+  resolved "https://registry.npmmirror.com/@ra-lib/model/-/model-0.1.13.tgz#e5e161a212e4aaa21cd9992d7bf671dd4e6d2a97"
   integrity sha512-4mmFgIaK3uNw4IE0tX0oTi+SoM9GiQCi3jUZKmW7X+V+Boy0oLz/uPCoyqKyxmGajrYUdHjCDw/QshngGYh5Ig==
 
 "@ra-lib/options@0.0.2":
   version "0.0.2"
-  resolved "https://registry.npmjs.org/@ra-lib/options/-/options-0.0.2.tgz#b91c1f7331fc9aba4f0b0a2d5f6f0fda8a3a7fb8"
+  resolved "https://registry.npmmirror.com/@ra-lib/options/-/options-0.0.2.tgz#b91c1f7331fc9aba4f0b0a2d5f6f0fda8a3a7fb8"
   integrity sha512-xshPD+UrG4ZaHpG80G8HZCgFrgbIKq6aB5ofwZv1ysvHJ38rfUfPeFEMWPeyILFDDbhYzJzrYc8n9wg4+uS5Pw==
 
 "@ra-lib/rancher-deploy@^1.0.27":
   version "1.0.27"
-  resolved "https://registry.npmjs.org/@ra-lib/rancher-deploy/-/rancher-deploy-1.0.27.tgz#1141260ffbbcd3e9f60b1aeb9eca10fb8a904d40"
+  resolved "https://registry.npmmirror.com/@ra-lib/rancher-deploy/-/rancher-deploy-1.0.27.tgz#1141260ffbbcd3e9f60b1aeb9eca10fb8a904d40"
   integrity sha512-+5BPPAZN4olNA0CC5QPNyhcbaV0cIEaogCEqTXF6E+sxbSxERUop+ZwiNS/hFYpxx+eGAwWOUnNyyvOJLYfkkA==
   dependencies:
     axios "^0.26.1"
@@ -1524,7 +1524,7 @@
 
 "@ra-lib/util@0.1.35":
   version "0.1.35"
-  resolved "https://registry.npmjs.org/@ra-lib/util/-/util-0.1.35.tgz#a8619836f0ead1d56eb8dacb2297f76762e24e9b"
+  resolved "https://registry.npmmirror.com/@ra-lib/util/-/util-0.1.35.tgz#a8619836f0ead1d56eb8dacb2297f76762e24e9b"
   integrity sha512-DQgCVx4luMmuTi0nR+DihHxOS2pvyPhIQ7NRsqnwShjRIqa/dLFkMeUIni4+kpFIp50xuU3vQ32mbkNKZBuseA==
 
 "@rollup/plugin-babel@^5.2.0":
@@ -1894,7 +1894,7 @@
 
 "@types/hoist-non-react-statics@^3.3.0":
   version "3.3.1"
-  resolved "https://registry.npmjs.org/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
+  resolved "https://registry.npmmirror.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
   integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
   dependencies:
     "@types/react" "*"
@@ -1993,7 +1993,7 @@
 
 "@types/react-redux@^7.1.20":
   version "7.1.24"
-  resolved "https://registry.npmjs.org/@types/react-redux/-/react-redux-7.1.24.tgz#6caaff1603aba17b27d20f8ad073e4c077e975c0"
+  resolved "https://registry.npmmirror.com/@types/react-redux/-/react-redux-7.1.24.tgz#6caaff1603aba17b27d20f8ad073e4c077e975c0"
   integrity sha512-7FkurKcS1k0FHZEtdbbgN8Oc6b+stGSfZYjQGicofJ0j4U0qIn/jaSvnP2pLwZKiai3/17xqqxkkrxTgN8UNbQ==
   dependencies:
     "@types/hoist-non-react-statics" "^3.3.0"
@@ -4084,7 +4084,7 @@ escodegen@^2.0.0:
 
 eslint-config-react-app-ra@^7.0.3:
   version "7.0.3"
-  resolved "https://registry.npmjs.org/eslint-config-react-app-ra/-/eslint-config-react-app-ra-7.0.3.tgz#08f2522657f3fbb2ef63a880be35fd81f0d68c90"
+  resolved "https://registry.npmmirror.com/eslint-config-react-app-ra/-/eslint-config-react-app-ra-7.0.3.tgz#08f2522657f3fbb2ef63a880be35fd81f0d68c90"
   integrity sha512-Pl5PRypfIoJuw0SkSpxFPz9AfjFzZoqALnyz4FAw5uKpuso3eKAuxqHueeUtQQRCra5LW8ZiW4GVrfOOdVtHsA==
   dependencies:
     "@babel/core" "^7.16.0"
@@ -4192,7 +4192,7 @@ eslint-plugin-jsx-a11y@^6.5.1:
 
 eslint-plugin-react-hooks-ra@4.3.2:
   version "4.3.2"
-  resolved "https://registry.npmjs.org/eslint-plugin-react-hooks-ra/-/eslint-plugin-react-hooks-ra-4.3.2.tgz#ea2cba182048916eab356f9d457bcca2db211950"
+  resolved "https://registry.npmmirror.com/eslint-plugin-react-hooks-ra/-/eslint-plugin-react-hooks-ra-4.3.2.tgz#ea2cba182048916eab356f9d457bcca2db211950"
   integrity sha512-g+4fx4DgDMywFEME98tFtjIgBonQAEUh8kaYybhztm+ZmUvM+p6No51u8qGLUq63ZsDKhduuLwnbySdpM/cJ2A==
 
 eslint-plugin-react-hooks@^4.3.0:
@@ -4905,7 +4905,7 @@ history@^5.2.0:
 
 hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
-  resolved "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+  resolved "https://registry.npmmirror.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
   dependencies:
     react-is "^16.7.0"
@@ -6895,7 +6895,7 @@ path-to-regexp@0.1.7:
 
 path-to-regexp@^6.2.0:
   version "6.2.0"
-  resolved "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-6.2.0.tgz#f7b3803336104c346889adece614669230645f38"
+  resolved "https://registry.npmmirror.com/path-to-regexp/-/path-to-regexp-6.2.0.tgz#f7b3803336104c346889adece614669230645f38"
   integrity sha512-f66KywYG6+43afgE/8j/GoiNyygk/bnoCbps++3ErRKsIYkGGupyv07R2Ok5m9i67Iqc+T2g1eAUGUPzWhYTyg==
 
 path-type@^4.0.0:
@@ -8108,7 +8108,7 @@ react-is@^17.0.1, react-is@^17.0.2:
 
 react-redux@^7.2.3:
   version "7.2.8"
-  resolved "https://registry.npmjs.org/react-redux/-/react-redux-7.2.8.tgz#a894068315e65de5b1b68899f9c6ee0923dd28de"
+  resolved "https://registry.npmmirror.com/react-redux/-/react-redux-7.2.8.tgz#a894068315e65de5b1b68899f9c6ee0923dd28de"
   integrity sha512-6+uDjhs3PSIclqoCk0kd6iX74gzrGc3W5zcAjbrFgEdIjRSQObdIwfx80unTkVUYvbQ95Y8Av3OvFHq1w5EOUw==
   dependencies:
     "@babel/runtime" "^7.15.4"
@@ -8206,17 +8206,17 @@ redent@^3.0.0:
 
 redux-thunk@^2.3.0:
   version "2.4.1"
-  resolved "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.4.1.tgz#0dd8042cf47868f4b29699941de03c9301a75714"
+  resolved "https://registry.npmmirror.com/redux-thunk/-/redux-thunk-2.4.1.tgz#0dd8042cf47868f4b29699941de03c9301a75714"
   integrity sha512-OOYGNY5Jy2TWvTL1KgAlVy6dcx3siPJ1wTq741EPyUKfn6W6nChdICjZwCd0p8AZBs5kWpZlbkXW2nE/zjUa+Q==
 
 redux-undo@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.npmjs.org/redux-undo/-/redux-undo-1.0.1.tgz#8d989d6c326e6718f4471042e90a5b8b6f3317eb"
+  resolved "https://registry.npmmirror.com/redux-undo/-/redux-undo-1.0.1.tgz#8d989d6c326e6718f4471042e90a5b8b6f3317eb"
   integrity sha512-0yFPT+FUgwxCEiS0Mg5T1S4tkgjR8h6sJRY9CW4EMsbJOf1SxO289TbJmlzhRouCHacdDF+powPjrjLHoJYxWQ==
 
 redux@^4.0.0, redux@^4.0.5:
   version "4.2.0"
-  resolved "https://registry.npmjs.org/redux/-/redux-4.2.0.tgz#46f10d6e29b6666df758780437651eeb2b969f13"
+  resolved "https://registry.npmmirror.com/redux/-/redux-4.2.0.tgz#46f10d6e29b6666df758780437651eeb2b969f13"
   integrity sha512-oSBmcKKIuIR4ME29/AeNUnl5L+hvBq7OaJWzaptTQJAntaPvxIJqfnjbaEiCzzaIz+XmVILfqAM3Ob0aXLPfjA==
   dependencies:
     "@babel/runtime" "^7.9.2"
