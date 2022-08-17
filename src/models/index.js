@@ -1,7 +1,6 @@
 import models from './models';
 import { storage, createStoreByModels, handleSuccess, handleError } from '@ra-lib/adm';
 
-console.log(models);
 const result = createStoreByModels(models, {
     // middlewares: [
     //     thunk,
