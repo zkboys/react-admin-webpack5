@@ -553,8 +553,8 @@ module.exports = function(webpackEnv) {
                                 },
                             }),
                         },
-                        // Opt-in support for SASS (using .less extensions).
-                        // By default we support SASS Modules with the
+                        // Opt-in support for LESS (using .less extensions).
+                        // By default we support LESS Modules with the
                         // extensions .module.less
                         {
                             test: lessRegex,
@@ -583,7 +583,7 @@ module.exports = function(webpackEnv) {
                             // See https://github.com/webpack/webpack/issues/6571
                             sideEffects: true,
                         },
-                        // Adds support for CSS Modules, but using SASS
+                        // Adds support for CSS Modules, but using LESS
                         // using the extension .module.less
                         {
                             test: lessModuleRegex,
