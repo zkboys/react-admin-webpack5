@@ -1,5 +1,4 @@
 {
-  "JENKINS_BASE_URL": "http://wang_sb:wang2018@172.16.161.53:8081/jenkins",
   "RANCHER_URL": "https://rancher-test.suixingpay.com/v3",
   "RANCHER_BEARER_TOKEN": "token-5kzzr:88xkl46m5hlfg2ccxcwvw4hz2662mr8cvc2xlwb9r92xknv7rt9zjz"
 }
