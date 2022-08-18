@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button, Form, Space } from 'antd';
 import { PageContent, QueryBar, FormItem, Table, Pagination, Operator, useFunction } from '@ra-lib/adm';
+import { useAsyncEffect } from 'ahooks';
 import config from 'src/commons/config-hoc';
 import editModal from './editModal';
 import detailModal from './detailModal';
@@ -72,10 +73,8 @@ export default config({
     });
 
     // 初始化查询
-    useEffect(() => {
-        (async () => {
-            await handleSearch({ pageNum: 1 });
-        })();
+    useAsyncEffect(async () => {
+        await handleSearch({ pageNum: 1 });
     }, []);
 
     const layout = {

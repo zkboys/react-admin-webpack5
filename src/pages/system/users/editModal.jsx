@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Form, Row, Col, Modal } from 'antd';
 import { FormItem, ModalContent, useFunction } from '@ra-lib/adm';
+import { useAsyncEffect } from 'ahooks';
 import config from 'src/commons/config-hoc';
 
 export default config({
@@ -25,12 +26,10 @@ export default config({
     });
 
     // 初始化，查询详情数据
-    useEffect(() => {
+    useAsyncEffect(async () => {
         if (!isEdit) return;
-        (async () => {
-            const res = await props.ajax.get('/users', { id: record?.id }, [], { setLoading });
-            form.setFieldsValue(res || {});
-        })();
+        const res = await props.ajax.get('/users', { id: record?.id }, [], { setLoading });
+        form.setFieldsValue(res || {});
     }, [isEdit, form, props.ajax, record?.id]);
 
     const layout = { labelCol: { flex: '100px' } };

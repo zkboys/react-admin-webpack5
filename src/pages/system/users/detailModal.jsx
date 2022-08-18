@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button, Descriptions, Modal } from 'antd';
 import { ModalContent } from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
+import { useAsyncEffect } from 'ahooks';
 
 export default config({
     modalFunction: true,
@@ -11,11 +12,9 @@ export default config({
     const [data, setData] = useState({});
 
     // 初始化，查询详情数据
-    useEffect(() => {
-        (async () => {
-            const res = await props.ajax.get('/users', { id: record?.id }, [], { setLoading });
-            setData(res || {});
-        })();
+    useAsyncEffect(async () => {
+        const res = await props.ajax.get('/users', { id: record?.id }, [], { setLoading });
+        setData(res || {});
     }, [props.ajax, record?.id]);
 
     return (
