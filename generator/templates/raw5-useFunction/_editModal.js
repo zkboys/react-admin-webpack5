@@ -17,20 +17,18 @@ module.exports = {
 
 
         return `
-import {useCallback, useState${_edit ? ', useEffect' : ''}} from 'react';
+import React, {useState${_edit ? ', useEffect' : ''}} from 'react';
 import {Form, Row, Col, Modal} from 'antd';
-import {ModalContent, FormItem${_validateRules ? ', validateRules' : ''}${uniqueFields.length ? ', useDebounceValidator' : ''}} from '@ra-lib/adm';
+import {ModalContent, useFunction, FormItem${_validateRules ? ', validateRules' : ''}${uniqueFields.length ? ', useDebounceValidator' : ''}} from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 
 export default config({
     modalFunction: true,
 })(function ${mn.ModuleName}EditModal(props) {
-    const {${_edit ? ' record, isEdit, ' : ''}close, commonProps } = props;
+    const {${_edit ? ' record, isEdit, ' : ''} close, onOk, onCancel, commonProps } = props;
     const [loading, setLoading] = useState(false);
     const [form] = Form.useForm();
-    
     ${uniqueFields.map(field => {
-
             return `const check${field.__names.ModuleName} = useDebounceValidator(async (rule, value) => {
         if (!value) return;
 
@@ -42,8 +40,7 @@ export default config({
         if (!isEdit && res.${field.name} === value) throw Error('${field.chinese}不能重复！');
     });`;
         })}
-
-    const handleSubmit = useCallback(async (values) => {
+    const handleSubmit = useFunction(async (values) => {
         const params = {
             ...values,
         };
@@ -52,15 +49,16 @@ export default config({
         } else {
             await props.ajax.post('/${mn.module_names}', params, { setLoading, successTip: '创建成功！' });
         }` : `await props.ajax.post('/${mn.module_names}', params, { setLoading, successTip: '创建成功！' });`}
-
+        
+        onOk && onOk();
         close();
-    }, [${_edit ? 'isEdit, ' : ''}close, props.ajax]);
+    });
 
     ${_edit ? `// 初始化，查询详情数据
     useEffect(() => {
         if (!isEdit) return;
         (async () => {
-            const res = await props.ajax.get('/${mn.module_names}', { id: record?.id }, [], { setLoading });
+            const res = await props.ajax.get('/${mn.module_names}', { id: record?.id }, { setLoading });
             form.setFieldsValue(res || {});
         })();
     }, [isEdit, form, props.ajax, record?.id]);` : NULL_LINE}
@@ -80,15 +78,14 @@ export default config({
                     loading={loading}
                     okText="保存"
                     okHtmlType="submit"
-                    cancelText="重置"
-                    onCancel={() => form.resetFields()}
+                    onCancel={onCancel}
                 >
                     ${_edit ? `{isEdit ? <FormItem hidden name="id"/> : null}` : NULL_LINE}
                     <Row>
                         ${formFields.map(item => {
-                const validation = item.validation.filter(item => !ignoreRules.includes(item));
-                const uniqueValidation = item.validation.some(it => it === 'unique');
-                return `<Col span={12}>
+            const validation = item.validation.filter(item => !ignoreRules.includes(item));
+            const uniqueValidation = item.validation.some(it => it === 'unique');
+            return `<Col span={12}>
                             <FormItem
                                 type="${item.formType}"
                                 label="${item.chinese}"
@@ -102,12 +99,12 @@ export default config({
                                 ${validation.length || uniqueValidation ? `rules={[
                                     ${uniqueValidation ? `{ validator: check${item.__names.ModuleName} },` : NULL_LINE}
                                     ${validation.map(item => {
-                    return `validateRules.${item}(),`;
-                }).join('\n                                ')}
+                return `validateRules.${item}(),`;
+            }).join('\n                                ')}
                                 ]}` : NULL_LINE}
                             />        
                         </Col>`;
-            }).join('\n                    ')}
+        }).join('\n                        ')}
                     </Row>
                 </ModalContent>
             </Form>
