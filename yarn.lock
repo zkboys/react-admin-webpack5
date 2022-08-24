@@ -1449,7 +1449,7 @@
 
 "@ra-lib/adm@^0.0.55":
   version "0.0.55"
-  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.55.tgz#92b3686cb97d06fcc9e2e0013cf4f20ae04fd802"
+  resolved "https://registry.npmmirror.com/@ra-lib/adm/-/adm-0.0.55.tgz#92b3686cb97d06fcc9e2e0013cf4f20ae04fd802"
   integrity sha512-FVBja/qrTixyTTNuk1OTLoOlHkvBIKpezv5pgSlssPrTRPosQwPsgzCQ8cbIhW73L2hm3ve++Pmkc55J8HG3fA==
   dependencies:
     "@ra-lib/admin-util" "0.0.22"
@@ -1491,7 +1491,7 @@
 
 "@ra-lib/hoc@0.1.19":
   version "0.1.19"
-  resolved "https://registry.npmjs.org/@ra-lib/hoc/-/hoc-0.1.19.tgz#50d81f88eab80d2f6ff23f98277f05343ee0e48f"
+  resolved "https://registry.npmmirror.com/@ra-lib/hoc/-/hoc-0.1.19.tgz#50d81f88eab80d2f6ff23f98277f05343ee0e48f"
   integrity sha512-NLZi0LpTY2r75iVbCVY43KYQ/6mjueZBoVdXPOQMf5xUSXAZSebczsI0AwAJeETph5PM7nHc7ZaM9nUzz/Gp7w==
 
 "@ra-lib/hooks@0.1.17":
@@ -1516,7 +1516,7 @@
 
 "@ra-lib/rancher-deploy@^1.0.40":
   version "1.0.40"
-  resolved "https://registry.npmjs.org/@ra-lib/rancher-deploy/-/rancher-deploy-1.0.40.tgz#99939917d7cf62c715db77639294d3f0042b361a"
+  resolved "https://registry.npmmirror.com/@ra-lib/rancher-deploy/-/rancher-deploy-1.0.40.tgz#99939917d7cf62c715db77639294d3f0042b361a"
   integrity sha512-BGP5Kx51lGG2o5efp5YxsnZ6JEpJpCUJzt63jF8si9x2HIpwYyP82jprIoaOtGHK5szJPRcEuUeLNhu/iDc47w==
   dependencies:
     axios "^0.26.1"
