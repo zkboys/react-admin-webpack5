@@ -1514,10 +1514,10 @@
   resolved "https://registry.npmmirror.com/@ra-lib/options/-/options-0.0.2.tgz#b91c1f7331fc9aba4f0b0a2d5f6f0fda8a3a7fb8"
   integrity sha512-xshPD+UrG4ZaHpG80G8HZCgFrgbIKq6aB5ofwZv1ysvHJ38rfUfPeFEMWPeyILFDDbhYzJzrYc8n9wg4+uS5Pw==
 
-"@ra-lib/rancher-deploy@^1.0.40":
-  version "1.0.40"
-  resolved "https://registry.npmmirror.com/@ra-lib/rancher-deploy/-/rancher-deploy-1.0.40.tgz#99939917d7cf62c715db77639294d3f0042b361a"
-  integrity sha512-BGP5Kx51lGG2o5efp5YxsnZ6JEpJpCUJzt63jF8si9x2HIpwYyP82jprIoaOtGHK5szJPRcEuUeLNhu/iDc47w==
+"@ra-lib/rancher-deploy@^1.0.41":
+  version "1.0.41"
+  resolved "https://registry.npmjs.org/@ra-lib/rancher-deploy/-/rancher-deploy-1.0.41.tgz#0ee0effdaa169cf0bdc2305674402eabde13609d"
+  integrity sha512-iNt4sc1U3fzo7kudxpHXXrXNr1gtY0NKBid4JcjNVcKVtiklM4I0Ip+R/RFeJ9syB+hLR4H6VfD6aKkV6nf+hg==
   dependencies:
     axios "^0.26.1"
     jenkins "^0.28.1"
