@@ -23,7 +23,7 @@ import useAppContext from './app-context';
 import theme from 'src/theme.less';
 import { modalDestroyAll } from 'src/commons/config-hoc';
 import 'antd/dist/antd.less';
-import { KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY } from 'src/config';
+import { KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY, IS_SUB } from 'src/config';
 import proxyConfig from 'src/setupProxyConfig.json';
 import moment from 'moment';
 import 'moment/locale/zh-cn'; // 解决antd日期相关组件国际化问题
@@ -71,7 +71,7 @@ export default function App() {
         const loginUser = getLoginUser();
 
         // 嵌入老门户，没有用户，设置个mock用户
-        if (!loginUser) {
+        if (!loginUser && IS_SUB) {
             const token = getToken();
             setLoginUser({
                 id: '1',
