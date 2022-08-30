@@ -60,8 +60,6 @@ export default function Header(props) {
 
     const userName = getLoginUser()?.name || '';
 
-    console.log(items);
-
     return (
         <header className={s.header}>
             <div className={c(s.logo, collapsed && s.collapsed)} onClick={() => navigate('/')}>
