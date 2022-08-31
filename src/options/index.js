@@ -1,5 +1,5 @@
-import {wrapperOptions} from '@ra-lib/adm';
-import {Tag} from 'antd';
+import { wrapperOptions, stringToRGB } from '@ra-lib/adm';
+import { Tag } from 'antd';
 import ajax from 'src/commons/ajax';
 
 /**
@@ -69,7 +69,13 @@ const options = {
 };
 
 function withTag(options) {
-    return options.map((item) => ({ ...item, tag: <Tag color={item.color}>{item.label}</Tag> }));
+    return options.map((item) => {
+        const { tag, color, label } = item;
+        if (tag) return item;
+
+        const _color = color || stringToRGB(label);
+        return { ...item, tag: <Tag color={_color}>{label}</Tag> };
+    });
 }
 
 wrapperOptions(options, 1000 * 5);
