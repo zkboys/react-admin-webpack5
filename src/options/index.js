@@ -1,5 +1,5 @@
-import { wrapperOptions } from '@ra-lib/adm';
-import { Tag } from 'antd';
+import {wrapperOptions} from '@ra-lib/adm';
+import {Tag} from 'antd';
 import ajax from 'src/commons/ajax';
 
 /**
@@ -26,15 +26,15 @@ const options = {
         { value: '_blank', label: '新开窗口打开第三方' },
     ],
     // 是否
-    yesNo: [
-        { value: true, label: '是', tag: <Tag color="green">是</Tag> },
-        { value: false, label: '否', tag: <Tag color="red">否</Tag> },
-    ],
+    yesNo: withTag([
+        { value: true, label: '是', color: 'green' },
+        { value: false, label: '否', color: 'red' },
+    ]),
     // 启用、禁用
-    enabled: [
-        { value: true, label: '启用', tag: <Tag color="green">启用</Tag> },
-        { value: false, label: '禁用', tag: <Tag color="red">禁用</Tag> },
-    ],
+    enabled: withTag([
+        { value: true, label: '启用', color: 'green' },
+        { value: false, label: '禁用', color: 'red' },
+    ]),
     // 性别
     sex: [
         { value: '1', label: '男' },
@@ -60,7 +60,17 @@ const options = {
     get demo() {
         return [];
     },
+    userStatus: withTag([
+        { value: 1, label: '已激活', color: 'green' },
+        { value: 2, label: '已禁用', color: 'red' },
+        { value: 4, label: '未激活', color: 'red' },
+        { value: 5, label: '退出企业', color: 'red' },
+    ]),
 };
+
+function withTag(options) {
+    return options.map((item) => ({ ...item, tag: <Tag color={item.color}>{item.label}</Tag> }));
+}
 
 wrapperOptions(options, 1000 * 5);
 
