@@ -73,10 +73,12 @@ export default function App() {
         // 嵌入老门户，没有用户，设置个mock用户
         if (!loginUser && IS_SUB) {
             const token = getToken();
+            const permissions = [];
             setLoginUser({
                 id: '1',
                 name: 'text',
                 token,
+                permissions,
             });
         }
         setLoading(false);
