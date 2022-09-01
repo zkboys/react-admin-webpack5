@@ -1,4 +1,5 @@
 {
+    "title": "React App",
     "name": "raw5",
     "version": "0.1.0",
     "private": true,
@@ -7,7 +8,7 @@
         "start": "nodemon -w ./config/webpack.config.js -w ./src/theme.less -w ./src/setupProxy.js -w ./src/setupProxyConfig.json --exec \"npm run dev\"",
         "test": "node scripts/test.js",
         "build": "cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
-        "build:test": "echo 'build:test'",
+        "build:test": "cross-env REACT_APP_RUN_ENV=test node scripts/build.js",
         "rancher": "cross-env BUILD_COMMAND=build:test rancher-deploy",
         "prettier": "prettier --write ."
     },
