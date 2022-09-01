@@ -7,7 +7,7 @@
         "start": "nodemon -w ./config/webpack.config.js -w ./src/theme.less -w ./src/setupProxy.js -w ./src/setupProxyConfig.json --exec \"npm run dev\"",
         "test": "node scripts/test.js",
         "build": "cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
-        "build:test": "echo22 'build:test'",
+        "build:test": "echo 'build:test'",
         "rancher": "cross-env BUILD_COMMAND=build:test rancher-deploy",
         "prettier": "prettier --write ."
     },
