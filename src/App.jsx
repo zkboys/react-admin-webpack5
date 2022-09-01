@@ -13,6 +13,7 @@ import {
     setLoginUser,
     getToken,
     getLoginUser,
+    isLoginPage,
 } from '@ra-lib/adm';
 import { Logo } from 'src/components';
 import routes from 'src/routes';
@@ -23,10 +24,11 @@ import useAppContext from './app-context';
 import theme from 'src/theme.less';
 import { modalDestroyAll } from 'src/commons/config-hoc';
 import 'antd/dist/antd.less';
-import { KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY, IS_SUB } from 'src/config';
+import { KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY } from 'src/config';
 import proxyConfig from 'src/setupProxyConfig.json';
 import moment from 'moment';
-import 'moment/locale/zh-cn'; // 解决antd日期相关组件国际化问题
+import 'moment/locale/zh-cn';
+import ajax from 'src/commons/ajax'; // 解决antd日期相关组件国际化问题
 
 // 设置语言
 moment.locale('zh-cn');
@@ -68,20 +70,30 @@ export default function App() {
     }, [location]);
 
     useEffect(() => {
-        const loginUser = getLoginUser();
+        (async () => {
+            try {
+                if (isLoginPage()) return;
 
-        // 嵌入老门户，没有用户，设置个mock用户
-        if (!loginUser && IS_SUB) {
-            const token = getToken();
-            const permissions = [];
-            setLoginUser({
-                id: '1',
-                name: 'text',
-                token,
-                permissions,
-            });
-        }
-        setLoading(false);
+                let loginUser = getLoginUser();
+
+                if (!loginUser) {
+                    // TODO 请求用户
+                    const token = getToken();
+                    loginUser = {
+                        id: '1',
+                        name: 'text',
+                        token,
+                    };
+                }
+
+                // 获取权限
+                const res = await ajax.get('/user/authority/getUserAuthCode');
+                loginUser.permissions = res.data || [];
+                setLoginUser(loginUser);
+            } finally {
+                setLoading(false);
+            }
+        })();
     }, []);
 
     // 监听主应用数据
