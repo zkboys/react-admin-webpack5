@@ -74,17 +74,16 @@ export default function App() {
             try {
                 if (isLoginPage()) return;
 
-                let loginUser = getLoginUser();
+                // TODO 请求用户
+                // const result = await ajax.get('/user/getSystemUser');
+                // const { realName: name, id } = result.object || {};
 
-                if (!loginUser) {
-                    // TODO 请求用户
-                    const token = getToken();
-                    loginUser = {
-                        id: '1',
-                        name: 'text',
-                        token,
-                    };
-                }
+                const token = getToken();
+                const loginUser = {
+                    id: '1',
+                    name: 'text',
+                    token,
+                };
 
                 // 获取权限
                 const res = await ajax.get('/user/authority/getUserAuthCode');

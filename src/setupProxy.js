@@ -42,6 +42,7 @@ module.exports = function (app) {
     location ^~${baseUrl} {
         rewrite ^${baseUrl}/(.*)$ /$1 break; # 如果后端接口不是统一以api开头，去掉api前缀
         proxy_pass ${target};
+        proxy_read_timeout 1200;  # 秒 代理超时时间
         proxy_set_header Host  $http_host;
         proxy_set_header Connection close;
         proxy_set_header X-Real-IP $remote_addr;

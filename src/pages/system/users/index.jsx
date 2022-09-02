@@ -31,7 +31,7 @@ export default config({
                     },
                     {
                         label: '修改',
-                        onClick: () => editModal({ record }),
+                        onClick: () => editModal({ record, onOk: () => handleSearch({ pageNum: 1 }) }),
                     },
                     {
                         label: '删除',
@@ -110,7 +110,7 @@ export default config({
                             <Button htmlType="reset">重置</Button>
                             <Button
                                 type="primary"
-                                onClick={() => editModal()}
+                                onClick={() => editModal({ onOk: () => handleSearch({ pageNum: 1 }) })}
                             >
                                 添加
                             </Button>
