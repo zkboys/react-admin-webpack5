@@ -21,7 +21,7 @@ export const AJAX_TIMEOUT = process.env.REACT_APP_AJAX_TIMEOUT || 1000 * 60 * 60
 // 页面路由前缀
 export const BASE_NAME = process.env.REACT_APP_BASE_NAME || baseName || '';
 // 页面保持
-export const KEEP_PAGE_ALIVE = !!(process.env.REACT_APP_KEEP_PAGE_ALIVE || IS_SUB);
+export const KEEP_PAGE_ALIVE = false; //!!(process.env.REACT_APP_KEEP_PAGE_ALIVE || IS_SUB);
 // 静态文件前缀
 export const PUBLIC_URL = process.env.PUBLIC_URL || '';
 // 是否是开发环境

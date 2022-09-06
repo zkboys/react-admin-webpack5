@@ -76,7 +76,7 @@ export default function App() {
 
                 // TODO 请求用户
                 // const result = await ajax.get('/user/getSystemUser');
-                // const { realName: name, id } = result.object || {};
+                // const { realName: name, id, ...others } = result.object || {};
 
                 const token = getToken();
                 const loginUser = {

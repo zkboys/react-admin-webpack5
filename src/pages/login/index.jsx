@@ -12,7 +12,7 @@ import c from 'classnames';
 import s from './style.module.less';
 
 // 开发模式下，默认填充的账号密码
-const FORM_VALUES = {
+const FORM_VALUES = JSON.parse(window.localStorage.getItem('LOGIN_FORM_VALUES')) || {
     account: 'P101282',
     password: '0000',
 };
@@ -54,6 +54,9 @@ export default config({
                 token, // 其他字段按需添加
                 ...others,
             });
+            if (IS_DEV || IS_TEST || IS_PREVIEW) {
+                window.localStorage.setItem('LOGIN_FORM_VALUES', JSON.stringify({ account, password }));
+            }
             toHome();
         } catch (err) {
             console.error(err);
