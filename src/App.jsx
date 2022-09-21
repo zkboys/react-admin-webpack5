@@ -78,10 +78,11 @@ export default function App() {
                 // const { realName: name, id, ...others } = result.object || {};
                 const token = getToken();
                 const loginUser = {
+                    ignorePermission: IGNORE_PERMISSION,
+                    // ...others,
                     id: '1',
                     name: 'text',
                     token,
-                    ignorePermission: IGNORE_PERMISSION,
                 };
 
                 // 获取权限
