@@ -17,7 +17,12 @@ export default config({
     return (
         <PageContent className={s.root}>
             <h1>首页</h1>
-            <Button onClick={() => props.action.demo.getUser()}>获取用户</Button>
+            <Button
+                r-code="xxxxxx"
+                onClick={() => props.action.demo.getUser()}
+            >
+                获取用户
+            </Button>
         </PageContent>
     );
 });

@@ -20,7 +20,8 @@ module.exports = function (app) {
     // 门户代理
     app.use(
         createProxyMiddleware('/portal', {
-            target: 'http://172.16.143.44:32328', // 测试门户后端
+            // target: 'http://172.16.143.44:32328', // 测试门户后端
+            target: 'http://22.50.7.25:39945', // 测试门户后端
             pathRewrite: {
                 '^/portal': '',
             },

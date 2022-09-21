@@ -12,7 +12,6 @@ import {
     Layout,
     setLoginUser,
     getToken,
-    getLoginUser,
     isLoginPage,
 } from '@ra-lib/adm';
 import { Logo } from 'src/components';
@@ -24,11 +23,11 @@ import useAppContext from './app-context';
 import theme from 'src/theme.less';
 import { modalDestroyAll } from 'src/commons/config-hoc';
 import 'antd/dist/antd.less';
-import { KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY } from 'src/config';
+import { KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY, IGNORE_PERMISSION } from 'src/config';
 import proxyConfig from 'src/setupProxyConfig.json';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
-import ajax from 'src/commons/ajax'; // 解决antd日期相关组件国际化问题
+// import ajax from 'src/commons/ajax';
 
 // 设置语言
 moment.locale('zh-cn');
@@ -77,17 +76,18 @@ export default function App() {
                 // TODO 请求用户
                 // const result = await ajax.get('/user/getSystemUser');
                 // const { realName: name, id, ...others } = result.object || {};
-
                 const token = getToken();
                 const loginUser = {
                     id: '1',
                     name: 'text',
                     token,
+                    ignorePermission: IGNORE_PERMISSION,
                 };
 
                 // 获取权限
-                const res = await ajax.get('/user/authority/getUserAuthCode');
-                loginUser.permissions = res.data || [];
+                // const res = await ajax.get('/user/authority/getUserAuthCode');
+                // loginUser.permissions = res.data || [];
+                console.log(loginUser);
                 setLoginUser(loginUser);
             } finally {
                 setLoading(false);
