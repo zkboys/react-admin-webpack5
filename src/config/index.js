@@ -33,4 +33,4 @@ export const KEEP_PAGE_ALIVE = false; //!!(process.env.REACT_APP_KEEP_PAGE_ALIVE
 // 静态文件前缀
 export const PUBLIC_URL = process.env.PUBLIC_URL || '';
 // 是否忽略权限
-export const IGNORE_PERMISSION = false;
+export const IGNORE_PERMISSION = IS_PROD ? false : false;

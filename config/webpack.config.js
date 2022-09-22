@@ -382,6 +382,7 @@ module.exports = function(webpackEnv) {
                         options: {
                             pagesPath: path.join(paths.appSrc, 'pages'),
                             conventionalRoutes: true,
+                            extraImport: 'import options from "src/options"',
                         },
                     },
                     include: paths.appSrc,
