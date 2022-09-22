@@ -1454,10 +1454,10 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/adm@^0.0.72":
-  version "0.0.72"
-  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.72.tgz#07e835f1e945c3a4ca902dacbdfa54b1f5d24adc"
-  integrity sha512-NIVEVrcjYdARe+Vhl8HnyNHmlTtwOESe/I8cGv2q+tZ2npDgdPEyR390Hu7F5qc6xo7us5Q58FdBpFN62G9ILw==
+"@ra-lib/adm@^0.0.73":
+  version "0.0.73"
+  resolved "https://registry.npmjs.org/@ra-lib/adm/-/adm-0.0.73.tgz#89975805ad3031f7a3dfa576c93ed18b87134e31"
+  integrity sha512-ibL2e3hPPacDhGKOsGNbUdKtIuHk4i+VYvBVVkUHItuT3W+az6mv+WB/qmct+8sWf8WMbv7QrSaSTz7M/htG5g==
   dependencies:
     "@ra-lib/admin-util" "0.0.26"
     "@ra-lib/ajax" "0.1.48"
@@ -1465,7 +1465,7 @@
     "@ra-lib/hoc" "0.1.21"
     "@ra-lib/hooks" "0.1.19"
     "@ra-lib/model" "0.1.14"
-    "@ra-lib/options" "0.0.7"
+    "@ra-lib/options" "0.0.8"
     "@ra-lib/util" "0.1.38"
     react-helmet "^6.1.0"
 
@@ -1516,10 +1516,10 @@
   resolved "https://registry.npmjs.org/@ra-lib/model/-/model-0.1.14.tgz#d7a9c620d27b8d1db5a814e4446ff9ec3860086f"
   integrity sha512-YsLngJ46KCk66VXts6zpdZzF90H3z2YQCw1ics/WrV6lpf2damPNqplwGu6Qvrj0XIZ/TQxCWAnSjbDVZV32Ig==
 
-"@ra-lib/options@0.0.7":
-  version "0.0.7"
-  resolved "https://registry.npmjs.org/@ra-lib/options/-/options-0.0.7.tgz#99770d5018866b7f669ded1b33152cf4e247308e"
-  integrity sha512-7EMEr9NG4mdUBgUCwJo1eeJp/BzkUyCHSMRMWWMbmLdJTCen3wRlMkujx1IzylgKf7F+2Svj1R2txFW3/3i/ug==
+"@ra-lib/options@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/@ra-lib/options/-/options-0.0.8.tgz#35f4483d5a9669e790cd3f8e8bae11d5362a4812"
+  integrity sha512-fDK/hQz8sIPZ3PWNPxW7lcRAzHCLOT8Y+YYbEtWY2QuCgWc1IcU/rNYZOXOPwteqv00K+SObaJwFsOnwcmmQmA==
 
 "@ra-lib/rancher-deploy@^1.0.44":
   version "1.0.44"
