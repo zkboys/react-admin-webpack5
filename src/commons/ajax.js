@@ -8,6 +8,7 @@ const ajax = new Ajax({
     timeout: AJAX_TIMEOUT,
     onError: handleError(toLogin),
     onSuccess: handleSuccess(),
+    noEmpty: false,
     // withCredentials: true, // 跨域携带cookie，对应后端 Access-Control-Allow-Origin不可以为 '*'，需要指定为具体域名
 });
 
