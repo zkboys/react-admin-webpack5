@@ -1454,14 +1454,14 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/adm@^0.0.79":
-  version "0.0.79"
-  resolved "https://registry.npmmirror.com/@ra-lib/adm/-/adm-0.0.79.tgz#7b4d14d2a8c2ab94064931c2aa0c6fa89e87acab"
-  integrity sha512-HmONWVLb343cJgm7xdq8exTi+bllMmYfMRB/hhl5uchpMh0BxNlN9fL48NvnynkI7P+hTQJrDdnkOEKijwYgGQ==
+"@ra-lib/adm@^0.0.81":
+  version "0.0.81"
+  resolved "https://registry.yarnpkg.com/@ra-lib/adm/-/adm-0.0.81.tgz#8ca731f181385f136e1c7db1b2e2d179e9e86221"
+  integrity sha512-bXYOJWcb/6OjB9iqQm3CJyQDWszyjVTfoi7DqcO3UPKKRBsL2y7XWWLJTG908zDg+zkaEjgjESzfLTTFSKshJw==
   dependencies:
     "@ra-lib/admin-util" "0.0.29"
     "@ra-lib/ajax" "0.1.48"
-    "@ra-lib/component" "0.0.17"
+    "@ra-lib/component" "0.0.18"
     "@ra-lib/hoc" "0.1.21"
     "@ra-lib/hooks" "0.1.19"
     "@ra-lib/model" "0.1.14"
@@ -1486,10 +1486,10 @@
   resolved "https://registry.npmmirror.com/@ra-lib/babel-plugin-attribute-wrapper/-/babel-plugin-attribute-wrapper-0.0.20.tgz#15929da0f1d2643f22323f8c2c5be6197b981bc0"
   integrity sha512-6cB21bF906ZPKhnEOG1caT8n76gn8VzULQG5yAXUvkB01RyDkXpLxh1ubKW7fMsiQJw9SbDgftZbHZqDQVyq/w==
 
-"@ra-lib/component@0.0.17":
-  version "0.0.17"
-  resolved "https://registry.npmmirror.com/@ra-lib/component/-/component-0.0.17.tgz#8ca37fdf7826a80cf42cab9e32c794e81f0d05ca"
-  integrity sha512-ULkfCPYCeqd7SbwpdrH06OsgjU8Iu9FBG5ycLVN9OzMbwMNWyPzys/cvEXHYuIj1Oq0oUR7r/rTWQCoKfJwWPg==
+"@ra-lib/component@0.0.18":
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/@ra-lib/component/-/component-0.0.18.tgz#99e3d429bc6f846179b9e0827e3694c624e85588"
+  integrity sha512-OZKUqrWoMGaMbObt2cSRSRWxqks72B6lSU/f2D33/ca6wZZOjvHPXSSEIoqgpD1cx8JLnHke15vS7HtdBxfQ0w==
 
 "@ra-lib/config-loader@^0.1.14":
   version "0.1.14"

@@ -1,5 +1,5 @@
 import models from './models';
-import { storage, createStoreByModels, handleSuccess, handleError } from '@ra-lib/adm';
+import {storage, createStoreByModels, handleSuccess, handleError} from '@ra-lib/adm';
 
 const result = createStoreByModels(models, {
     // middlewares: [
@@ -15,8 +15,8 @@ const result = createStoreByModels(models, {
     sessionStorage: storage.session,
     serialize: (data) => data,
     deserialize: (data) => data,
-    onError: handleError,
-    onSuccess: handleSuccess,
+    onError: handleError(),
+    onSuccess: handleSuccess(),
 });
 
 export const store = result.store;
