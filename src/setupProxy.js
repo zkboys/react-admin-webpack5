@@ -3,7 +3,7 @@ const proxies = require('./setupProxyConfig.json');
 const path = require('path');
 const fs = require('fs');
 
-module.exports = function (app) {
+module.exports = function(app) {
     proxies.forEach((item) => {
         const { baseUrl, target } = item;
         app.use(
@@ -13,7 +13,7 @@ module.exports = function (app) {
                 changeOrigin: true,
                 secure: false, // 是否验证证书
                 ws: true, // 启用websocket
-            })
+            }),
         );
     });
 
@@ -23,13 +23,14 @@ module.exports = function (app) {
             // target: 'http://172.16.143.44:32328', // 老测试门户后端
             target: 'http://22.50.7.25:39945', // 测试门户后端
             // target: 'http://22.50.7.25:3411', // 杰汇门户后端
+            // target: 'http://22.50.7.25:30017', // 杰汇门户前端
             pathRewrite: {
                 '^/portal': '',
             },
             changeOrigin: true,
             secure: false, // 是否验证证书
             ws: true, // 启用websocket
-        })
+        }),
     );
 };
 
