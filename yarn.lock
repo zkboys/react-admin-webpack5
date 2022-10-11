@@ -1454,18 +1454,18 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/adm@^0.0.81":
-  version "0.0.81"
-  resolved "https://registry.yarnpkg.com/@ra-lib/adm/-/adm-0.0.81.tgz#8ca731f181385f136e1c7db1b2e2d179e9e86221"
-  integrity sha512-bXYOJWcb/6OjB9iqQm3CJyQDWszyjVTfoi7DqcO3UPKKRBsL2y7XWWLJTG908zDg+zkaEjgjESzfLTTFSKshJw==
+"@ra-lib/adm@^0.0.85":
+  version "0.0.85"
+  resolved "https://registry.yarnpkg.com/@ra-lib/adm/-/adm-0.0.85.tgz#e8912a47af7bb8fd6b5d873d2da64c75b995eeb8"
+  integrity sha512-DGCSbCED5uGQSSv9BuVpF2Yj+sYDLmwM9DO/XUd/GVaVqlNldEOXkGIDfPsdSMXjgIV6yKI7rN8+Z0vnIlyd/Q==
   dependencies:
     "@ra-lib/admin-util" "0.0.29"
-    "@ra-lib/ajax" "0.1.48"
-    "@ra-lib/component" "0.0.18"
+    "@ra-lib/ajax" "0.1.49"
+    "@ra-lib/component" "0.0.20"
     "@ra-lib/hoc" "0.1.21"
-    "@ra-lib/hooks" "0.1.19"
+    "@ra-lib/hooks" "0.1.20"
     "@ra-lib/model" "0.1.14"
-    "@ra-lib/options" "0.0.10"
+    "@ra-lib/options" "0.0.11"
     "@ra-lib/util" "0.1.41"
     react-helmet "^6.1.0"
 
@@ -1476,20 +1476,20 @@
   dependencies:
     "@ra-lib/util" "0.1.41"
 
-"@ra-lib/ajax@0.1.48":
-  version "0.1.48"
-  resolved "https://registry.npmjs.org/@ra-lib/ajax/-/ajax-0.1.48.tgz#0ee7a293bdebc52e361ecd653b5ebc8dd79e2834"
-  integrity sha512-kq90ztML08SfAP3yLWtsWsfsEeVkbUslRG+rR9qxQ+3+PCLXR8A/0hDVr2gj/52yvm68uzPD7SaZBjBSjE8CNA==
+"@ra-lib/ajax@0.1.49":
+  version "0.1.49"
+  resolved "https://registry.yarnpkg.com/@ra-lib/ajax/-/ajax-0.1.49.tgz#8971c8859780cbf6517ce503b955227a2671a884"
+  integrity sha512-l5gmE37ddInM5vFgDszzW95JYwLhZtJSmV8oHtKQ+k/GFo0Ala69mUJOOsd4uskmkO49ENpD5ZSGTdEI6ZOJXg==
 
 "@ra-lib/babel-plugin-attribute-wrapper@^0.0.20":
   version "0.0.20"
   resolved "https://registry.npmmirror.com/@ra-lib/babel-plugin-attribute-wrapper/-/babel-plugin-attribute-wrapper-0.0.20.tgz#15929da0f1d2643f22323f8c2c5be6197b981bc0"
   integrity sha512-6cB21bF906ZPKhnEOG1caT8n76gn8VzULQG5yAXUvkB01RyDkXpLxh1ubKW7fMsiQJw9SbDgftZbHZqDQVyq/w==
 
-"@ra-lib/component@0.0.18":
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/@ra-lib/component/-/component-0.0.18.tgz#99e3d429bc6f846179b9e0827e3694c624e85588"
-  integrity sha512-OZKUqrWoMGaMbObt2cSRSRWxqks72B6lSU/f2D33/ca6wZZOjvHPXSSEIoqgpD1cx8JLnHke15vS7HtdBxfQ0w==
+"@ra-lib/component@0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@ra-lib/component/-/component-0.0.20.tgz#cd52522a5bfec3e2ce062c5bb6072cc22be50176"
+  integrity sha512-dbTRv7BH4ZIRcPsb4iJkOcYSPiL2ZWQHd5zM6y4xd8liEXc5w8Wr/GJ4BkPjpoM8vrDVEADhCWSWKwGhAaVwLA==
 
 "@ra-lib/config-loader@^0.1.14":
   version "0.1.14"
@@ -1501,10 +1501,10 @@
   resolved "https://registry.npmjs.org/@ra-lib/hoc/-/hoc-0.1.21.tgz#24527ff5876a712c97c73b85163e9cb0cd9e4a71"
   integrity sha512-Ca993vdnv01Sqxa90L7+gJebfC6bB9gyU0wLHNUJDsHnCgbf2IdRn3q/wrEBZmzfJSHV7SukvsTibOXlueqSEQ==
 
-"@ra-lib/hooks@0.1.19":
-  version "0.1.19"
-  resolved "https://registry.npmjs.org/@ra-lib/hooks/-/hooks-0.1.19.tgz#4c3dcf06fa6d9de73d80e4f9aa5ea8c036ab1e4e"
-  integrity sha512-H73Rnx9MaDQkXsa0LEqZVfN9G/Bn4qOeTKsQvpj98khF5kccuHNXlwvOSKtQRoJCr0V9VypwDPAz9iuZ5vHM/Q==
+"@ra-lib/hooks@0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@ra-lib/hooks/-/hooks-0.1.20.tgz#4880810884a99504fe25f8e63f8ff9f5321ad38d"
+  integrity sha512-PkUuGoVO9KZ4Yzot36pxMrx90rC6ULO8ZNbQ767ExnD9EAb3uhfSvNzNupMd7mmIRlW7oiOBhVD2djrfdffwBQ==
 
 "@ra-lib/model-async-function-loader@^0.0.3":
   version "0.0.3"
@@ -1516,10 +1516,10 @@
   resolved "https://registry.npmjs.org/@ra-lib/model/-/model-0.1.14.tgz#d7a9c620d27b8d1db5a814e4446ff9ec3860086f"
   integrity sha512-YsLngJ46KCk66VXts6zpdZzF90H3z2YQCw1ics/WrV6lpf2damPNqplwGu6Qvrj0XIZ/TQxCWAnSjbDVZV32Ig==
 
-"@ra-lib/options@0.0.10":
-  version "0.0.10"
-  resolved "https://registry.npmmirror.com/@ra-lib/options/-/options-0.0.10.tgz#691f1d075d11e93dc03668d8302b051cc31708a9"
-  integrity sha512-KKuYXGOdhDOX7FNdJ4CiM1toIHp8OJSEW1roPk6y+V5+n5wxQvjWCzp5unORtupBF5BfskPSN/3mOMLZHIWPpQ==
+"@ra-lib/options@0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@ra-lib/options/-/options-0.0.11.tgz#ccbf273e660622e55b2f5332d744955b20feff70"
+  integrity sha512-9eXdKG0TqBayCi7pgDMhO6fhtWV3Uu8ZIIcxQZ5D95hqH2fGnI5x22sRIUzlwk6AEJKOiPL21xXDFz43kx9Ieg==
   dependencies:
     pubsub-js "^1.9.4"
 
