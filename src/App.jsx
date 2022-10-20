@@ -1,7 +1,7 @@
-import { Suspense, useEffect, useState } from 'react';
-import { useNavigate, useRoutes, useLocation } from 'react-router';
-import { ConfigProvider, Modal } from 'antd';
-import { Provider } from 'react-redux';
+import {Suspense, useEffect, useState} from 'react';
+import {useNavigate, useRoutes, useLocation} from 'react-router';
+import {ConfigProvider, Modal} from 'antd';
+import {Provider} from 'react-redux';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import {
     Loading,
@@ -14,16 +14,16 @@ import {
     getToken,
     isLoginPage,
 } from '@ra-lib/adm';
-import { Logo } from 'src/components';
+import {Logo} from 'src/components';
 import routes from 'src/routes';
 import menus from 'src/menus';
-import { toHome, toLogin, getCurrentPageConfig } from 'src/commons';
-import { store } from './models';
+import {toHome, toLogin, getCurrentPageConfig} from 'src/commons';
+import {store} from './models';
 import useAppContext from './app-context';
 import theme from 'src/theme.less';
-import { modalDestroyAll } from 'src/commons/config-hoc';
+import {modalDestroyAll} from 'src/commons/config-hoc';
 import 'antd/dist/antd.less';
-import { KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY, IGNORE_PERMISSION } from 'src/config';
+import {KEEP_PAGE_ALIVE, BASE_NAME, SHOW_PROXY, IGNORE_PERMISSION} from 'src/config';
 import proxyConfig from 'src/setupProxyConfig.json';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
@@ -108,7 +108,7 @@ export default function App() {
             >
                 <ComponentProvider prefixCls={theme.raLibPrefix}>
                     {loading ? (
-                        <Loading sping />
+                        <Loading sping/>
                     ) : (
                         <Layout
                             layout={state.layout}
@@ -123,7 +123,7 @@ export default function App() {
                                 toLogin();
                             }}
                         >
-                            <Suspense fallback={<Loading spin />}>
+                            <Suspense fallback={<Loading spin/>}>
                                 {KEEP_PAGE_ALIVE ? (
                                     <KeepPageAlive
                                         routes={routes}
