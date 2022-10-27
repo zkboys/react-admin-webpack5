@@ -1454,14 +1454,14 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@ra-lib/adm@^0.0.92":
-  version "0.0.92"
-  resolved "https://registry.yarnpkg.com/@ra-lib/adm/-/adm-0.0.92.tgz#7122b2188f1cff892466c5e326601661c3810222"
-  integrity sha512-mG4dDtrID9CbrVgLxRTxKJKqlWYClIe3wbY/J6ELafhDibXb6TK7SdsKoF/04dlhXgOI2eKqzlaqOjwBN71f9w==
+"@ra-lib/adm@^0.0.93":
+  version "0.0.93"
+  resolved "https://registry.yarnpkg.com/@ra-lib/adm/-/adm-0.0.93.tgz#fa08a93b2ee79f1ab4697e14f792d0b2f51b97bf"
+  integrity sha512-k74Aez/5vhgCEaEuC/OceSx5mtWz8wBi+HxSHYJdesXmtj5whkMuu28dHhn1Ag6Bf9DW27Kec8vOtHVltlasRA==
   dependencies:
     "@ra-lib/admin-util" "0.0.31"
     "@ra-lib/ajax" "0.1.49"
-    "@ra-lib/component" "0.0.21"
+    "@ra-lib/component" "0.0.22"
     "@ra-lib/hoc" "0.1.21"
     "@ra-lib/hooks" "0.1.20"
     "@ra-lib/model" "0.1.14"
@@ -1486,10 +1486,10 @@
   resolved "https://registry.npmmirror.com/@ra-lib/babel-plugin-attribute-wrapper/-/babel-plugin-attribute-wrapper-0.0.20.tgz#15929da0f1d2643f22323f8c2c5be6197b981bc0"
   integrity sha512-6cB21bF906ZPKhnEOG1caT8n76gn8VzULQG5yAXUvkB01RyDkXpLxh1ubKW7fMsiQJw9SbDgftZbHZqDQVyq/w==
 
-"@ra-lib/component@0.0.21":
-  version "0.0.21"
-  resolved "https://registry.yarnpkg.com/@ra-lib/component/-/component-0.0.21.tgz#d6e7704af72f7551e76ff99a7da439b85e6b0d05"
-  integrity sha512-+m+IVKDvNJNQZ+83CzN49lxRJqnnJM2gHHgcSqmwMTAfSHGftz6M0otXZ3p0gDIl6QmbkNuJSLdIuVSpIFIFjw==
+"@ra-lib/component@0.0.22":
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/@ra-lib/component/-/component-0.0.22.tgz#10923b4200a0a5194e5972bab4335fee44e3d026"
+  integrity sha512-uQ107+FRSisHKLkP4WRMng9BFkIhLE19GigaG51niXu62pF+qxZMzxcSYl73Ho3SsfWIo8hzubqLDLGCa64n7g==
 
 "@ra-lib/config-loader@^0.1.14":
   version "0.1.14"
