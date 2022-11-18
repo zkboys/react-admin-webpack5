@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { Button, Form, Space } from 'antd';
-import { PageContent, QueryBar, FormItem, Table, Pagination, Operator, useFunction } from '@ra-lib/adm';
+import {useEffect, useState} from 'react';
+import {Button, Form, Space} from 'antd';
+import {PageContent, QueryBar, FormItem, Table, Pagination, Operator, useFunction} from '@ra-lib/adm';
 import config from 'src/commons/config-hoc';
 import editModal from './editModal';
 import detailModal from './detailModal';
@@ -8,12 +8,14 @@ import detailModal from './detailModal';
 export default config({
     title: '用户查询',
 })(function UserList(props) {
-    const [loading, setLoading] = useState(false);
-    const [pageNum, setPageNum] = useState(1);
-    const [pageSize, setPageSize] = useState(20);
-    const [dataSource, setDataSource] = useState([]);
-    const [total, setTotal] = useState(0);
-    const [form] = Form.useForm();
+    const [ loading, setLoading ] = useState(false);
+    const [ deleting, setDeleting ] = useState(false);
+    const [ pageNum, setPageNum ] = useState(1);
+    const [ pageSize, setPageSize ] = useState(20);
+    const [ dataSource, setDataSource ] = useState([]);
+    const [ total, setTotal ] = useState(0);
+    const [ selectedRowKeys, setSelectedRowKeys ] = useState([]);
+    const [ form ] = Form.useForm();
 
     const columns = [
         { title: '用户名', dataIndex: 'userName' },
@@ -42,15 +44,16 @@ export default config({
                         },
                     },
                 ];
-                return <Operator items={items} />;
+                return <Operator items={items}/>;
             },
         },
     ];
 
     // 查询
     const handleSearch = useFunction(async (options = {}) => {
+        if(loading) return;
         // TODO 测试数据
-        setDataSource([{ id: 1, userName: '张三', age: 11 }]);
+        setDataSource([ { id: 1, userName: '张三', age: 11 } ]);
 
         const values = await form.validateFields();
         const params = {
@@ -69,7 +72,13 @@ export default config({
 
     // 删除
     const handleDelete = useFunction(async (id) => {
-        await props.ajax.del(`/users/${id}`, null, { setLoading, successTip: '删除成功！' });
+        await props.ajax.del(`/users/${id}`, null, { setLoading: setDeleting, successTip: '删除成功！' });
+        await handleSearch();
+    });
+
+    // 批量删除
+    const handleBatchDelete = useFunction(async () => {
+        await props.ajax.del(`/users/`, { ids: selectedRowKeys }, { setLoading: setDeleting, successTip: '删除成功！' });
         await handleSearch();
     });
 
@@ -86,7 +95,7 @@ export default config({
     };
 
     return (
-        <PageContent loading={loading}>
+        <PageContent loading={loading || deleting}>
             <QueryBar>
                 <Form
                     layout="inline"
@@ -114,11 +123,23 @@ export default config({
                             >
                                 添加
                             </Button>
+                            <Button
+                                type="primary"
+                                danger
+                                disabled={!selectedRowKeys?.length}
+                                onClick={() => handleBatchDelete()}
+                            >
+                                删除
+                            </Button>
                         </Space>
                     </FormItem>
                 </Form>
             </QueryBar>
             <Table
+                rowSelection={{
+                    selectedRowKeys,
+                    onChange: selectedRowKeys => setSelectedRowKeys(selectedRowKeys),
+                }}
                 pageNum={pageNum}
                 pageSize={pageSize}
                 fitHeight
@@ -133,6 +154,7 @@ export default config({
                 onPageNumChange={async (pageNum) => await handleSearch({ pageNum })}
                 onPageSizeChange={async (pageSize) => await handleSearch({ pageNum: 1, pageSize })}
             />
+
         </PageContent>
     );
 });
