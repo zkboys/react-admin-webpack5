@@ -1,5 +1,6 @@
 import models from './models';
 import {storage, createStoreByModels, handleSuccess, handleError} from '@ra-lib/adm';
+import createUseModel from './create-use-model';
 
 const result = createStoreByModels(models, {
     // middlewares: [
@@ -22,3 +23,4 @@ const result = createStoreByModels(models, {
 export const store = result.store;
 export const connect = result.connect;
 export const actions = result.actions;
+export const useModel = createUseModel(actions);

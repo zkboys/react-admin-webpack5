@@ -15,10 +15,10 @@ export default {
                 a: {
                     aa: 'aa',
                     aaa: 'aaa',
-                    aaaa: ['a', 'a1', 'a2'],
+                    aaaa: [ 'a', 'a1', 'a2' ],
                 },
             },
-            foo: ['f', 'f1'],
+            foo: [ 'f', 'f1' ],
         },
     },
     /**
@@ -27,7 +27,7 @@ export default {
      * 1. true 所有当前model state 都同步
      * 2. [path, path, ...] 指定jsonpath同步，详见：https://lodash.com/docs/4.17.15#get
      */
-    syncLocal: ['syncObj.bar.a.aaaa[1]', 'syncObj.foo', 'name', 'user'],
+    syncLocal: [ 'syncObj.bar.a.aaaa[1]', 'syncObj.foo', 'name', 'user' ],
     /**
      * 配置同 syncLocal，同步到sessionStorage中
      */
@@ -120,7 +120,7 @@ export default {
         console.log('getUser state', state);
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                Math.random() > 0.1 ? resolve({ user: { name: 123, age: 23 } }) : reject(new Error('获取用户失败！'));
+                Math.random() > 0.1 ? resolve({ user: { name: Math.random(), age: 23 } }) : reject(new Error('获取用户失败！'));
             }, 2000);
         });
     },
