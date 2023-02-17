@@ -10,7 +10,7 @@ const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
@@ -25,9 +25,9 @@ const ForkTsCheckerWebpackPlugin =
         ? require('react-dev-utils/ForkTsCheckerWarningWebpackPlugin')
         : require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const { getThemeVariables } = require('antd/dist/theme');
+const {getThemeVariables} = require('antd/dist/theme');
 
-const { lessVarsToJs } = require('./util');
+const {lessVarsToJs} = require('./util');
 const pkg = require(paths.appPackageJson);
 const themeVars = lessVarsToJs(path.join(paths.appSrc, 'theme.less'));
 const modifyVars = {
@@ -52,7 +52,7 @@ const reactRefreshWebpackPluginRuntimeEntry = require.resolve(
 const babelRuntimeEntry = require.resolve('babel-preset-react-app');
 const babelRuntimeEntryHelpers = require.resolve(
     '@babel/runtime/helpers/esm/assertThisInitialized',
-    { paths: [babelRuntimeEntry] },
+    {paths: [babelRuntimeEntry]},
 );
 const babelRuntimeRegenerator = require.resolve('@babel/runtime/regenerator', {
     paths: [babelRuntimeEntry],
@@ -101,7 +101,7 @@ const hasJsxRuntime = (() => {
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
-module.exports = function(webpackEnv) {
+module.exports = function (webpackEnv) {
     const isEnvDevelopment = webpackEnv === 'development';
     const isEnvProduction = webpackEnv === 'production';
 
@@ -127,7 +127,7 @@ module.exports = function(webpackEnv) {
                 // css is located in `static/css`, use '../../' to locate index.html folder
                 // in production `paths.publicUrlOrPath` can be a relative path
                 options: paths.publicUrlOrPath.startsWith('.')
-                    ? { publicPath: '../../' }
+                    ? {publicPath: '../../'}
                     : {},
             },
             {
@@ -375,12 +375,14 @@ module.exports = function(webpackEnv) {
                     loader: require.resolve('source-map-loader'),
                 },
                 {
-                    test: path.join(paths.appSrc, 'pages', 'page-configs.js'),
+                    // test: path.join(paths.appSrc, 'pages', 'page-configs.js'),
+                    test: /\.(js|jsx)$/,
                     enforce: 'pre',
                     use: {
                         loader: require.resolve('@ra-lib/config-loader'),
                         options: {
                             pagesPath: path.join(paths.appSrc, 'pages'),
+                            pageConfigsPath: path.join(paths.appSrc, 'pages', 'page-configs.js'),
                             conventionalRoutes: true,
                             extraImport: 'import options from "src/options"',
                         },
@@ -437,7 +439,7 @@ module.exports = function(webpackEnv) {
                                         prettier: false,
                                         svgo: false,
                                         svgoConfig: {
-                                            plugins: [{ removeViewBox: false }],
+                                            plugins: [{removeViewBox: false}],
                                         },
                                         titleProp: true,
                                         ref: true,
@@ -500,7 +502,7 @@ module.exports = function(webpackEnv) {
                                 presets: [
                                     [
                                         require.resolve('babel-preset-react-app/dependencies'),
-                                        { helpers: true },
+                                        {helpers: true},
                                     ],
                                 ],
                                 cacheDirectory: true,
@@ -773,14 +775,14 @@ module.exports = function(webpackEnv) {
                     // '../cra-template-typescript/template/src/App.tsx'
                     // otherwise.
                     include: [
-                        { file: '../**/src/**/*.{ts,tsx}' },
-                        { file: '**/src/**/*.{ts,tsx}' },
+                        {file: '../**/src/**/*.{ts,tsx}'},
+                        {file: '**/src/**/*.{ts,tsx}'},
                     ],
                     exclude: [
-                        { file: '**/src/**/__tests__/**' },
-                        { file: '**/src/**/?(*.){spec|test}.*' },
-                        { file: '**/src/setupProxy.*' },
-                        { file: '**/src/setupTests.*' },
+                        {file: '**/src/**/__tests__/**'},
+                        {file: '**/src/**/?(*.){spec|test}.*'},
+                        {file: '**/src/setupProxy.*'},
+                        {file: '**/src/setupTests.*'},
                     ],
                 },
                 logger: {
